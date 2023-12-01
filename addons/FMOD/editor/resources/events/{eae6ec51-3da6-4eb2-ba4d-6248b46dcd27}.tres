@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://b8v6ag7mpfklw"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Take_Tamagotchi"
+guid = "{eae6ec51-3da6-4eb2-ba4d-6248b46dcd27}"
+name = "Take_Tamagotchi"

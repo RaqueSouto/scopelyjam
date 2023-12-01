@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://dnxjh6hc1j6ar"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Angry"
+guid = "{c6c0728c-b150-4e83-8aa6-b7414491544f}"
+name = "Angry"

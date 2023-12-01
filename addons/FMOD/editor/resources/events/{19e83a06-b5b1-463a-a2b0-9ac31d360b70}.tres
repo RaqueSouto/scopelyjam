@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://b8c6gd1jvmj5s"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Take_MSN"
+guid = "{19e83a06-b5b1-463a-a2b0-9ac31d360b70}"
+name = "Take_MSN"
