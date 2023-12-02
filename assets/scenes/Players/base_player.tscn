@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=3 uid="uid://cwk572nh7d3wp"]
 
-[ext_resource type="Texture2D" uid="uid://bf1lata5s2d6d" path="res://assets/sprites/arrow.png" id="1_hagiq"]
-[ext_resource type="Texture2D" uid="uid://b8nbkrd6dkkdc" path="res://assets/sprites/characters/Scopely_Character_Raquel.png" id="1_jlelo"]
-[ext_resource type="Script" path="res://assets/scripts/player/player.gd" id="1_qagqk"]
-[ext_resource type="Script" path="res://assets/scripts/player/state_machine/state_machine.gd" id="2_i05c6"]
-[ext_resource type="Script" path="res://assets/scripts/player/state_machine/states/moving_state.gd" id="4_8f58o"]
+[ext_resource type="Script" path="res://assets/scripts/player/player.gd" id="1_n8mnh"]
+[ext_resource type="Texture2D" uid="uid://b8nbkrd6dkkdc" path="res://assets/sprites/characters/Scopely_Character_Raquel.png" id="2_wkotj"]
+[ext_resource type="Texture2D" uid="uid://bf1lata5s2d6d" path="res://assets/sprites/arrow.png" id="3_cfgdn"]
+[ext_resource type="Script" path="res://assets/scripts/player/state_machine/state_machine.gd" id="4_csyv5"]
+[ext_resource type="Script" path="res://assets/scripts/player/state_machine/states/moving_state.gd" id="5_aa3ev"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_omrrp"]
 radius = 100.0
@@ -126,10 +126,10 @@ _data = {
 radius = 30.0
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_qagqk")
+script = ExtResource("1_n8mnh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_jlelo")
+texture = ExtResource("2_wkotj")
 offset = Vector2(0, -170)
 hframes = 6
 vframes = 5
@@ -147,7 +147,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 position = Vector2(0, -512)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_hagiq")
+texture = ExtResource("3_cfgdn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -160,11 +160,11 @@ shape = SubResource("CircleShape2D_1irbj")
 
 [node name="StateMachine" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("2_i05c6")
+script = ExtResource("4_csyv5")
 
 [node name="MovingState" type="Node" parent="StateMachine"]
 unique_name_in_owner = true
-script = ExtResource("4_8f58o")
+script = ExtResource("5_aa3ev")
 
 [node name="StuntState" type="Node" parent="StateMachine"]
 unique_name_in_owner = true
