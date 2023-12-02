@@ -1,10 +1,10 @@
 class_name Player extends Node
 
-var speed
-var angular_speed
+#var speed
+#var angular_speed
 
 func setup(player_settings : PlayerSettings):
-
+	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
