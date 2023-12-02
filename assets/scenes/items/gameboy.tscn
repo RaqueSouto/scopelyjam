@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://bctm8qvn3nvsq"]
+
+[ext_resource type="Texture2D" uid="uid://cr3hdlu32f6nk" path="res://assets/sprites/items/gameboy.png" id="1_1esor"]
+
+[sub_resource type="Animation" id="Animation_2ocrw"]
+resource_name = "idle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_54tb3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_d3fnf"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3pjl6"]
+_data = {
+"RESET": SubResource("Animation_54tb3"),
+"idle": SubResource("Animation_2ocrw"),
+"walk": SubResource("Animation_d3fnf")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_63kyu"]
+radius = 133.439
+height = 345.49
+
+[node name="gameboy" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1esor")
+hframes = 6
+vframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3pjl6")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.11759e-07, -29)
+rotation = -0.0785398
+shape = SubResource("CapsuleShape2D_63kyu")
