@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dw6ed0sjvbeco"]
+[gd_scene load_steps=9 format=3 uid="uid://dw6ed0sjvbeco"]
 
 [ext_resource type="Script" path="res://assets/scripts/autoloads/config.gd" id="1_nfl1k"]
 [ext_resource type="Script" path="res://assets/scripts/config/character_repository.gd" id="2_oot1g"]
@@ -6,7 +6,8 @@
 [ext_resource type="Script" path="res://assets/scripts/config/character_config.gd" id="3_2ksta"]
 [ext_resource type="Script" path="res://assets/scripts/config/player_config.gd" id="3_6hu3x"]
 [ext_resource type="Texture2D" uid="uid://bm0g22mia32ag" path="res://icon.svg" id="4_0eybc"]
-[ext_resource type="Texture2D" uid="uid://dkl2pn6f8jul8" path="res://assets/sprites/characters/Scopely_Character_Raquel_Avatar.png" id="6_i52o7"]
+[ext_resource type="Texture2D" uid="uid://dkl2pn6f8jul8" path="res://assets/sprites/characters/raque_avatar.png" id="6_i52o7"]
+[ext_resource type="Texture2D" uid="uid://du3mf1hiqwx53" path="res://assets/sprites/characters/alma_avatar.png" id="7_o1uib"]
 
 [node name="GameConfig" type="Node"]
 script = ExtResource("1_nfl1k")
@@ -34,7 +35,7 @@ story = "This is just an example character. Delete and creat others."
 
 [node name="Alma" type="Node" parent="CharacterRepository"]
 script = ExtResource("3_2ksta")
-avatar_icon = ExtResource("4_0eybc")
+avatar_icon = ExtResource("7_o1uib")
 avatar_scene = "res://assets/scenes/players/alma.tscn"
 color = Color(1, 0.447059, 0, 1)
 print_name = "Alma"

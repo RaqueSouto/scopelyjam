@@ -6,11 +6,13 @@ signal player_joined(PlayerSettings)
 const GAME_PATH = "res://assets/scenes/game.tscn"
 
 var players : PlayersState
+var characters_repo : CharacterRepository
 var pendant_devices : Dictionary
 @onready var start_label = %StartLabel
 
 func _ready():
 	players = GameState.players
+	characters_repo = Config.character_repository
 	for device in Input.get_connected_joypads():
 		add_device(device)
 	
@@ -37,8 +39,6 @@ func add_device(device : int):
 			
 	var device_input = DeviceInput.new(device)
 	pendant_devices[device] = device_input
-	
-	print("device added " + str(device))
 
 
 func remove_device(device : int):
@@ -49,8 +49,6 @@ func remove_device(device : int):
 	else:
 		players.remove_player_by_device(device)
 	
-	print("device removed " + str(device))
-	
 	
 func _process(_delta):
 	_check_input_devices()
@@ -60,9 +58,18 @@ func _process(_delta):
 func _check_input_devices():
 	for device in pendant_devices:
 		if pendant_devices[device].is_action_just_pressed("ui_join"):
-			players.add_player(device, pendant_devices[device])
+			var character_index := _get_first_unselected_character()
+			players.add_player(device, pendant_devices[device], character_index)
 			Audio.play_player_join()
-			call_deferred("remove_device", device)
+			remove_device.call_deferred(device)
+
+
+func _get_first_unselected_character() -> int:
+	for character_index in characters_repo.get_last_character_index():
+		if not players.is_character_id_selected_by_other(character_index):
+			return character_index
+			
+	return 0
 
 
 func _check_start():

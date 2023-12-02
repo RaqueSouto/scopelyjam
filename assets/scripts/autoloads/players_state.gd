@@ -18,16 +18,19 @@ var all_players_ready := false:
 		all_players_ready_changed.emit()
 		
 
-func add_player(device : int, device_input : DeviceInput) -> PlayerSettings:
+func add_player(device : int, device_input : DeviceInput, character_index : int) -> PlayerSettings:
 	if list.size() >= MAX_PLAYERS:
 		return
+		
 	var player_settings = PlayerSettings.new()
 	player_settings.player_index = list.size()
 	player_settings.device = device
 	player_settings.device_input = device_input
+	player_settings.character_index = character_index
 	list.append(player_settings)
 	player_list_changed.emit()
 	return player_settings
+	
 	
 
 func remove_player(player : int):
@@ -49,6 +52,29 @@ func exist_player_device(device : int) -> bool:
 			return true
 			
 	return false
+	
+
+func is_character_id_selected_by_other(character_index : int, player_index : int = -1) -> bool:
+	for player in list:
+		if player.player_index == player_index:
+			continue
+			 
+		if player.character_index == character_index:
+			return true
+			
+	return false
+	
+
+func is_character_id_being_used_by_other(character_index : int, player_index : int = -1) -> bool:
+	for player in list:
+		if player.player_index == player_index:
+			continue
+			
+		if player.is_ready and player.character_index == character_index:
+			return true
+			
+	return false
+	
 
 func select_character(player : int, character : int):
 	list[player].character_index = character

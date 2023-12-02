@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://cwk572nh7d3wp"]
 
 [ext_resource type="Script" path="res://assets/scripts/player/player.gd" id="1_n8mnh"]
-[ext_resource type="Texture2D" uid="uid://b8nbkrd6dkkdc" path="res://assets/sprites/characters/Scopely_Character_Raquel.png" id="2_wkotj"]
+[ext_resource type="Texture2D" uid="uid://sqdpw4qn1y8m" path="res://assets/sprites/characters/raque.png" id="2_08b8c"]
 [ext_resource type="Texture2D" uid="uid://bf1lata5s2d6d" path="res://assets/sprites/arrow.png" id="3_cfgdn"]
 [ext_resource type="Script" path="res://assets/scripts/player/state_machine/state_machine.gd" id="4_csyv5"]
 [ext_resource type="Script" path="res://assets/scripts/player/state_machine/states/moving_state.gd" id="5_aa3ev"]
@@ -133,7 +133,7 @@ radius = 30.0
 script = ExtResource("1_n8mnh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_wkotj")
+texture = ExtResource("2_08b8c")
 offset = Vector2(0, -170)
 hframes = 6
 vframes = 5

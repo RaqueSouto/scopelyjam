@@ -55,15 +55,10 @@ func _on_player_ready_changed(check_player : PlayerSettings):
 		
 	ready_allowed = not check_player.is_ready or check_player.character_index != player.character_index
 
-	
 
 func _check_is_avatar_allowed():
-	for check_player in players.list:
-		if check_player.is_ready and check_player.character_index == player.character_index:
-			ready_allowed = false
-			return
-			
-	ready_allowed = true
+	ready_allowed = not players.is_character_id_being_used_by_other(player.character_index, player.player_index)
+
 
 func set_player(player_settings : PlayerSettings):
 	player = player_settings

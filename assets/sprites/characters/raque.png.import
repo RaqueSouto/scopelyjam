@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkl2pn6f8jul8"
-path="res://.godot/imported/Scopely_Character_Raquel_Avatar.png-19c2712b38e518f1931f5bd8ecaa2e0e.ctex"
+uid="uid://sqdpw4qn1y8m"
+path="res://.godot/imported/raque.png-6bd00ccf857be0e980baa37ddcef6569.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/Scopely_Character_Raquel_Avatar.png"
-dest_files=["res://.godot/imported/Scopely_Character_Raquel_Avatar.png-19c2712b38e518f1931f5bd8ecaa2e0e.ctex"]
+source_file="res://assets/sprites/characters/raque.png"
+dest_files=["res://.godot/imported/raque.png-6bd00ccf857be0e980baa37ddcef6569.ctex"]
 
 [params]
 
