@@ -8,10 +8,9 @@ size = Vector2(108, 20)
 [node name="bench" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(657, 338)
+position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_jgtne")
 
 [node name="sprite" type="Sprite2D" parent="."]
-position = Vector2(656, 354)
 texture = ExtResource("1_2ejde")
 offset = Vector2(0, -32)

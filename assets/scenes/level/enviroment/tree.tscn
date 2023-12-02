@@ -8,11 +8,11 @@ height = 92.0
 [node name="tree" type="StaticBody2D"]
 
 [node name="sprite" type="Sprite2D" parent="."]
-position = Vector2(340, 536)
+position = Vector2(8, 0)
 texture = ExtResource("1_otq3g")
 offset = Vector2(0, -80)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(334, 533)
+position = Vector2(0, -10)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_qyl7n")

@@ -1,85 +1,38 @@
-[gd_scene load_steps=12 format=3 uid="uid://bvjlpmx5mxmba"]
+[gd_scene load_steps=4 format=3 uid="uid://bvjlpmx5mxmba"]
 
-[ext_resource type="Texture2D" uid="uid://whmheiqeg4b6" path="res://assets/sprites/background/Scopely_Background.png" id="1_fqr55"]
 [ext_resource type="Script" path="res://assets/scripts/game/game.gd" id="1_qm8kl"]
-[ext_resource type="PackedScene" uid="uid://hiw1m0o7ye68" path="res://assets/scenes/enviroment/bench.tscn" id="2_c68y4"]
-[ext_resource type="Texture2D" uid="uid://3de6t01u1q1i" path="res://assets/sprites/background/Scopely_Background_Gate.png" id="2_k20i5"]
-[ext_resource type="PackedScene" uid="uid://cw7uy6nrdywya" path="res://assets/scenes/enviroment/lamppost.tscn" id="3_tn57f"]
-[ext_resource type="PackedScene" uid="uid://8rgr1octdy8k" path="res://assets/scenes/enviroment/tree.tscn" id="4_gcwhf"]
-[ext_resource type="PackedScene" uid="uid://dnrjr3nnn12m1" path="res://assets/scenes/enviroment/bush.tscn" id="5_811xv"]
-[ext_resource type="PackedScene" uid="uid://dhrnd83k14vrw" path="res://assets/scenes/enviroment/house.tscn" id="7_1kioi"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ooq7q"]
-size = Vector2(1334.17, 46.0427)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ca8mt"]
-size = Vector2(1586.72, 45.9575)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtogn"]
-size = Vector2(32.2927, 906.17)
+[ext_resource type="PackedScene" uid="uid://briojhyaesuc0" path="res://assets/scenes/level/level.tscn" id="3_54xch"]
+[ext_resource type="PackedScene" uid="uid://dhrnd83k14vrw" path="res://assets/scenes/level/enviroment/house.tscn" id="7_1kioi"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_qm8kl")
 
-[node name="Level" type="Sprite2D" parent="."]
+[node name="Level" parent="." instance=ExtResource("3_54xch")]
+z_index = -100
+y_sort_enabled = true
 position = Vector2(960.5, 541.5)
 scale = Vector2(0.998437, 1.00093)
-texture = ExtResource("1_fqr55")
 
-[node name="Decor" type="Sprite2D" parent="Level"]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-962.003, -540.999)
-scale = Vector2(1.00156, 0.999075)
+[node name="CollisionUp" parent="Level" index="6"]
+position = Vector2(0, -470)
 
-[node name="bench" parent="Level/Decor" instance=ExtResource("2_c68y4")]
+[node name="LevelBases" type="Sprite2D" parent="."]
+position = Vector2(960.5, 541.5)
+scale = Vector2(0.998437, 1.00093)
 
-[node name="Lamppost" parent="Level/Decor" instance=ExtResource("3_tn57f")]
-
-[node name="Tree" parent="Level/Decor" instance=ExtResource("4_gcwhf")]
-
-[node name="Bush" parent="Level/Decor" instance=ExtResource("5_811xv")]
-position = Vector2(-64.001, 25.002)
-
-[node name="GateDown" type="Sprite2D" parent="Level"]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(0, 540)
-scale = Vector2(0.998435, 0.99815)
-texture = ExtResource("2_k20i5")
-offset = Vector2(0, -540)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/GateDown"]
-position = Vector2(0, -113.105)
-shape = SubResource("RectangleShape2D_ooq7q")
-one_way_collision_margin = 0.0
-
-[node name="CollisionUp" type="CollisionShape2D" parent="Level"]
-position = Vector2(-0.622131, -466.068)
-shape = SubResource("RectangleShape2D_ca8mt")
-
-[node name="CollisionLeft" type="CollisionShape2D" parent="Level"]
-position = Vector2(-807.762, -15.4856)
-shape = SubResource("RectangleShape2D_qtogn")
-
-[node name="CollisionRight" type="CollisionShape2D" parent="Level"]
-position = Vector2(808.764, -15.4856)
-shape = SubResource("RectangleShape2D_qtogn")
-
-[node name="LevelBases" type="Sprite2D" parent="Level"]
-position = Vector2(-3.50548, 0.499535)
-
-[node name="House1" parent="Level/LevelBases" instance=ExtResource("7_1kioi")]
+[node name="House1" parent="LevelBases" instance=ExtResource("7_1kioi")]
 position = Vector2(-810, 540)
 
-[node name="House2" parent="Level/LevelBases" instance=ExtResource("7_1kioi")]
+[node name="House2" parent="LevelBases" instance=ExtResource("7_1kioi")]
 position = Vector2(810, -540)
 scale = Vector2(-1, -1)
 
-[node name="House3" parent="Level/LevelBases" instance=ExtResource("7_1kioi")]
+[node name="House3" parent="LevelBases" instance=ExtResource("7_1kioi")]
 position = Vector2(-810, -540)
 scale = Vector2(1, -1)
 
-[node name="House4" parent="Level/LevelBases" instance=ExtResource("7_1kioi")]
+[node name="House4" parent="LevelBases" instance=ExtResource("7_1kioi")]
 position = Vector2(810, 540)
 scale = Vector2(-1, 1)
+
+[editable path="Level"]

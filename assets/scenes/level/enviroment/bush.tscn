@@ -2,15 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://bd88kbtd75yvp" path="res://assets/sprites/background/Scopely_Prop_Bush.png" id="1_2ydle"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3r0y"]
-size = Vector2(159, 11)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7566w"]
+radius = 12.0
+height = 160.0
 
 [node name="Bush" type="StaticBody2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(649, 857.5)
-shape = SubResource("RectangleShape2D_i3r0y")
-
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(649, 838)
+position = Vector2(0, -24)
 texture = ExtResource("1_2ydle")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_7566w")
