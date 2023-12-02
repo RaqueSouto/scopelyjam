@@ -16,26 +16,57 @@ var select_cooldown := false
 @onready var select_cooldown_timer := %SelectCooldownTimer
 @onready var ready_label = %ReadyLabel
 
+const disallowed_color := Color.DIM_GRAY
+
+
 @onready var up_arrow = %UpArrow
 @onready var down_arrow = %DownArrow
 
-
 var input_allowed = false
+var ready_allowed = true:
+	set(value):
+		if value == ready_allowed:
+			return
+			
+		ready_allowed = value
+		if ready_allowed:
+			character_avatar.modulate = Color.WHITE
+		else:
+			character_avatar.modulate = disallowed_color
+		
 
 func _ready():
 	players = GameState.players
 	character_repo = Config.character_repository
 	select_cooldown_timer.timeout.connect(_on_select_cooldown_timer_timeout)
+	players.player_ready_changed.connect(_on_player_ready_changed)
 	
 
 func _on_select_cooldown_timer_timeout():
-	print("now you can select!")
 	select_cooldown = false
 
 
+func _on_player_ready_changed(check_player : PlayerSettings):
+	if player == null:
+		return
+
+	if player == check_player:
+		return
+		
+	ready_allowed = not check_player.is_ready or check_player.character_index != player.character_index
+
+	
+
+func _check_is_avatar_allowed():
+	for check_player in players.list:
+		if check_player.is_ready and check_player.character_index == player.character_index:
+			ready_allowed = false
+			return
+			
+	ready_allowed = true
+
 func set_player(player_settings : PlayerSettings):
 	player = player_settings
-	player.is_ready = false
 	player_label.text = player.get_print()
 	var character = character_repo.get_character(player.character_index)
 	set_character(character)
@@ -48,6 +79,7 @@ func set_player(player_settings : PlayerSettings):
 		set_as_not_ready()
 		
 	input_allowed = false
+	_check_is_avatar_allowed()
 	
 	
 func set_character(character : CharacterConfig):
@@ -56,6 +88,7 @@ func set_character(character : CharacterConfig):
 	character_role_label.text = character.print_role
 	character_name_label.modulate = character.color
 	character_avatar.texture = character.avatar_icon
+	_check_is_avatar_allowed()
 
 
 func remove_player():
@@ -87,7 +120,10 @@ func _process(_delta):
 				select_next()
 
 		if player.device_input.is_action_just_pressed("ui_accept"):
-			set_player_as_ready()
+			if ready_allowed:
+				set_player_as_ready()
+			else:
+				Audio.play_warning()
 		
 	elif player.is_ready and player.device_input.is_action_just_pressed("ui_cancel"):
 		set_player_as_not_ready()
@@ -99,9 +135,9 @@ func select_previous():
 	else:
 		character_index = character_repo.get_last_character_index()
 		
+	players.select_character(player.player_index, character_index)
 	set_character(
 		character_repo.get_character(character_index))
-	players.select_character(player.player_index, character_index)
 		
 	select_cooldown = true
 	select_cooldown_timer.start()
@@ -117,9 +153,9 @@ func select_next():
 	else:
 		character_index = 0
 
+	players.select_character(player.player_index, character_index)
 	set_character(
 			character_repo.get_character(character_index))
-	players.select_character(player.player_index, character_index)
 		
 	select_cooldown = true
 	select_cooldown_timer.start()

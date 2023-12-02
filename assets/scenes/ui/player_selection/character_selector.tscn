@@ -25,7 +25,6 @@ size_flags_horizontal = 3
 script = ExtResource("1_5wsxd")
 
 [node name="PlayerActive" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

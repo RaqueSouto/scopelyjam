@@ -1,5 +1,6 @@
 class_name PlayersState extends Node
 
+signal player_ready_changed(player : PlayerSettings)
 signal all_players_ready_changed()
 signal player_list_changed()
 
@@ -32,6 +33,7 @@ func add_player(device : int, device_input : DeviceInput) -> PlayerSettings:
 func remove_player(player : int):
 	list.remove_at(player)
 	player_list_changed.emit()
+	_check_players_ready()
 
 
 func remove_player_by_device(device : int):
@@ -55,6 +57,7 @@ func select_character(player : int, character : int):
 func set_player_ready(player : int, is_ready : bool):
 	list[player].is_ready = is_ready
 	_check_players_ready()
+	player_ready_changed.emit(list[player])
 	
 	
 func _check_players_ready():

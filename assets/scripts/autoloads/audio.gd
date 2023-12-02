@@ -24,6 +24,11 @@ func play_select_character():
 	pass
 
 
+func play_warning():
+	
+	pass
+	
+	
 func play_player_ready():
 	pass
 
