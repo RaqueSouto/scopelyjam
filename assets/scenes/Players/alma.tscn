@@ -1,5 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7bhi4sukg2s8"]
+[gd_scene load_steps=3 format=3 uid="uid://c7bhi4sukg2s8"]
 
-[ext_resource type="PackedScene" uid="uid://cwk572nh7d3wp" path="res://assets/scenes/players/base_player.tscn" id="1_0hfr4"]
+[ext_resource type="PackedScene" uid="uid://cwk572nh7d3wp" path="res://assets/scenes/Players/base_player.tscn" id="1_0hfr4"]
+[ext_resource type="Texture2D" uid="uid://dusgc52funx6f" path="res://assets/sprites/characters/Scopely_Character_Alma.png" id="2_sfqed"]
 
 [node name="Player" instance=ExtResource("1_0hfr4")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_sfqed")
