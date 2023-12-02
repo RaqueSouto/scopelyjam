@@ -15,6 +15,10 @@ var select_cooldown := false
 @onready var select_cooldown_timer := %SelectCooldownTimer
 @onready var ready_label = %ReadyLabel
 
+@onready var up_arrow = %UpArrow
+@onready var down_arrow = %DownArrow
+
+
 var input_allowed = false
 
 func _ready():
@@ -95,6 +99,7 @@ func select_previous():
 		
 	select_cooldown = true
 	select_cooldown_timer.start()
+	tween_control(up_arrow)
 
 
 func select_next():
@@ -110,3 +115,10 @@ func select_next():
 		
 	select_cooldown = true
 	select_cooldown_timer.start()
+	tween_control(down_arrow)
+
+
+func tween_control(control : Control):
+	var tween = create_tween()
+	tween.tween_property(control, "scale", Vector2(1.4, 1.4), 0.15).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(control, "scale", Vector2.ONE, 0.15).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)

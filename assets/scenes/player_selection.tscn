@@ -1,58 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://igrrthfcyjvl"]
+[gd_scene load_steps=5 format=3 uid="uid://igrrthfcyjvl"]
 
 [ext_resource type="Script" path="res://assets/scripts/ui/player_selection/player_selection.gd" id="1_g4nc4"]
 [ext_resource type="Script" path="res://assets/scripts/ui/player_selection/character_selection.gd" id="2_7q8pf"]
+[ext_resource type="Theme" uid="uid://b3kf378b70aub" path="res://assets/style/millenial_go.tres" id="2_djyf3"]
 [ext_resource type="PackedScene" uid="uid://ckom1utsggt8k" path="res://assets/scenes/ui/player_selection/character_selector.tscn" id="3_q8gex"]
-
-[sub_resource type="FontFile" id="FontFile_welao"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/50/0 = Vector2(0, 0)
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
-cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/50/0 = Vector2(0, 0)
-cache/0/50/0/ascent = 0.0
-cache/0/50/0/descent = 0.0
-cache/0/50/0/underline_position = 0.0
-cache/0/50/0/underline_thickness = 0.0
-cache/0/50/0/scale = 1.0
-cache/0/50/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/50/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/50/0/kerning_overrides/50/0 = Vector2(0, 0)
-
-[sub_resource type="Theme" id="Theme_secd1"]
-default_font = SubResource("FontFile_welao")
-default_font_size = 50
-
-[sub_resource type="Theme" id="Theme_xiwpu"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_byb0b"]
-font_size = 50
 
 [node name="PlayerSelection" type="Node"]
 script = ExtResource("1_g4nc4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+[node name="Label" type="Label" parent="CanvasLayer"]
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 50.0
-offset_bottom = 150.0
+offset_top = 20.0
+offset_bottom = 89.0
 grow_horizontal = 2
-theme = SubResource("Theme_secd1")
-bbcode_enabled = true
-text = "[center]Press [img]res://addons/controller_icons/assets/ps4/cross.png[/img] / [img]res://addons/controller_icons/assets/xbox360/a.png[/img] / [img]res://addons/controller_icons/assets/key/enter.png[/img] to join![/center]"
+theme = ExtResource("2_djyf3")
+text = "SELECT PLAYER"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CharacterSelection" type="HBoxContainer" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -61,16 +28,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -557.0
+offset_left = -692.0
 offset_top = -128.0
-offset_right = 557.0
+offset_right = 692.0
 offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource("Theme_xiwpu")
-theme_override_constants/separation = 30
+theme = ExtResource("2_djyf3")
+theme_override_constants/separation = 120
 script = ExtResource("2_7q8pf")
 
 [node name="Player0" parent="CanvasLayer/CharacterSelection" instance=ExtResource("3_q8gex")]
@@ -85,19 +52,18 @@ layout_mode = 2
 [node name="Player3" parent="CanvasLayer/CharacterSelection" instance=ExtResource("3_q8gex")]
 layout_mode = 2
 
-[node name="StartLabel" type="Label" parent="CanvasLayer"]
+[node name="StartLabel" type="RichTextLabel" parent="CanvasLayer"]
 unique_name_in_owner = true
 visible = false
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 12
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -250.0
 offset_top = -120.0
-offset_right = 250.0
-offset_bottom = -51.0
+offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Press START to GO!"
-label_settings = SubResource("LabelSettings_byb0b")
+pivot_offset = Vector2(0, 100)
+theme = ExtResource("2_djyf3")
+bbcode_enabled = true
+text = "[center]Press [img]res://addons/controller_icons/assets/ps5/options_alt.png[/img] / [img]res://addons/controller_icons/assets/xbox360/start_alt.png[/img] to GO![/center]"

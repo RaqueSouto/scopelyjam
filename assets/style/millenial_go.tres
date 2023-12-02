@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b3kf378b70aub"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3itas"]
+
+[resource]
+Label/font_sizes/font_size = 50
+RichTextLabel/font_sizes/normal_font_size = 50
+RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_3itas")
