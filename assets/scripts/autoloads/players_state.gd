@@ -34,6 +34,20 @@ func remove_player(player : int):
 	player_list_changed.emit()
 
 
+func remove_player_by_device(device : int):
+	for player in list:
+		if player.device == device:
+			call_deferred("remove_player", device)
+			return
+			
+			
+func exist_player_device(device : int) -> bool:
+	for player in list:
+		if player.device == device:
+			return true
+			
+	return false
+
 func select_character(player : int, character : int):
 	list[player].character_index = character
 	

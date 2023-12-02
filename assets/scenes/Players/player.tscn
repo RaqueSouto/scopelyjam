@@ -1,23 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7hrpf0hp2reb"]
+[gd_scene load_steps=10 format=3 uid="uid://cwk572nh7d3wp"]
 
-[ext_resource type="Texture2D" uid="uid://sqdpw4qn1y8m" path="res://assets/sprites/characters/Scopely_Character_Raquel.png" id="1_jlelo"]
-
-[sub_resource type="Animation" id="Animation_m7kck"]
-resource_name = "walk"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
+[ext_resource type="Texture2D" uid="uid://b8nbkrd6dkkdc" path="res://assets/sprites/characters/Scopely_Character_Raquel.png" id="1_jlelo"]
 
 [sub_resource type="Animation" id="Animation_akv72"]
 length = 0.001
@@ -68,6 +51,22 @@ tracks/0/keys = {
 "values": [12, 13]
 }
 
+[sub_resource type="Animation" id="Animation_nvb66"]
+resource_name = "sad"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [24]
+}
+
 [sub_resource type="Animation" id="Animation_sfslk"]
 resource_name = "stun"
 length = 0.2
@@ -85,9 +84,10 @@ tracks/0/keys = {
 "values": [18, 19]
 }
 
-[sub_resource type="Animation" id="Animation_nvb66"]
-resource_name = "sad"
-length = 0.1
+[sub_resource type="Animation" id="Animation_m7kck"]
+resource_name = "walk"
+length = 0.6
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -95,10 +95,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [24]
+"values": [0, 1, 2, 3, 4, 5]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_60jqf"]

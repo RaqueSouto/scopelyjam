@@ -94,7 +94,6 @@ offset = Vector2(0, -540)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fondo/GateDown"]
 position = Vector2(0, -113.105)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ooq7q")
 one_way_collision_margin = 0.0
 

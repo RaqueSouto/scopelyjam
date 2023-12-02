@@ -10,7 +10,7 @@ script = ExtResource("1_g4nc4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="TitleLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = 10
 anchor_right = 1.0
 offset_top = 20.0

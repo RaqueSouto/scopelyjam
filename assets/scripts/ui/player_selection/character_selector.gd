@@ -56,6 +56,7 @@ func remove_player():
 	player_active.visible = false
 	player_inactive.visible = true
 
+
 func _process(_delta):
 	if player == null:
 		return
@@ -81,10 +82,13 @@ func _process(_delta):
 		if player.device_input.is_action_just_pressed("ui_accept"):
 			players.set_player_ready(player.player_index, true)
 			ready_label.visible = true
+			Audio.play_player_ready()
 		
 	elif player.is_ready and player.device_input.is_action_just_pressed("ui_cancel"):
 		players.set_player_ready(player.player_index, false)
 		ready_label.visible = false
+		Audio.play_player_not_ready()
+
 
 func select_previous():
 	var index = 0
@@ -99,7 +103,9 @@ func select_previous():
 		
 	select_cooldown = true
 	select_cooldown_timer.start()
+	
 	tween_control(up_arrow)
+	Audio.play_select_character()
 
 
 func select_next():
@@ -115,7 +121,9 @@ func select_next():
 		
 	select_cooldown = true
 	select_cooldown_timer.start()
+	
 	tween_control(down_arrow)
+	Audio.play_select_character()
 
 
 func tween_control(control : Control):

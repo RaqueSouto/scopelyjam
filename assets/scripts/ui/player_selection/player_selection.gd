@@ -21,7 +21,7 @@ func _ready():
 func _on_joy_connection_changed(device : int, connected : bool):
 	if connected:
 		add_device(device)
-	elif pendant_devices.has(device):
+	else:
 		remove_device(device)
 			
 
@@ -32,14 +32,23 @@ func _on_all_players_ready_changed():
 func add_device(device : int):
 	if pendant_devices.has(device):
 		return
+	
+	Audio.play_input_connect()
 			
 	var device_input = DeviceInput.new(device)
 	pendant_devices[device] = device_input
+	
 	print("device added " + str(device))
 
 
 func remove_device(device : int):
-	pendant_devices.erase(device)
+	Audio.play_input_disconnect()
+	
+	if pendant_devices.has(device):
+		pendant_devices.erase(device)
+	else:
+		players.remove_player_by_device(device)
+	
 	print("device removed " + str(device))
 	
 	
@@ -52,11 +61,13 @@ func _check_input_devices():
 	for device in pendant_devices:
 		if pendant_devices[device].is_action_just_pressed("ui_join"):
 			players.add_player(device, pendant_devices[device])
+			Audio.play_player_join()
 			call_deferred("remove_device", device)
 
 
 func _check_start():
 	if players.all_players_ready and MultiplayerInput.is_action_just_pressed(0, "ui_start"):
+		Audio.play_open_match()
 		get_tree().change_scene_to_file(GAME_PATH)
 
 
