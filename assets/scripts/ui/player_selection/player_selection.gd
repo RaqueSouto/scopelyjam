@@ -3,15 +3,19 @@ class_name PlayerSelection extends Node
 signal player_joined(PlayerSettings)
 
 @onready var character_selection = %CharacterSelection
+const GAME_PATH = "res://assets/scenes/game.tscn"
 
+var players : PlayersState
 var pendant_devices : Dictionary
+@onready var start_label = %StartLabel
 
 func _ready():
+	players = GameState.players
 	for device in Input.get_connected_joypads():
 		add_device(device)
 	
 	Input.joy_connection_changed.connect(_on_joy_connection_changed)
-	GameState.players.player_list_change.connect(_on_player_list_change)
+	players.all_players_ready_changed.connect(_on_all_players_ready_changed)
 	
 	
 func _on_joy_connection_changed(device : int, connected : bool):
@@ -21,22 +25,38 @@ func _on_joy_connection_changed(device : int, connected : bool):
 		remove_device(device)
 			
 
-
+func _on_all_players_ready_changed():
+	start_label.visible = players.all_players_ready
+	
+	
 func add_device(device : int):
+	if pendant_devices.has(device):
+		return
+			
 	var device_input = DeviceInput.new(device)
 	pendant_devices[device] = device_input
+	print("device added " + str(device))
 
 
 func remove_device(device : int):
 	pendant_devices.erase(device)
+	print("device removed " + str(device))
 	
 	
-func _process(delta):
+func _process(_delta):
+	_check_input_devices()
+	_check_start()
+			
+			
+func _check_input_devices():
 	for device in pendant_devices:
-		if pendant_devices[device].is_action_just_pressed("join"):
-			GameState.players.add_player(device, pendant_devices[device])
-			call_deferred("remove_device")
+		if pendant_devices[device].is_action_just_pressed("ui_join"):
+			players.add_player(device, pendant_devices[device])
+			call_deferred("remove_device", device)
 
-func _on_player_list_change():
-	for player_settings : PlayerSettings in GameState.players.list:
-		print(str(player_settings))
+
+func _check_start():
+	if players.all_players_ready and MultiplayerInput.is_action_just_pressed(0, "ui_start"):
+		get_tree().change_scene_to_file(GAME_PATH)
+
+

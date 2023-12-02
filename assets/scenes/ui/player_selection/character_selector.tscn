@@ -1,19 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckom1utsggt8k"]
+[gd_scene load_steps=7 format=3 uid="uid://ckom1utsggt8k"]
 
+[ext_resource type="Script" path="res://assets/scripts/ui/player_selection/character_selector.gd" id="1_5wsxd"]
 [ext_resource type="Texture2D" uid="uid://bm0g22mia32ag" path="res://icon.svg" id="1_duqdc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tjwyv"]
 font_size = 64
 
+[sub_resource type="LabelSettings" id="LabelSettings_xd516"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_no2oo"]
+font_size = 45
+
+[sub_resource type="LabelSettings" id="LabelSettings_ytsje"]
+font_size = 60
+
 [node name="Player0" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 256.0
 offset_bottom = 256.0
 size_flags_horizontal = 3
+script = ExtResource("1_5wsxd")
 
-[node name="Label" type="Label" parent="."]
+[node name="PlayerActive" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerLabel" type="Label" parent="PlayerActive"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -24,7 +44,8 @@ text = "P1"
 label_settings = SubResource("LabelSettings_tjwyv")
 horizontal_alignment = 1
 
-[node name="Character" type="TextureRect" parent="."]
+[node name="CharacterAvatar" type="TextureRect" parent="PlayerActive"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,3 +53,62 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_duqdc")
+
+[node name="SelectCooldownTimer" type="Timer" parent="PlayerActive"]
+unique_name_in_owner = true
+wait_time = 0.5
+one_shot = true
+
+[node name="CharacterNameLabel" type="Label" parent="PlayerActive"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 4.0
+offset_right = 27.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "dasdasdasd"
+label_settings = SubResource("LabelSettings_xd516")
+horizontal_alignment = 1
+
+[node name="ReadyLabel" type="Label" parent="PlayerActive"]
+unique_name_in_owner = true
+visible = false
+self_modulate = Color(0.333333, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 84.0
+offset_right = 27.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Ready!"
+label_settings = SubResource("LabelSettings_no2oo")
+horizontal_alignment = 1
+
+[node name="PlayerInactive" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NoneLabel" type="Label" parent="PlayerInactive"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "None"
+label_settings = SubResource("LabelSettings_ytsje")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -22,8 +22,30 @@ script = ExtResource("3_6hu3x")
 unique_name_in_owner = true
 script = ExtResource("2_oot1g")
 
-[node name="ExampleCharacter" type="Node" parent="CharacterRepository"]
+[node name="Raque" type="Node" parent="CharacterRepository"]
 script = ExtResource("3_2ksta")
-avatar = ExtResource("4_0eybc")
-print_name = "Mr Godot"
+avatar_icon = ExtResource("4_0eybc")
+color = Color(0.309804, 0.988235, 1, 1)
+print_name = "Raque"
+story = "This is just an example character. Delete and creat others."
+
+[node name="Alma" type="Node" parent="CharacterRepository"]
+script = ExtResource("3_2ksta")
+avatar_icon = ExtResource("4_0eybc")
+color = Color(1, 0.447059, 0, 1)
+print_name = "Alma"
+story = "This is just an example character. Delete and creat others."
+
+[node name="Miguel" type="Node" parent="CharacterRepository"]
+script = ExtResource("3_2ksta")
+avatar_icon = ExtResource("4_0eybc")
+color = Color(0.913725, 0.129412, 0.211765, 1)
+print_name = "Miguel"
+story = "This is just an example character. Delete and creat others."
+
+[node name="Nebulah" type="Node" parent="CharacterRepository"]
+script = ExtResource("3_2ksta")
+avatar_icon = ExtResource("4_0eybc")
+color = Color(0.796078, 0, 0.780392, 1)
+print_name = "Nebulah"
 story = "This is just an example character. Delete and creat others."
