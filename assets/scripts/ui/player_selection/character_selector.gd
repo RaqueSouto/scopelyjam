@@ -12,6 +12,7 @@ var select_cooldown := false
 @onready var player_label := %PlayerLabel
 @onready var character_avatar := %CharacterAvatar
 @onready var character_name_label = %CharacterNameLabel
+@onready var character_role_label = %CharacterRoleLabel
 @onready var select_cooldown_timer := %SelectCooldownTimer
 @onready var ready_label = %ReadyLabel
 
@@ -47,6 +48,7 @@ func set_player(player_settings : PlayerSettings):
 func set_character(character : CharacterConfig):
 	player_label.modulate = character.color
 	character_name_label.text = character.print_name
+	character_role_label.text = character.print_role
 	character_name_label.modulate = character.color
 	character_avatar.texture = character.avatar_icon
 

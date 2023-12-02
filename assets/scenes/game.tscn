@@ -17,6 +17,7 @@ scale = Vector2(0.998437, 1.00093)
 position = Vector2(0, -470)
 
 [node name="LevelBases" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(960.5, 541.5)
 scale = Vector2(0.998437, 1.00093)
 

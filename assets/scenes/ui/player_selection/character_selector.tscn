@@ -1,7 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ckom1utsggt8k"]
 
 [ext_resource type="Script" path="res://assets/scripts/ui/player_selection/character_selector.gd" id="1_5wsxd"]
-[ext_resource type="Texture2D" uid="uid://bm0g22mia32ag" path="res://icon.svg" id="1_duqdc"]
 [ext_resource type="Theme" uid="uid://b3kf378b70aub" path="res://assets/style/millenial_go.tres" id="3_m8nbh"]
 [ext_resource type="Texture2D" uid="uid://bf1lata5s2d6d" path="res://assets/sprites/arrow.png" id="3_yisvs"]
 
@@ -10,6 +9,9 @@ font_size = 64
 
 [sub_resource type="LabelSettings" id="LabelSettings_xd516"]
 font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_5770o"]
+font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_no2oo"]
 font_size = 45
@@ -46,12 +48,18 @@ horizontal_alignment = 1
 [node name="CharacterAvatar" type="TextureRect" parent="PlayerActive"]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -160.0
+offset_right = 160.0
+offset_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_duqdc")
+expand_mode = 1
 
 [node name="CharacterNameLabel" type="Label" parent="PlayerActive"]
 unique_name_in_owner = true
@@ -60,14 +68,33 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -32.0
 offset_top = 4.0
-offset_right = 27.0
+offset_right = 32.0
 offset_bottom = 84.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "dasdasdasd"
+text = "dsadasd"
 label_settings = SubResource("LabelSettings_xd516")
 horizontal_alignment = 1
+
+[node name="CharacterRoleLabel" type="Label" parent="PlayerActive/CharacterNameLabel"]
+unique_name_in_owner = true
+self_modulate = Color(0.75, 0.75, 0.75, 1)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -30.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Game Designer"
+label_settings = SubResource("LabelSettings_5770o")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
 [node name="ReadyLabel" type="Label" parent="PlayerActive"]
 unique_name_in_owner = true
@@ -78,9 +105,8 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 184.0
-offset_right = 27.0
-offset_bottom = 264.0
+offset_top = -556.0
+offset_bottom = -476.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Ready!"
@@ -111,9 +137,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -25.0
-offset_top = 94.0
+offset_top = 164.0
 offset_right = 25.0
-offset_bottom = 144.0
+offset_bottom = 214.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(25, 10)

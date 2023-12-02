@@ -4,4 +4,5 @@ class_name CharacterConfig extends Node
 @export_file("*.tscn") var avatar_scene : String
 @export var color : Color = Color.WHITE
 @export var print_name : String
+@export var print_role : String
 @export_multiline var story : String

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dw6ed0sjvbeco"]
+[gd_scene load_steps=8 format=3 uid="uid://dw6ed0sjvbeco"]
 
 [ext_resource type="Script" path="res://assets/scripts/autoloads/config.gd" id="1_nfl1k"]
 [ext_resource type="Script" path="res://assets/scripts/config/character_repository.gd" id="2_oot1g"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://assets/scripts/config/character_config.gd" id="3_2ksta"]
 [ext_resource type="Script" path="res://assets/scripts/config/player_config.gd" id="3_6hu3x"]
 [ext_resource type="Texture2D" uid="uid://bm0g22mia32ag" path="res://icon.svg" id="4_0eybc"]
+[ext_resource type="Texture2D" uid="uid://dkl2pn6f8jul8" path="res://assets/sprites/characters/Scopely_Character_Raquel_Avatar.png" id="6_i52o7"]
 
 [node name="GameConfig" type="Node"]
 script = ExtResource("1_nfl1k")
@@ -24,9 +25,10 @@ script = ExtResource("2_oot1g")
 
 [node name="Raque" type="Node" parent="CharacterRepository"]
 script = ExtResource("3_2ksta")
-avatar_icon = ExtResource("4_0eybc")
+avatar_icon = ExtResource("6_i52o7")
 color = Color(0.309804, 0.988235, 1, 1)
 print_name = "Raque"
+print_role = "Game Designer"
 story = "This is just an example character. Delete and creat others."
 
 [node name="Alma" type="Node" parent="CharacterRepository"]
@@ -34,6 +36,7 @@ script = ExtResource("3_2ksta")
 avatar_icon = ExtResource("4_0eybc")
 color = Color(1, 0.447059, 0, 1)
 print_name = "Alma"
+print_role = "2D Artist"
 story = "This is just an example character. Delete and creat others."
 
 [node name="Miguel" type="Node" parent="CharacterRepository"]
@@ -41,6 +44,7 @@ script = ExtResource("3_2ksta")
 avatar_icon = ExtResource("4_0eybc")
 color = Color(0.913725, 0.129412, 0.211765, 1)
 print_name = "Miguel"
+print_role = "Programmer"
 story = "This is just an example character. Delete and creat others."
 
 [node name="Nebulah" type="Node" parent="CharacterRepository"]
@@ -48,4 +52,5 @@ script = ExtResource("3_2ksta")
 avatar_icon = ExtResource("4_0eybc")
 color = Color(0.796078, 0, 0.780392, 1)
 print_name = "Nebulah"
+print_role = "Audio Designer"
 story = "This is just an example character. Delete and creat others."
