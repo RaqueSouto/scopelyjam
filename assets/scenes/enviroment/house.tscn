@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhrnd83k14vrw"]
+[gd_scene load_steps=5 format=3 uid="uid://dhrnd83k14vrw"]
 
+[ext_resource type="Script" path="res://assets/scripts/game/level/player_base.gd" id="1_vb2mn"]
 [ext_resource type="Texture2D" uid="uid://dg8iswwvdripq" path="res://assets/sprites/background/Scopely_Background_House_Base.png" id="1_wn1wo"]
 [ext_resource type="Texture2D" uid="uid://b3qf7ie738pv8" path="res://assets/sprites/background/Scopely_Background_House_Border.png" id="2_4vvq5"]
 
@@ -8,25 +9,25 @@ size = Vector2(295, 223)
 
 [node name="House" type="Area2D"]
 y_sort_enabled = true
+script = ExtResource("1_vb2mn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, 458.5)
+position = Vector2(0, -114)
 shape = SubResource("RectangleShape2D_tetos")
 
-[node name="backgroundsprite" type="Sprite2D" parent="."]
+[node name="BackgroundSprite" type="Sprite2D" parent="."]
 modulate = Color(0.152941, 1, 1, 1)
-z_index = 1
 y_sort_enabled = true
-position = Vector2(0, 228)
-scale = Vector2(1.00157, 0.999071)
 texture = ExtResource("1_wn1wo")
-offset = Vector2(0, 228)
+offset = Vector2(0, -114)
 
-[node name="bordersprite" type="Sprite2D" parent="backgroundsprite"]
+[node name="bordersprite" type="Sprite2D" parent="BackgroundSprite"]
 self_modulate = Color(0.380392, 0.380392, 0.380392, 1)
 z_index = 1
 y_sort_enabled = true
-position = Vector2(0, 114)
-scale = Vector2(0.998432, 1.00093)
+position = Vector2(0, -228)
 texture = ExtResource("2_4vvq5")
 offset = Vector2(0, 114)
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(150, -228)

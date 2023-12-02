@@ -1,10 +1,23 @@
-class_name Player extends Node
+class_name Player extends CharacterBody2D
 
-#var speed
-#var angular_speed
+var input : DeviceInput
+var config : PlayerConfig
+
+@onready var state_machine = %StateMachine
+@onready var moving_state = %MovingState
+@onready var stunt_state = %StuntState
+@onready var picking_state = %PickingState
+
+var speed : float
+var angular_speed : float
 
 func setup(player_settings : PlayerSettings):
-	pass
+	input = player_settings.device_input
+	config = Config.match.player
+	
+	speed = config.base_speed
+	angular_speed = deg_to_rad(config.base_angular_speed)
+	
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -1,6 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7hrpf0hp2reb"]
+[gd_scene load_steps=15 format=3 uid="uid://cwk572nh7d3wp"]
 
-[ext_resource type="Texture2D" uid="uid://sqdpw4qn1y8m" path="res://assets/sprites/characters/Scopely_Character_Raquel.png" id="1_jlelo"]
+[ext_resource type="Texture2D" uid="uid://bf1lata5s2d6d" path="res://assets/sprites/arrow.png" id="1_hagiq"]
+[ext_resource type="Texture2D" uid="uid://b8nbkrd6dkkdc" path="res://assets/sprites/characters/Scopely_Character_Raquel.png" id="1_jlelo"]
+[ext_resource type="Script" path="res://assets/scripts/player/player.gd" id="1_qagqk"]
+[ext_resource type="Script" path="res://assets/scripts/player/state_machine/state_machine.gd" id="2_i05c6"]
+[ext_resource type="Script" path="res://assets/scripts/player/state_machine/states/moving_state.gd" id="4_8f58o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_omrrp"]
+radius = 100.0
+height = 340.0
 
 [sub_resource type="Animation" id="Animation_akv72"]
 length = 0.001
@@ -114,18 +122,33 @@ _data = {
 "walk": SubResource("Animation_m7kck")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_stcy3"]
-radius = 33.0
-height = 78.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_1irbj"]
+radius = 30.0
 
 [node name="Player" type="CharacterBody2D"]
+visible = false
+script = ExtResource("1_qagqk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(875, 592)
 texture = ExtResource("1_jlelo")
-offset = Vector2(-4.49, 0)
+offset = Vector2(0, -170)
 hframes = 6
 vframes = 5
+
+[node name="InteractorArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractorArea"]
+position = Vector2(0, -170)
+shape = SubResource("CapsuleShape2D_omrrp")
+
+[node name="LookAt" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Target" type="Sprite2D" parent="LookAt"]
+unique_name_in_owner = true
+position = Vector2(0, -512)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_hagiq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -133,5 +156,19 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(874, 729)
-shape = SubResource("CapsuleShape2D_stcy3")
+position = Vector2(0, -30)
+shape = SubResource("CircleShape2D_1irbj")
+
+[node name="StateMachine" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_i05c6")
+
+[node name="MovingState" type="Node" parent="StateMachine"]
+unique_name_in_owner = true
+script = ExtResource("4_8f58o")
+
+[node name="StuntState" type="Node" parent="StateMachine"]
+unique_name_in_owner = true
+
+[node name="ScoringState" type="Node" parent="StateMachine"]
+unique_name_in_owner = true
