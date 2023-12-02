@@ -1,23 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://bvjlpmx5mxmba"]
+[gd_scene load_steps=11 format=3 uid="uid://bvjlpmx5mxmba"]
 
 [ext_resource type="Texture2D" uid="uid://whmheiqeg4b6" path="res://assets/sprites/background/Scopely_Background.png" id="1_fqr55"]
-[ext_resource type="Texture2D" uid="uid://c6j3r8nkf0are" path="res://assets/sprites/background/Scopely_Prop_Bench.png" id="2_inkis"]
+[ext_resource type="PackedScene" uid="uid://hiw1m0o7ye68" path="res://assets/scenes/enviroment/bench.tscn" id="2_c68y4"]
 [ext_resource type="Texture2D" uid="uid://3de6t01u1q1i" path="res://assets/sprites/background/Scopely_Background_Gate.png" id="2_k20i5"]
-[ext_resource type="Texture2D" uid="uid://bd88kbtd75yvp" path="res://assets/sprites/background/Scopely_Prop_Bush.png" id="3_2s5tr"]
-[ext_resource type="Texture2D" uid="uid://bgffoj7xer8ws" path="res://assets/sprites/background/Scopely_Prop_Lamppost.png" id="4_4tcbr"]
-[ext_resource type="Texture2D" uid="uid://biywqoc3w6gvy" path="res://assets/sprites/background/Scopely_Prop_Tree.png" id="5_kstb6"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3r0y"]
-size = Vector2(159, 11)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgtne"]
-size = Vector2(108, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_agbwk"]
-size = Vector2(33, 24)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3y2ab"]
-size = Vector2(92, 21)
+[ext_resource type="PackedScene" uid="uid://cw7uy6nrdywya" path="res://assets/scenes/enviroment/lamppost.tscn" id="3_tn57f"]
+[ext_resource type="PackedScene" uid="uid://8rgr1octdy8k" path="res://assets/scenes/enviroment/tree.tscn" id="4_gcwhf"]
+[ext_resource type="PackedScene" uid="uid://dnrjr3nnn12m1" path="res://assets/scenes/enviroment/bush.tscn" id="5_811xv"]
+[ext_resource type="PackedScene" uid="uid://dhrnd83k14vrw" path="res://assets/scenes/enviroment/house.tscn" id="7_1kioi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ooq7q"]
 size = Vector2(1334.17, 46.0427)
@@ -41,48 +30,14 @@ y_sort_enabled = true
 position = Vector2(-962.003, -540.999)
 scale = Vector2(1.00156, 0.999075)
 
-[node name="Bush" type="Sprite2D" parent="Fondo/Decor"]
-position = Vector2(649, 838)
-texture = ExtResource("3_2s5tr")
+[node name="bench" parent="Fondo/Decor" instance=ExtResource("2_c68y4")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fondo/Decor/Bush"]
-position = Vector2(0, 19.5)
-shape = SubResource("RectangleShape2D_i3r0y")
+[node name="Lamppost" parent="Fondo/Decor" instance=ExtResource("3_tn57f")]
 
-[node name="Bench" type="Sprite2D" parent="Fondo/Decor"]
-position = Vector2(656, 354)
-texture = ExtResource("2_inkis")
-offset = Vector2(0, -32)
+[node name="Tree" parent="Fondo/Decor" instance=ExtResource("4_gcwhf")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fondo/Decor/Bench"]
-position = Vector2(1, -16)
-shape = SubResource("RectangleShape2D_jgtne")
-
-[node name="Lamppost" type="Sprite2D" parent="Fondo/Decor"]
-position = Vector2(961, 498)
-texture = ExtResource("4_4tcbr")
-offset = Vector2(0, -108)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fondo/Decor/Lamppost"]
-position = Vector2(4.5, 8)
-shape = SubResource("RectangleShape2D_agbwk")
-
-[node name="Tree" type="Sprite2D" parent="Fondo/Decor"]
-position = Vector2(340, 536)
-texture = ExtResource("5_kstb6")
-offset = Vector2(0, -80)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fondo/Decor/Tree"]
-position = Vector2(-6, -8.5)
-shape = SubResource("RectangleShape2D_3y2ab")
-
-[node name="Bush2" type="Sprite2D" parent="Fondo/Decor"]
-position = Vector2(649, 838)
-texture = ExtResource("3_2s5tr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fondo/Decor/Bush2"]
-position = Vector2(0, 19.5)
-shape = SubResource("RectangleShape2D_i3r0y")
+[node name="Bush" parent="Fondo/Decor" instance=ExtResource("5_811xv")]
+position = Vector2(-64.001, 25.002)
 
 [node name="GateDown" type="Sprite2D" parent="Fondo"]
 z_index = 1
@@ -94,7 +49,6 @@ offset = Vector2(0, -540)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fondo/GateDown"]
 position = Vector2(0, -113.105)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ooq7q")
 one_way_collision_margin = 0.0
 
@@ -109,3 +63,38 @@ shape = SubResource("RectangleShape2D_qtogn")
 [node name="CollisionRight" type="CollisionShape2D" parent="Fondo"]
 position = Vector2(808.764, -15.4856)
 shape = SubResource("RectangleShape2D_qtogn")
+
+[node name="Houses" type="Sprite2D" parent="Fondo"]
+position = Vector2(-3.50548, 0.499535)
+
+[node name="House1" parent="Fondo/Houses" instance=ExtResource("7_1kioi")]
+position = Vector2(-812.77, -18.4828)
+
+[node name="House2" parent="Fondo/Houses" instance=ExtResource("7_1kioi")]
+position = Vector2(812.77, 28.4735)
+rotation = 3.14159
+scale = Vector2(1.00157, 0.999071)
+
+[node name="House3" parent="Fondo/Houses" instance=ExtResource("7_1kioi")]
+position = Vector2(-812.77, 28.4735)
+rotation = 3.14159
+scale = Vector2(1.00157, 0.999071)
+
+[node name="backgroundsprite" parent="Fondo/Houses/House3" index="1"]
+flip_h = true
+
+[node name="bordersprite" parent="Fondo/Houses/House3/backgroundsprite" index="0"]
+flip_h = true
+
+[node name="House4" parent="Fondo/Houses" instance=ExtResource("7_1kioi")]
+position = Vector2(811.769, -29.4726)
+scale = Vector2(1.00157, 0.999071)
+
+[node name="backgroundsprite" parent="Fondo/Houses/House4" index="1"]
+flip_h = true
+
+[node name="bordersprite" parent="Fondo/Houses/House4/backgroundsprite" index="0"]
+flip_h = true
+
+[editable path="Fondo/Houses/House3"]
+[editable path="Fondo/Houses/House4"]

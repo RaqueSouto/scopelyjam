@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnrjr3nnn12m1"]
+
+[ext_resource type="Texture2D" uid="uid://bd88kbtd75yvp" path="res://assets/sprites/background/Scopely_Prop_Bush.png" id="1_2ydle"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3r0y"]
+size = Vector2(159, 11)
+
+[node name="Bush" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(649, 857.5)
+shape = SubResource("RectangleShape2D_i3r0y")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(649, 838)
+texture = ExtResource("1_2ydle")
