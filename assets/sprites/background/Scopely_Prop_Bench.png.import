@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sqdpw4qn1y8m"
-path="res://.godot/imported/Scopely_Character_Raquel.png-2785b487f8a043c9a1f0c61f74d33cf1.ctex"
+uid="uid://c6j3r8nkf0are"
+path="res://.godot/imported/Scopely_Prop_Bench.png-7831e73ba03fa30921197850ec328261.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/Scopely_Character_Raquel.png"
-dest_files=["res://.godot/imported/Scopely_Character_Raquel.png-2785b487f8a043c9a1f0c61f74d33cf1.ctex"]
+source_file="res://assets/sprites/background/Scopely_Prop_Bench.png"
+dest_files=["res://.godot/imported/Scopely_Prop_Bench.png-7831e73ba03fa30921197850ec328261.ctex"]
 
 [params]
 

@@ -1,3 +1,111 @@
-[gd_scene format=3 uid="uid://bvjlpmx5mxmba"]
+[gd_scene load_steps=14 format=3 uid="uid://bvjlpmx5mxmba"]
+
+[ext_resource type="Texture2D" uid="uid://whmheiqeg4b6" path="res://assets/sprites/background/Scopely_Background.png" id="1_fqr55"]
+[ext_resource type="Texture2D" uid="uid://c6j3r8nkf0are" path="res://assets/sprites/background/Scopely_Prop_Bench.png" id="2_inkis"]
+[ext_resource type="Texture2D" uid="uid://3de6t01u1q1i" path="res://assets/sprites/background/Scopely_Background_Gate.png" id="2_k20i5"]
+[ext_resource type="Texture2D" uid="uid://bd88kbtd75yvp" path="res://assets/sprites/background/Scopely_Prop_Bush.png" id="3_2s5tr"]
+[ext_resource type="Texture2D" uid="uid://bgffoj7xer8ws" path="res://assets/sprites/background/Scopely_Prop_Lamppost.png" id="4_4tcbr"]
+[ext_resource type="Texture2D" uid="uid://biywqoc3w6gvy" path="res://assets/sprites/background/Scopely_Prop_Tree.png" id="5_kstb6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3r0y"]
+size = Vector2(159, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgtne"]
+size = Vector2(108, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agbwk"]
+size = Vector2(33, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3y2ab"]
+size = Vector2(92, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ooq7q"]
+size = Vector2(1334.17, 46.0427)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ca8mt"]
+size = Vector2(1586.72, 45.9575)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtogn"]
+size = Vector2(32.2927, 906.17)
 
 [node name="Game" type="Node"]
+
+[node name="Fondo" type="Sprite2D" parent="."]
+position = Vector2(960.5, 541.5)
+scale = Vector2(0.998437, 1.00093)
+texture = ExtResource("1_fqr55")
+
+[node name="Decor" type="Sprite2D" parent="Fondo"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-962.003, -540.999)
+scale = Vector2(1.00156, 0.999075)
+
+[node name="Bush" type="Sprite2D" parent="Fondo/Decor"]
+position = Vector2(649, 838)
+texture = ExtResource("3_2s5tr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fondo/Decor/Bush"]
+position = Vector2(0, 19.5)
+shape = SubResource("RectangleShape2D_i3r0y")
+
+[node name="Bench" type="Sprite2D" parent="Fondo/Decor"]
+position = Vector2(656, 354)
+texture = ExtResource("2_inkis")
+offset = Vector2(0, -32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fondo/Decor/Bench"]
+position = Vector2(1, -16)
+shape = SubResource("RectangleShape2D_jgtne")
+
+[node name="Lamppost" type="Sprite2D" parent="Fondo/Decor"]
+position = Vector2(961, 498)
+texture = ExtResource("4_4tcbr")
+offset = Vector2(0, -108)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fondo/Decor/Lamppost"]
+position = Vector2(4.5, 8)
+shape = SubResource("RectangleShape2D_agbwk")
+
+[node name="Tree" type="Sprite2D" parent="Fondo/Decor"]
+position = Vector2(340, 536)
+texture = ExtResource("5_kstb6")
+offset = Vector2(0, -80)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fondo/Decor/Tree"]
+position = Vector2(-6, -8.5)
+shape = SubResource("RectangleShape2D_3y2ab")
+
+[node name="Bush2" type="Sprite2D" parent="Fondo/Decor"]
+position = Vector2(649, 838)
+texture = ExtResource("3_2s5tr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fondo/Decor/Bush2"]
+position = Vector2(0, 19.5)
+shape = SubResource("RectangleShape2D_i3r0y")
+
+[node name="GateDown" type="Sprite2D" parent="Fondo"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(0, 540)
+scale = Vector2(0.998435, 0.99815)
+texture = ExtResource("2_k20i5")
+offset = Vector2(0, -540)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fondo/GateDown"]
+position = Vector2(0, -113.105)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ooq7q")
+one_way_collision_margin = 0.0
+
+[node name="CollisionUp" type="CollisionShape2D" parent="Fondo"]
+position = Vector2(-0.622131, -466.068)
+shape = SubResource("RectangleShape2D_ca8mt")
+
+[node name="CollisionLeft" type="CollisionShape2D" parent="Fondo"]
+position = Vector2(-807.762, -15.4856)
+shape = SubResource("RectangleShape2D_qtogn")
+
+[node name="CollisionRight" type="CollisionShape2D" parent="Fondo"]
+position = Vector2(808.764, -15.4856)
+shape = SubResource("RectangleShape2D_qtogn")
