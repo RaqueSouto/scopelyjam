@@ -41,6 +41,9 @@ func _ready():
 	select_cooldown_timer.timeout.connect(_on_select_cooldown_timer_timeout)
 	players.player_ready_changed.connect(_on_player_ready_changed)
 	
+	player_active.visible = false
+	player_inactive.visible = true
+	
 
 func _on_select_cooldown_timer_timeout():
 	select_cooldown = false

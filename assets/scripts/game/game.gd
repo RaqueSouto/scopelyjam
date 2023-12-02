@@ -15,12 +15,11 @@ func _ready():
 	
 	player_bases = level_bases.get_children()
 	
-	call_deferred("setup")
-	
-func setup():
 	for player in players.list:
 		player_bases[player.player_index].setup(level, player)
-	
+		
+	await ScreenEffects.transtion_fade_out()
+	get_tree().paused = false	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

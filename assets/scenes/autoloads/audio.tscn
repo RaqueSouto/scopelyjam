@@ -3,4 +3,5 @@
 [ext_resource type="Script" path="res://assets/scripts/autoloads/audio.gd" id="1_t2u72"]
 
 [node name="Audio" type="Node"]
+process_mode = 3
 script = ExtResource("1_t2u72")

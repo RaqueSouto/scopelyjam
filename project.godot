@@ -22,6 +22,7 @@ Config="*res://assets/scenes/autoloads/config.tscn"
 GameState="*res://assets/scenes/autoloads/game_state.tscn"
 Audio="*res://assets/scenes/autoloads/audio.tscn"
 MultiplayerInput="*res://addons/MultiplayerInput/multiplayer_input.gd"
+ScreenEffects="*res://assets/scenes/autoloads/screen_effects.tscn"
 
 [display]
 

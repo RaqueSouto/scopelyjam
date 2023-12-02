@@ -19,12 +19,16 @@ func _ready():
 	Input.joy_connection_changed.connect(_on_joy_connection_changed)
 	players.all_players_ready_changed.connect(_on_all_players_ready_changed)
 	
+	start_label.visible = false
+	
 	
 func _on_joy_connection_changed(device : int, connected : bool):
 	if connected:
 		add_device(device)
+		#Audio.play_input_connect()
 	else:
 		remove_device(device)
+		Audio.play_input_disconnect()
 			
 
 func _on_all_players_ready_changed():
@@ -34,16 +38,12 @@ func _on_all_players_ready_changed():
 func add_device(device : int):
 	if pendant_devices.has(device):
 		return
-	
-	Audio.play_input_connect()
 			
 	var device_input = DeviceInput.new(device)
 	pendant_devices[device] = device_input
 
 
 func remove_device(device : int):
-	Audio.play_input_disconnect()
-	
 	if pendant_devices.has(device):
 		pendant_devices.erase(device)
 	else:
@@ -75,6 +75,8 @@ func _get_first_unselected_character() -> int:
 func _check_start():
 	if players.all_players_ready and players.list[0].device_input.is_action_just_pressed("ui_start"):
 		Audio.play_open_match()
+		get_tree().paused = true
+		await ScreenEffects.transtion_fade_in()
 		get_tree().change_scene_to_file(GAME_PATH)
 
 

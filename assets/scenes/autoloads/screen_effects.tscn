@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0mudfu7am6sp"]
+
+[ext_resource type="Script" path="res://assets/scripts/autoloads/screen_effects.gd" id="1_f3t1n"]
+[ext_resource type="Shader" path="res://assets/shaders/transition_shaders.gdshader" id="2_eml1l"]
+[ext_resource type="Script" path="res://assets/scripts/ui/transition.gd" id="3_3lbu1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nu7k7"]
+shader = ExtResource("2_eml1l")
+shader_parameter/circle_radius = 1.05
+shader_parameter/screen_size = Vector2(1920, 1080)
+
+[node name="ScreenEffects" type="CanvasLayer"]
+process_mode = 3
+layer = 100
+script = ExtResource("1_f3t1n")
+
+[node name="Transition" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_nu7k7")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("3_3lbu1")
