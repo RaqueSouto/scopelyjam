@@ -1,6 +1,5 @@
-class_name Shaker
-extends Node
 @icon("res://addons/shaker/shaker.svg")
+class_name Shaker extends Node
 
 ## The node to target. Defaults to parent.
 @export var target_node: Node;

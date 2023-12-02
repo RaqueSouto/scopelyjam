@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://dw6ed0sjvbeco"]
+
+[ext_resource type="Script" path="res://assets/scripts/autoloads/config.gd" id="1_nfl1k"]
+[ext_resource type="Script" path="res://assets/scripts/config/character_repository.gd" id="2_oot1g"]
+[ext_resource type="Script" path="res://assets/scripts/config/match_config.gd" id="2_vvwk1"]
+[ext_resource type="Script" path="res://assets/scripts/config/character_config.gd" id="3_2ksta"]
+[ext_resource type="Script" path="res://assets/scripts/config/player_config.gd" id="3_6hu3x"]
+[ext_resource type="Texture2D" uid="uid://bm0g22mia32ag" path="res://icon.svg" id="4_0eybc"]
+
+[node name="GameConfig" type="Node"]
+script = ExtResource("1_nfl1k")
+
+[node name="MatchConfig" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_vvwk1")
+
+[node name="PlayerConfig" type="Node" parent="MatchConfig"]
+unique_name_in_owner = true
+script = ExtResource("3_6hu3x")
+
+[node name="CharacterRepository" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_oot1g")
+
+[node name="ExampleCharacter" type="Node" parent="CharacterRepository"]
+script = ExtResource("3_2ksta")
+avatar = ExtResource("4_0eybc")
+print_name = "Mr Godot"
+story = "This is just an example character. Delete and creat others."

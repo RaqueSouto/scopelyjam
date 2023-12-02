@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://gghjh30lav6l"]
+[gd_scene load_steps=3 format=3 uid="uid://gghjh30lav6l"]
+
+[ext_resource type="Script" path="res://assets/scripts/autoloads/game_state.gd" id="1_cua5f"]
+[ext_resource type="Script" path="res://assets/scripts/autoloads/players_state.gd" id="2_qhm5s"]
 
 [node name="GameState" type="Node"]
+script = ExtResource("1_cua5f")
+
+[node name="PlayersState" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_qhm5s")

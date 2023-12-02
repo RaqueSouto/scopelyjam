@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckom1utsggt8k"]
+
+[ext_resource type="Texture2D" uid="uid://bm0g22mia32ag" path="res://icon.svg" id="1_duqdc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tjwyv"]
+font_size = 64
+
+[node name="Player0" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 256.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -200.0
+offset_bottom = -100.0
+grow_horizontal = 2
+text = "P1"
+label_settings = SubResource("LabelSettings_tjwyv")
+horizontal_alignment = 1
+
+[node name="Character" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_duqdc")
