@@ -1,10 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://cwk572nh7d3wp"]
+[gd_scene load_steps=19 format=3 uid="uid://cwk572nh7d3wp"]
 
 [ext_resource type="Script" path="res://assets/scripts/player/player.gd" id="1_n8mnh"]
 [ext_resource type="Texture2D" uid="uid://b8nbkrd6dkkdc" path="res://assets/sprites/characters/Scopely_Character_Raquel.png" id="2_wkotj"]
 [ext_resource type="Texture2D" uid="uid://bf1lata5s2d6d" path="res://assets/sprites/arrow.png" id="3_cfgdn"]
 [ext_resource type="Script" path="res://assets/scripts/player/state_machine/state_machine.gd" id="4_csyv5"]
 [ext_resource type="Script" path="res://assets/scripts/player/state_machine/states/moving_state.gd" id="5_aa3ev"]
+[ext_resource type="Script" path="res://assets/scripts/player/state_machine/states/starting_state.gd" id="5_ovbxy"]
+[ext_resource type="Script" path="res://assets/scripts/player/state_machine/states/stunt_state.gd" id="7_dd1bj"]
+[ext_resource type="Script" path="res://assets/scripts/player/state_machine/states/scoring_state.gd" id="8_v1t8c"]
+[ext_resource type="Script" path="res://assets/scripts/player/state_machine/states/end_game_state.gd" id="9_kicry"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_omrrp"]
 radius = 100.0
@@ -158,9 +162,14 @@ libraries = {
 position = Vector2(0, -30)
 shape = SubResource("CircleShape2D_1irbj")
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 unique_name_in_owner = true
 script = ExtResource("4_csyv5")
+initial_state = NodePath("StartingState")
+
+[node name="StartingState" type="Node" parent="StateMachine"]
+unique_name_in_owner = true
+script = ExtResource("5_ovbxy")
 
 [node name="MovingState" type="Node" parent="StateMachine"]
 unique_name_in_owner = true
@@ -168,6 +177,12 @@ script = ExtResource("5_aa3ev")
 
 [node name="StuntState" type="Node" parent="StateMachine"]
 unique_name_in_owner = true
+script = ExtResource("7_dd1bj")
 
 [node name="ScoringState" type="Node" parent="StateMachine"]
 unique_name_in_owner = true
+script = ExtResource("8_v1t8c")
+
+[node name="EndGameState" type="Node" parent="StateMachine"]
+unique_name_in_owner = true
+script = ExtResource("9_kicry")

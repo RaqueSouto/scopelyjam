@@ -39,6 +39,8 @@ func _physics_process(delta):
 func change_state(state : State, force : bool = false):
 	if state == current_state and not force: 
 		return
-		
+	
+	print("set state: %s" % str(state))
+	
 	current_state.state_exit()
 	set_state(state)

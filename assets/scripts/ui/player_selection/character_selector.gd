@@ -42,6 +42,11 @@ func set_player(player_settings : PlayerSettings):
 	player_active.visible = true
 	player_inactive.visible = false
 	
+	if player.is_ready:
+		set_as_ready()
+	else:
+		set_as_not_ready()
+		
 	input_allowed = false
 	
 	
@@ -82,26 +87,21 @@ func _process(_delta):
 				select_next()
 
 		if player.device_input.is_action_just_pressed("ui_accept"):
-			players.set_player_ready(player.player_index, true)
-			ready_label.visible = true
-			Audio.play_player_ready()
+			set_player_as_ready()
 		
 	elif player.is_ready and player.device_input.is_action_just_pressed("ui_cancel"):
-		players.set_player_ready(player.player_index, false)
-		ready_label.visible = false
-		Audio.play_player_not_ready()
-
+		set_player_as_not_ready()
 
 func select_previous():
-	var index = 0
-	if player.character_index > index:
-		index = player.character_index - 1
+	var character_index = 0
+	if player.character_index > character_index:
+		character_index = player.character_index - 1
 	else:
-		index = character_repo.get_last_character_index()
+		character_index = character_repo.get_last_character_index()
 		
 	set_character(
-		character_repo.get_character(index))
-	players.select_character(player.player_index, index)
+		character_repo.get_character(character_index))
+	players.select_character(player.player_index, character_index)
 		
 	select_cooldown = true
 	select_cooldown_timer.start()
@@ -111,15 +111,15 @@ func select_previous():
 
 
 func select_next():
-	var index = character_repo.get_last_character_index()
-	if player.character_index < index:
-		index = player.character_index + 1
+	var character_index = character_repo.get_last_character_index()
+	if player.character_index < character_index:
+		character_index = player.character_index + 1
 	else:
-		index = 0
+		character_index = 0
 
 	set_character(
-			character_repo.get_character(index))
-	players.select_character(player.player_index, index)
+			character_repo.get_character(character_index))
+	players.select_character(player.player_index, character_index)
 		
 	select_cooldown = true
 	select_cooldown_timer.start()
@@ -128,6 +128,26 @@ func select_next():
 	Audio.play_select_character()
 
 
+func set_player_as_ready():
+	players.set_player_ready(player.player_index, true)
+	Audio.play_player_ready()
+	set_as_ready()
+
+
+func set_as_ready():
+	ready_label.visible = true
+
+
+func set_player_as_not_ready():
+	players.set_player_ready(player.player_index, false)
+	Audio.play_player_not_ready()
+	set_as_not_ready()
+	
+	
+func set_as_not_ready():
+	ready_label.visible = false
+	
+	
 func tween_control(control : Control):
 	var tween = create_tween()
 	tween.tween_property(control, "scale", Vector2(1.4, 1.4), 0.15).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)

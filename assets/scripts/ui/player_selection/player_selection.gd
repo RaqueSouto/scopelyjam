@@ -66,7 +66,7 @@ func _check_input_devices():
 
 
 func _check_start():
-	if players.all_players_ready and MultiplayerInput.is_action_just_pressed(0, "ui_start"):
+	if players.all_players_ready and players.list[0].device_input.is_action_just_pressed("ui_start"):
 		Audio.play_open_match()
 		get_tree().change_scene_to_file(GAME_PATH)
 

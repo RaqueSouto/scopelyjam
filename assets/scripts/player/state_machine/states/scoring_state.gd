@@ -1,4 +1,4 @@
-class_name MovingState extends State
+class_name ScoringState extends State
 
 var player : Player
 
@@ -19,7 +19,7 @@ func state_process(delta):
 	var rotation = player.input.get_axis("move_left", "move_right")
 	look_at.rotate(rotation * player.angular_speed)
 	player.up_direction = look_at.get_angle_to(target)
-	player.velocity = player.up_direction * player.speed
-
-func state_physics_process(delta):
-	player.move_and_slide()
+	
+	
+	player
+	pass
