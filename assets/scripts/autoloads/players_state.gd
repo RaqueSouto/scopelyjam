@@ -1,7 +1,7 @@
 class_name PlayersState extends Node
 
-signal all_players_ready_change()
-signal player_list_change()
+signal all_players_ready_changed()
+signal player_list_changed()
 
 const MIN_PLAYERS := 2
 const MAX_PLAYERS := 4
@@ -14,50 +14,38 @@ var all_players_ready := false:
 			return
 			
 		all_players_ready = value
-		all_players_ready_change.emit()
-	
+		all_players_ready_changed.emit()
+		
 
-func _ready():
-	for i in MAX_PLAYERS:
-		var player_settings = PlayerSettings.new()
-		player_settings.player_index = i
-		list.append(player_settings)
-
-
-func add_player(device : int) -> PlayerSettings:
+func add_player(device : int, device_input : DeviceInput) -> PlayerSettings:
 	if list.size() >= MAX_PLAYERS:
 		return
-	
 	var player_settings = PlayerSettings.new()
 	player_settings.player_index = list.size()
 	player_settings.device = device
+	player_settings.device_input = device_input
 	list.append(player_settings)
-	player_list_change.emit()
+	player_list_changed.emit()
 	return player_settings
-	
 	
 
 func remove_player(player : int):
 	list.remove_at(player)
-	player_list_change.emit()
+	player_list_changed.emit()
 
 
 func select_character(player : int, character : int):
-	players[player].character_index = character
+	list[player].character_index = character
 	
 
-func player_ready(player : int, is_ready : bool):
-	players[player].is_ready = is_ready
-	if ready:
-		_check_players_ready()
+func set_player_ready(player : int, is_ready : bool):
+	list[player].is_ready = is_ready
+	_check_players_ready()
 	
 	
 func _check_players_ready():
 	var players_ready = 0
-	for player in players:
-		if not player.is_active:
-			continue
-			
+	for player in list:			
 		if not player.is_ready:
 			all_players_ready = false
 			return
