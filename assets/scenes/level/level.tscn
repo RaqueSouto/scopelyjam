@@ -17,14 +17,14 @@ size = Vector2(1600, 46)
 size = Vector2(32.2927, 906.17)
 
 [node name="Level" type="StaticBody2D"]
+y_sort_enabled = true
 
 [node name="Background" type="Sprite2D" parent="."]
-z_index = 1
 y_sort_enabled = true
-position = Vector2(0, 540)
+position = Vector2(0, -540)
 scale = Vector2(1.00156, 0.999075)
 texture = ExtResource("1_c0sfs")
-offset = Vector2(0, -540)
+offset = Vector2(0, 540)
 
 [node name="GateDown" type="Sprite2D" parent="."]
 z_index = 1
@@ -32,17 +32,63 @@ y_sort_enabled = true
 texture = ExtResource("5_v80hi")
 
 [node name="bench" parent="." instance=ExtResource("1_uqnht")]
+position = Vector2(-344, -157)
+rotation = 0.54242
 scale = Vector2(1.00156, 0.999075)
 
 [node name="Lamppost" parent="." instance=ExtResource("2_3sluq")]
+position = Vector2(-0.999996, -37)
 scale = Vector2(1.00156, 0.999075)
 
 [node name="Tree" parent="." instance=ExtResource("3_hxw16")]
+position = Vector2(-611, 0)
 scale = Vector2(1.00156, 0.999075)
 
+[node name="bench4" parent="." instance=ExtResource("1_uqnht")]
+position = Vector2(458, -239)
+rotation = -0.567796
+
 [node name="Bush" parent="." instance=ExtResource("4_mt3i3")]
-position = Vector2(-64.1008, 24.9789)
+position = Vector2(-347, 339)
 scale = Vector2(1.00156, 0.999075)
+
+[node name="tree" parent="." instance=ExtResource("3_hxw16")]
+position = Vector2(207, -225)
+
+[node name="tree2" parent="." instance=ExtResource("3_hxw16")]
+position = Vector2(-172, 176)
+scale = Vector2(1, 1)
+
+[node name="tree3" parent="." instance=ExtResource("3_hxw16")]
+position = Vector2(367, 285)
+
+[node name="Bush2" parent="." instance=ExtResource("4_mt3i3")]
+position = Vector2(-66, 289)
+
+[node name="Bush3" parent="." instance=ExtResource("4_mt3i3")]
+position = Vector2(157, 193)
+
+[node name="bench2" parent="." instance=ExtResource("1_uqnht")]
+position = Vector2(-476, 164)
+rotation = -0.430831
+
+[node name="Bush4" parent="." instance=ExtResource("4_mt3i3")]
+position = Vector2(-393, -303)
+
+[node name="Bush5" parent="." instance=ExtResource("4_mt3i3")]
+position = Vector2(-93.0001, -299)
+scale = Vector2(1, 1)
+
+[node name="bench3" parent="." instance=ExtResource("1_uqnht")]
+position = Vector2(629, 225)
+rotation = 0.623654
+scale = Vector2(1, 1)
+
+[node name="Bush6" parent="." instance=ExtResource("4_mt3i3")]
+position = Vector2(663, -90)
+
+[node name="tree4" parent="." instance=ExtResource("3_hxw16")]
+position = Vector2(394, 20)
 
 [node name="CollisionUp" type="CollisionShape2D" parent="."]
 position = Vector2(0, -469.565)
