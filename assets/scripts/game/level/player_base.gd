@@ -13,7 +13,7 @@ func _ready():
 	body_exited.connect(_on_body_exited)
 
 # Called when the node enters the scene tree for the first time.
-func setup(environment : Node2D, player_settings : PlayerSettings, score_label : PlayerScoreUI):
+func setup(environment : Node2D, player_settings : PlayerSettings, score_label : PlayerScoreUI, game : Game):
 	var character_config : CharacterConfig = Config.character_repository.get_character(player_settings.character_index)
 	background_sprite.modulate = character_config.color
 	
@@ -21,7 +21,7 @@ func setup(environment : Node2D, player_settings : PlayerSettings, score_label :
 	player = character_scene.instantiate()
 	
 	environment.add_child(player)	
-	player.setup(player_settings, character_config, self)
+	player.setup(player_settings, character_config, self, game)
 	score_label.setup(player)
  
 

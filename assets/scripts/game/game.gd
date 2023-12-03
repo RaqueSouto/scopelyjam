@@ -1,5 +1,7 @@
 class_name Game extends Node
 
+signal game_ended()
+
 var match_config : MatchConfig
 var player_bases : Array
 var score_labels : Array
@@ -13,6 +15,8 @@ var players : PlayersState
 @onready var item_spawner = $ItemSpawner
 @onready var score = %Score
 
+const END_GAME = "res://assets/scenes/end_game.tscn"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	match_config = Config.match
@@ -22,7 +26,7 @@ func _ready():
 	score_labels = score.get_children()
 	
 	for player in players.list:
-		player_bases[player.player_index].setup(environment, player, score_labels[player.player_index])
+		player_bases[player.player_index].setup(environment, player, score_labels[player.player_index], self)
 		
 	Audio.play_init_match()
 	await ScreenEffects.transtion_fade_out()
@@ -35,9 +39,14 @@ func _ready():
 	
 	
 func _on_end_game_timeout():
+	get_tree().paused = true
 	check_winners()
+	await game_ui.show_end_game()
+	await ScreenEffects.transtion_fade_in()
+	get_tree().change_scene_to_file(END_GAME)
 	
 	
 func check_winners():
+	game_ended.emit()
 	pass
 	

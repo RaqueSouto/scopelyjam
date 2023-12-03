@@ -49,6 +49,16 @@ func set_countdown_number(number : String):
 	countdown_label.scale = Vector2(10, 10)
 
 	
+func show_end_game():
+	countdown_label.modulate = Color.WHITE
+	set_countdown_number("Time Over!")
+	countdown_label.visible = true
+	
+	var tween = create_tween()
+	tween.tween_property(countdown_label, "scale", Vector2.ONE, 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+	tween.tween_interval(3)
+	await tween.finished
+	
 func _process(delta):
 	set_timer()
 	

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvjlpmx5mxmba"]
+[gd_scene load_steps=9 format=3 uid="uid://bvjlpmx5mxmba"]
 
 [ext_resource type="Script" path="res://assets/scripts/game/game.gd" id="1_qm8kl"]
 [ext_resource type="PackedScene" uid="uid://briojhyaesuc0" path="res://assets/scenes/level/level.tscn" id="3_54xch"]
 [ext_resource type="Script" path="res://assets/scripts/ui/game/game_ui.gd" id="4_dfltd"]
 [ext_resource type="Theme" uid="uid://b3kf378b70aub" path="res://assets/style/millenial_go.tres" id="4_u5p2u"]
 [ext_resource type="Script" path="res://assets/scripts/game/items/item_spawner.gd" id="6_7jwdh"]
+[ext_resource type="FontFile" uid="uid://d0wdrl6eo28bi" path="res://assets/fonts/BADABB__.TTF" id="6_11ea6"]
 [ext_resource type="Script" path="res://assets/scripts/ui/game/player_score_ui.gd" id="6_qupih"]
 [ext_resource type="PackedScene" uid="uid://dhrnd83k14vrw" path="res://assets/scenes/level/enviroment/house.tscn" id="7_1kioi"]
 
@@ -66,13 +67,13 @@ grow_vertical = 2
 pivot_offset = Vector2(150, 164)
 size_flags_horizontal = 4
 theme = ExtResource("4_u5p2u")
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 6
-theme_override_constants/outline_size = 20
+theme_override_constants/outline_size = 30
 theme_override_constants/shadow_outline_size = 40
+theme_override_fonts/font = ExtResource("6_11ea6")
 theme_override_font_sizes/font_size = 240
 text = "3
 "

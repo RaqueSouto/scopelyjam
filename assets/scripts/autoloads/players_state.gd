@@ -9,6 +9,9 @@ const MAX_PLAYERS := 4
 
 var list : Array[PlayerSettings]
 
+var winners : Array[int]
+var losers : Array[int]
+
 var all_players_ready := false:
 	set(value):
 		if value == all_players_ready:

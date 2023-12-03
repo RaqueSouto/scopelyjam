@@ -10,13 +10,9 @@ script = ExtResource("1_g4nc4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Background" type="ColorRect" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.137255, 0.00784314, 0.2, 1)
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="TitleLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = 10

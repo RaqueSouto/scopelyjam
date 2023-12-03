@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk01d60anhl06"]
+
+[ext_resource type="Script" path="res://assets/scripts/ui/end_game.gd" id="1_0ay04"]
+
+[node name="EndGame" type="Node"]
+script = ExtResource("1_0ay04")

@@ -3,6 +3,7 @@ class_name Player extends CharacterBody2D
 signal scored(amount : int)
 
 const spawn_offset := 72.0
+const item_types := 4
 
 var base : PlayerBase
 var current_speed : float
@@ -44,7 +45,7 @@ func _ready():
 	target.modulate = Color(Color.GRAY, 0.5)
 
 
-func setup(player_settings : PlayerSettings, character_config : CharacterConfig, player_base : PlayerBase):
+func setup(player_settings : PlayerSettings, character_config : CharacterConfig, player_base : PlayerBase, game : Game):
 	input = player_settings.device_input
 	
 	base = player_base
@@ -60,6 +61,8 @@ func setup(player_settings : PlayerSettings, character_config : CharacterConfig,
 	starting_state.setup(base.player_start.global_position)
 	scoring_state.setup(base)
 	state_machine.init()
+	
+	game.game_ended.connect(_on_game_ended)
 	
 
 func enter_house():
@@ -144,7 +147,8 @@ func add_score():
 		
 	tail.clear()
 		
-	if score_items.size() > 0:
+	print("score_items.size() " + str(score_items.size()))
+	if score_items.size() == item_types: 
 		var score_added = score_items.values().min()
 		score += score_added
 	
@@ -163,3 +167,7 @@ func destroy_items(items):
 func _process(delta):
 	for item in tail:
 		item.follow(delta)
+
+
+func _on_game_ended():
+	pass
