@@ -17,6 +17,10 @@ func _ready():
 	spawn_timer.timeout.connect(_on_spawn_timer)
 
 
+func init():
+	spawn_random_item()
+
+
 func _on_spawn_timer():
 	spawn_random_item()
 	

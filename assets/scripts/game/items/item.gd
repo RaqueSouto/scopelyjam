@@ -64,8 +64,19 @@ func impact_and_unfollow():
 	player_owner = null
 	item_parent = null
 	
+	renderer.material.set("shader_parameter/line_color", Color.WHITE)
+	
 	animation.play("idle")
 	velocity = Vector2.from_angle(randf_range(0, PI * 2)) * impact_force
+	
+	
+func destroy():
+	if item_parent is Item:
+		item_parent.detach_child()
+	
+	player_owner = null
+	item_parent = null
+	queue_free()
 	
 	
 func _physics_process(delta):
@@ -84,6 +95,11 @@ func _process(delta):
 		renderer.flip_h = true
 	elif velocity.x > 0:
 		renderer.flip_h = false
+		
+	elif direction.x < 0:
+		renderer.flip_h = true
+	elif direction.x > 0:
+		renderer.flip_h = false
 	
 
 func change_owner(new_player_owner : Player, new_item_parent : Node2D):
@@ -100,6 +116,7 @@ func change_owner(new_player_owner : Player, new_item_parent : Node2D):
 	
 	item_parent = new_item_parent
 	player_owner = new_player_owner
+	renderer.material.set("shader_parameter/line_color", player_owner.color)
 	
 	if item_parent is Item:
 		item_parent.attach_child(self)

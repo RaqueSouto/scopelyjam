@@ -2,6 +2,7 @@ class_name Game extends Node
 
 var match_config : MatchConfig
 var player_bases : Array
+var score_labels : Array
 
 var players : PlayersState 
 
@@ -9,6 +10,8 @@ var players : PlayersState
 @onready var level_bases := %LevelBases
 @onready var game_ui := %GameUI
 @onready var end_game_timer = %EndGameTimer
+@onready var item_spawner = $ItemSpawner
+@onready var score = %Score
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,9 +19,10 @@ func _ready():
 	players = GameState.players
 	
 	player_bases = level_bases.get_children()
+	score_labels = score.get_children()
 	
 	for player in players.list:
-		player_bases[player.player_index].setup(environment, player)
+		player_bases[player.player_index].setup(environment, player, score_labels[player.player_index])
 		
 	Audio.play_init_match()
 	await ScreenEffects.transtion_fade_out()
@@ -27,6 +31,7 @@ func _ready():
 	get_tree().paused = false
 	end_game_timer.start(match_config.duration)
 	end_game_timer.timeout.connect(_on_end_game_timeout)
+	item_spawner.init()
 	
 	
 func _on_end_game_timeout():

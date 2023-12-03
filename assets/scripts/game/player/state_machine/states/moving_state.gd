@@ -13,6 +13,7 @@ func state_enter():
 	player.can_move = true
 	player.can_take_items = true
 	player.can_crash = true
+	player.can_score = true
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

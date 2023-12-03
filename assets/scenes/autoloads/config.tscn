@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://dw6ed0sjvbeco"]
+[gd_scene load_steps=10 format=3 uid="uid://dw6ed0sjvbeco"]
 
 [ext_resource type="Script" path="res://assets/scripts/autoloads/config.gd" id="1_nfl1k"]
 [ext_resource type="Script" path="res://assets/scripts/config/character_repository.gd" id="2_oot1g"]
 [ext_resource type="Script" path="res://assets/scripts/config/match_config.gd" id="2_vvwk1"]
 [ext_resource type="Script" path="res://assets/scripts/config/character_config.gd" id="3_2ksta"]
 [ext_resource type="Script" path="res://assets/scripts/config/player_config.gd" id="3_6hu3x"]
-[ext_resource type="Texture2D" uid="uid://bm0g22mia32ag" path="res://icon.svg" id="4_0eybc"]
 [ext_resource type="Texture2D" uid="uid://dkl2pn6f8jul8" path="res://assets/sprites/characters/raque_avatar.png" id="6_i52o7"]
 [ext_resource type="Texture2D" uid="uid://du3mf1hiqwx53" path="res://assets/sprites/characters/alma_avatar.png" id="7_o1uib"]
+[ext_resource type="Texture2D" uid="uid://cc5pq4lrrk01q" path="res://assets/sprites/characters/miguel_avatar.png" id="8_fspm8"]
+[ext_resource type="Texture2D" uid="uid://2c500fd2hbcv" path="res://assets/sprites/characters/nebulah.png" id="9_a00jq"]
 
 [node name="GameConfig" type="Node"]
 script = ExtResource("1_nfl1k")
@@ -48,16 +49,16 @@ story = "This is just an example character. Delete and creat others."
 
 [node name="Miguel" type="Node" parent="CharacterRepository"]
 script = ExtResource("3_2ksta")
-avatar_icon = ExtResource("4_0eybc")
+avatar_icon = ExtResource("8_fspm8")
 avatar_scene = "res://assets/scenes/players/miguel.tscn"
-color = Color(0.913725, 0.129412, 0.211765, 1)
+color = Color(1, 0.101961, 0.188235, 1)
 print_name = "Miguel"
 print_role = "Programmer"
 story = "This is just an example character. Delete and creat others."
 
 [node name="Nebulah" type="Node" parent="CharacterRepository"]
 script = ExtResource("3_2ksta")
-avatar_icon = ExtResource("4_0eybc")
+avatar_icon = ExtResource("9_a00jq")
 avatar_scene = "res://assets/scenes/players/nebulah.tscn"
 color = Color(0.796078, 0, 0.780392, 1)
 print_name = "Nebulah"

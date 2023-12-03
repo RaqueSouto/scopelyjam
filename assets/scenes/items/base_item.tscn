@@ -1,6 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://bctm8qvn3nvsq"]
+[gd_scene load_steps=9 format=3 uid="uid://bctm8qvn3nvsq"]
 
 [ext_resource type="Script" path="res://assets/scripts/game/items/item.gd" id="1_qjw2t"]
+[ext_resource type="Shader" path="res://assets/shaders/outline.gdshader" id="2_ndh3s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jsyma"]
+resource_local_to_scene = true
+shader = ExtResource("2_ndh3s")
+shader_parameter/rainbow = false
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_scale = 16.0
+shader_parameter/frequency = 0.5
+shader_parameter/light_offset = 0.5
+shader_parameter/alpha = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wyfx1"]
 radius = 180.0
@@ -66,6 +77,7 @@ scale = Vector2(0.15, 0.15)
 script = ExtResource("1_qjw2t")
 
 [node name="Renderer" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_jsyma")
 hframes = 6
 vframes = 5
 frame = 2

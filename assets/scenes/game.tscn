@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvjlpmx5mxmba"]
+[gd_scene load_steps=8 format=3 uid="uid://bvjlpmx5mxmba"]
 
 [ext_resource type="Script" path="res://assets/scripts/game/game.gd" id="1_qm8kl"]
 [ext_resource type="PackedScene" uid="uid://briojhyaesuc0" path="res://assets/scenes/level/level.tscn" id="3_54xch"]
 [ext_resource type="Script" path="res://assets/scripts/ui/game/game_ui.gd" id="4_dfltd"]
 [ext_resource type="Theme" uid="uid://b3kf378b70aub" path="res://assets/style/millenial_go.tres" id="4_u5p2u"]
 [ext_resource type="Script" path="res://assets/scripts/game/items/item_spawner.gd" id="6_7jwdh"]
+[ext_resource type="Script" path="res://assets/scripts/ui/game/player_score_ui.gd" id="6_qupih"]
 [ext_resource type="PackedScene" uid="uid://dhrnd83k14vrw" path="res://assets/scenes/level/enviroment/house.tscn" id="7_1kioi"]
 
 [node name="Game" type="Node"]
@@ -83,10 +84,9 @@ unique_name_in_owner = true
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -100.0
-offset_top = 12.0
-offset_right = 100.0
-offset_bottom = 95.0
+offset_left = -200.0
+offset_right = 200.0
+offset_bottom = 110.0
 grow_horizontal = 2
 theme = ExtResource("4_u5p2u")
 theme_override_colors/font_color = Color(1, 0.258824, 0.662745, 1)
@@ -96,10 +96,119 @@ theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 6
 theme_override_constants/shadow_outline_size = 10
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 80
 text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Score" type="Control" parent="GameUI"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScoreLabel_P1" type="Label" parent="GameUI/Score"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -952.0
+offset_top = 692.0
+offset_right = -752.0
+offset_bottom = 857.0
+grow_horizontal = 2
+theme = ExtResource("4_u5p2u")
+theme_override_colors/font_color = Color(1, 0.258824, 0.662745, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.501961)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 120
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_qupih")
+
+[node name="ScoreLabel_P2" type="Label" parent="GameUI/Score"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 754.0
+offset_top = 224.0
+offset_right = 954.0
+offset_bottom = 389.0
+grow_horizontal = 2
+theme = ExtResource("4_u5p2u")
+theme_override_colors/font_color = Color(1, 0.258824, 0.662745, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.501961)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 120
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_qupih")
+
+[node name="ScoreLabel_P3" type="Label" parent="GameUI/Score"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -947.0
+offset_top = 224.0
+offset_right = -747.0
+offset_bottom = 389.0
+grow_horizontal = 2
+theme = ExtResource("4_u5p2u")
+theme_override_colors/font_color = Color(1, 0.258824, 0.662745, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.501961)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 120
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_qupih")
+
+[node name="ScoreLabel_P4" type="Label" parent="GameUI/Score"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 748.0
+offset_top = 690.0
+offset_right = 948.0
+offset_bottom = 855.0
+grow_horizontal = 2
+theme = ExtResource("4_u5p2u")
+theme_override_colors/font_color = Color(1, 0.258824, 0.662745, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.501961)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 120
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_qupih")
 
 [node name="ItemSpawner" type="Node2D" parent="."]
 position = Vector2(960, 540)

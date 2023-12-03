@@ -19,6 +19,7 @@ func state_enter():
 	player.can_move = false
 	player.can_take_items = false
 	player.can_crash = false
+	player.can_score = false
 	
 	var direction = (base_start_position - player.global_position).normalized()
 	player.look_at.look_at(player.look_at.global_position + direction)
