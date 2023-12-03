@@ -1,5 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2kbynn6js1vb"]
+[gd_scene load_steps=3 format=3 uid="uid://b2kbynn6js1vb"]
 
-[ext_resource type="PackedScene" uid="uid://cwk572nh7d3wp" path="res://assets/scenes/players/base_player.tscn" id="1_m2hkp"]
+[ext_resource type="PackedScene" uid="uid://cwk572nh7d3wp" path="res://assets/scenes/Players/base_player.tscn" id="1_m2hkp"]
+[ext_resource type="Texture2D" uid="uid://ds7754komfs8b" path="res://assets/sprites/characters/Scopely_Character_Miguel.png" id="2_12hdc"]
 
 [node name="Player" instance=ExtResource("1_m2hkp")]
+
+[node name="Renderer" parent="." index="0"]
+texture = ExtResource("2_12hdc")
