@@ -4,16 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://dg8iswwvdripq" path="res://assets/sprites/background/Scopely_Background_House_Base.png" id="1_wn1wo"]
 [ext_resource type="Texture2D" uid="uid://b3qf7ie738pv8" path="res://assets/sprites/background/Scopely_Background_House_Border.png" id="2_4vvq5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tetos"]
-size = Vector2(295, 223)
+[sub_resource type="CircleShape2D" id="CircleShape2D_3bbbt"]
+radius = 130.0
 
 [node name="House" type="Area2D"]
-y_sort_enabled = true
 script = ExtResource("1_vb2mn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -114)
-shape = SubResource("RectangleShape2D_tetos")
+position = Vector2(11, -92)
+shape = SubResource("CircleShape2D_3bbbt")
 
 [node name="BackgroundSprite" type="Sprite2D" parent="."]
 modulate = Color(0.5, 0.5, 0.5, 1)
@@ -23,7 +22,7 @@ offset = Vector2(0, 114)
 
 [node name="BorderSprite" type="Sprite2D" parent="BackgroundSprite"]
 self_modulate = Color(0.5, 0.5, 0.5, 1)
-z_index = 1
+z_index = 4096
 position = Vector2(0, 228)
 texture = ExtResource("2_4vvq5")
 offset = Vector2(0, -114)

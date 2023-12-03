@@ -8,6 +8,7 @@ var players : PlayersState
 @onready var environment := %Environment
 @onready var level_bases := %LevelBases
 @onready var game_ui := %GameUI
+@onready var end_game_timer = %EndGameTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,3 +25,14 @@ func _ready():
 	await game_ui.play_countdown()
 	
 	get_tree().paused = false
+	end_game_timer.start(match_config.duration)
+	end_game_timer.timeout.connect(_on_end_game_timeout)
+	
+	
+func _on_end_game_timeout():
+	check_winners()
+	
+	
+func check_winners():
+	pass
+	

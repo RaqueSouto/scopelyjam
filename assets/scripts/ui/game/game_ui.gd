@@ -1,6 +1,9 @@
 class_name GameUI extends CanvasLayer
 
 @onready var countdown_label = %CountdownLabel
+@onready var end_game_label = %EndGameLabel
+@onready var end_game_timer = %EndGameTimer
+
 
 func _ready():
 	countdown_label.visible = false
@@ -36,4 +39,9 @@ func set_countdown_number(number : String):
 	countdown_label.text = str(number)
 	countdown_label.scale = Vector2(10, 10)
 
+	
+func _process(delta):
+	var minutes = floor(end_game_timer.time_left / 60)
+	var seconds = int(end_game_timer.time_left) % 60
+	end_game_label.text = "%0*d:%0*d" % [2, minutes, 2, seconds]
 	

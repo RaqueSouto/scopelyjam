@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvjlpmx5mxmba"]
+[gd_scene load_steps=7 format=3 uid="uid://bvjlpmx5mxmba"]
 
 [ext_resource type="Script" path="res://assets/scripts/game/game.gd" id="1_qm8kl"]
 [ext_resource type="PackedScene" uid="uid://briojhyaesuc0" path="res://assets/scenes/level/level.tscn" id="3_54xch"]
 [ext_resource type="Script" path="res://assets/scripts/ui/game/game_ui.gd" id="4_dfltd"]
 [ext_resource type="Theme" uid="uid://b3kf378b70aub" path="res://assets/style/millenial_go.tres" id="4_u5p2u"]
+[ext_resource type="Script" path="res://assets/scripts/game/items/item_spawner.gd" id="6_7jwdh"]
 [ext_resource type="PackedScene" uid="uid://dhrnd83k14vrw" path="res://assets/scenes/level/enviroment/house.tscn" id="7_1kioi"]
 
 [node name="Game" type="Node"]
@@ -76,5 +77,41 @@ text = "3
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="EndGameLabel" type="Label" parent="GameUI"]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 12.0
+offset_right = 100.0
+offset_bottom = 95.0
+grow_horizontal = 2
+theme = ExtResource("4_u5p2u")
+theme_override_colors/font_color = Color(1, 0.258824, 0.662745, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.501961)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemSpawner" type="Node2D" parent="."]
+position = Vector2(960, 540)
+script = ExtResource("6_7jwdh")
+item_paths = Array[String](["res://assets/scenes/items/gameboy.tscn", "res://assets/scenes/items/msn.tscn", "res://assets/scenes/items/tamagochi.tscn", "res://assets/scenes/items/vhs.tscn"])
+spawn_offset = Vector2(500, 400)
+
+[node name="SpawnTimer" type="Timer" parent="ItemSpawner"]
+wait_time = 5.0
+autostart = true
+
+[node name="EndGameTimer" type="Timer" parent="."]
+unique_name_in_owner = true
 
 [editable path="Environment/Level"]

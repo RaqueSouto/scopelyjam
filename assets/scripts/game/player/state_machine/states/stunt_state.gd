@@ -10,9 +10,13 @@ func _ready():
 	await owner.ready
 	player = owner
 
+
 func state_enter():
 	player.animation.play("stun")
 	player.can_move = false
+	player.can_take_items = false
+	player.can_crash = false
+	
 	stunt_timer.start(player.config.stunt_duration)
 	#TODO: play particles
 	await stunt_timer.timeout

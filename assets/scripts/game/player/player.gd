@@ -3,23 +3,28 @@ class_name Player extends CharacterBody2D
 const spawn_offset := 72.0
 
 var base : PlayerBase
-var speed : float
-var angular_speed : float
+var current_speed : float
+var current_angular_speed : float
 
 var input : DeviceInput
 var config : PlayerConfig
 
 var not_flip := true
 var can_score := false
+var can_take_items := false
+var can_crash := false
 var can_move = false:
 	set(value):
 		can_move = value
 		target.modulate = Color.WHITE if can_move else Color(Color.GRAY, 0.5)
 
+var tail : Array[Item]
+
 @onready var look_at := %LookAt
 @onready var target := %ArrowTarget
 
 @onready var animation := %AnimationPlayer
+
 
 @onready var state_machine = %StateMachine
 @onready var starting_state = %StartingState
@@ -38,8 +43,8 @@ func setup(player_settings : PlayerSettings, character_config : CharacterConfig,
 	input = player_settings.device_input
 	
 	base = player_base
-	speed = config.base_speed
-	angular_speed = deg_to_rad(config.base_angular_speed)
+	current_speed = config.base_speed
+	current_angular_speed = deg_to_rad(config.base_angular_speed)
 	target.self_modulate = character_config.color
 
 	global_position = player_base.player_spawn.global_position
@@ -60,6 +65,9 @@ func exit_house():
 
 
 func crash(impact_force : Vector2):
+	if not can_take_items:
+		return
+		
 	state_machine.change_state(stunt_state)
 	not_flip = false
 	velocity = impact_force
@@ -68,9 +76,56 @@ func crash(impact_force : Vector2):
 	
 	
 func lose_half_items():
-	pass
+	if tail.size() < 2:
+		return
+	
+	var new_size = ceil(tail.size() / 2)
+	while tail.size() > new_size:
+		var item : Item = tail.pop_back()
+		item.impact_and_unfollow()
+	
+	update_speed()
+	
+
+func add_items(item : Item):
+	if not can_take_items:
+		return
+		
+	if (item.player_owner == self):
+		return
+		
+	if tail.size() > 0:
+		item.change_owner(self, tail[tail.size() - 1])
+	else:
+		item.change_owner(self, self)
+		
+	#tail.insert(0, item)
+	tail.append(item)
+	
+	while (item.item_child != null):
+		item = item.item_child
+		item.change_owner(self, tail[tail.size() - 1])
+		
+	update_speed()
 
 
+func remove_item(item):
+	tail.erase(item)
+	
+
+func update_speed():
+	current_speed = max(config.min_speed, config.base_speed - config.speed_penalization * tail.size())
+	current_angular_speed = deg_to_rad(max(config.angular_min_speed, config.base_angular_speed - config.angular_speed_penalization * tail.size()))
+	
+	print("current_speed: %s" % current_speed)
+	print("current_angular_speed: %s" % current_angular_speed)
+	
+	
 func recover():
 	not_flip = true
 	state_machine.change_state(moving_state)
+
+
+func _process(delta):
+	for item in tail:
+		item.follow(delta)

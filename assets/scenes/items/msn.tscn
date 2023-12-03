@@ -1,80 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://764ukfqlg3xs"]
+[gd_scene load_steps=3 format=3 uid="uid://dnojamdp8gvd7"]
 
-[ext_resource type="Texture2D" uid="uid://dh053vmebneuv" path="res://assets/sprites/items/msn.png" id="1_otmdc"]
+[ext_resource type="PackedScene" uid="uid://bctm8qvn3nvsq" path="res://assets/scenes/items/base_item.tscn" id="1_dgt5d"]
+[ext_resource type="Texture2D" uid="uid://dh053vmebneuv" path="res://assets/sprites/items/msn.png" id="2_n4pbd"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wcijg"]
-radius = 156.0
-height = 454.0
+[node name="MSN" instance=ExtResource("1_dgt5d")]
+type = 3
 
-[sub_resource type="Animation" id="Animation_mf1i2"]
-resource_name = "idle"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_e7pcp"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_jx0ih"]
-resource_name = "walk"
-length = 0.4
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [6, 7]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ks16y"]
-_data = {
-"RESET": SubResource("Animation_e7pcp"),
-"idle": SubResource("Animation_mf1i2"),
-"walk": SubResource("Animation_jx0ih")
-}
-
-[node name="msn" type="RigidBody2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_otmdc")
-hframes = 6
-vframes = 5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16, 13)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_wcijg")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_ks16y")
-}
+[node name="Renderer" parent="." index="0"]
+texture = ExtResource("2_n4pbd")
+offset = Vector2(0, -40)

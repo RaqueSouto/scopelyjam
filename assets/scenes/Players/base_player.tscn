@@ -1,15 +1,26 @@
-[gd_scene load_steps=20 format=3 uid="uid://cwk572nh7d3wp"]
+[gd_scene load_steps=23 format=3 uid="uid://cwk572nh7d3wp"]
 
-[ext_resource type="Script" path="res://assets/scripts/player/player.gd" id="1_n8mnh"]
+[ext_resource type="Script" path="res://assets/scripts/game/player/player.gd" id="1_xw7wa"]
+[ext_resource type="Shader" path="res://assets/shaders/outline.gdshader" id="2_3clm5"]
 [ext_resource type="Texture2D" uid="uid://sqdpw4qn1y8m" path="res://assets/sprites/characters/raque.png" id="2_08b8c"]
-[ext_resource type="Script" path="res://assets/scripts/player/player_renderer.gd" id="3_4hq14"]
+[ext_resource type="Script" path="res://assets/scripts/game/player/player_renderer.gd" id="3_5n1f0"]
 [ext_resource type="Texture2D" uid="uid://bf1lata5s2d6d" path="res://assets/sprites/arrow.png" id="3_cfgdn"]
-[ext_resource type="Script" path="res://assets/scripts/player/state_machine/state_machine.gd" id="4_csyv5"]
-[ext_resource type="Script" path="res://assets/scripts/player/state_machine/states/moving_state.gd" id="5_aa3ev"]
-[ext_resource type="Script" path="res://assets/scripts/player/state_machine/states/starting_state.gd" id="5_ovbxy"]
-[ext_resource type="Script" path="res://assets/scripts/player/state_machine/states/stunt_state.gd" id="7_dd1bj"]
-[ext_resource type="Script" path="res://assets/scripts/player/state_machine/states/scoring_state.gd" id="8_v1t8c"]
-[ext_resource type="Script" path="res://assets/scripts/player/state_machine/states/end_game_state.gd" id="9_kicry"]
+[ext_resource type="Script" path="res://assets/scripts/game/player/player_interactor.gd" id="4_csd48"]
+[ext_resource type="Script" path="res://assets/scripts/game/player/state_machine/state_machine.gd" id="5_hq8nn"]
+[ext_resource type="Script" path="res://assets/scripts/game/player/state_machine/states/starting_state.gd" id="6_fq4l7"]
+[ext_resource type="Script" path="res://assets/scripts/game/player/state_machine/states/moving_state.gd" id="7_2gfls"]
+[ext_resource type="Script" path="res://assets/scripts/game/player/state_machine/states/stunt_state.gd" id="8_klr8n"]
+[ext_resource type="Script" path="res://assets/scripts/game/player/state_machine/states/scoring_state.gd" id="9_8b70k"]
+[ext_resource type="Script" path="res://assets/scripts/game/player/state_machine/states/end_game_state.gd" id="10_ak4t7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fiy1p"]
+shader = ExtResource("2_3clm5")
+shader_parameter/rainbow = false
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_scale = 4.0
+shader_parameter/frequency = 0.5
+shader_parameter/light_offset = 1.0
+shader_parameter/alpha = 1.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_omrrp"]
 radius = 100.0
@@ -132,17 +143,19 @@ radius = 30.0
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.4, 0.4)
-script = ExtResource("1_n8mnh")
+script = ExtResource("1_xw7wa")
 
 [node name="Renderer" type="Sprite2D" parent="."]
 z_index = 100
+material = SubResource("ShaderMaterial_fiy1p")
 texture = ExtResource("2_08b8c")
 offset = Vector2(0, -170)
 hframes = 6
 vframes = 5
-script = ExtResource("3_4hq14")
+script = ExtResource("3_5n1f0")
 
 [node name="InteractorArea" type="Area2D" parent="."]
+script = ExtResource("4_csd48")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractorArea"]
 position = Vector2(0, -170)
@@ -173,27 +186,27 @@ shape = SubResource("CircleShape2D_1irbj")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 unique_name_in_owner = true
-script = ExtResource("4_csyv5")
+script = ExtResource("5_hq8nn")
 initial_state = NodePath("StartingState")
 
 [node name="StartingState" type="Node" parent="StateMachine"]
 unique_name_in_owner = true
-script = ExtResource("5_ovbxy")
+script = ExtResource("6_fq4l7")
 
 [node name="MovingState" type="Node" parent="StateMachine"]
 unique_name_in_owner = true
-script = ExtResource("5_aa3ev")
+script = ExtResource("7_2gfls")
 
 [node name="StuntState" type="Node" parent="StateMachine"]
 unique_name_in_owner = true
-script = ExtResource("7_dd1bj")
+script = ExtResource("8_klr8n")
 
 [node name="StuntTimer" type="Timer" parent="StateMachine/StuntState"]
 
 [node name="ScoringState" type="Node" parent="StateMachine"]
 unique_name_in_owner = true
-script = ExtResource("8_v1t8c")
+script = ExtResource("9_8b70k")
 
 [node name="EndGameState" type="Node" parent="StateMachine"]
 unique_name_in_owner = true
-script = ExtResource("9_kicry")
+script = ExtResource("10_ak4t7")

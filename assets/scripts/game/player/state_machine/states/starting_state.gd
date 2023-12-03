@@ -17,10 +17,12 @@ func setup(in_base_start_position : Vector2):
 func state_enter():
 	player.animation.play("walk")
 	player.can_move = false
+	player.can_take_items = false
+	player.can_crash = false
 	
 	var direction = (base_start_position - player.global_position).normalized()
 	player.look_at.look_at(player.look_at.global_position + direction)
-	player.velocity = direction * player.speed
+	player.velocity = direction * player.current_speed
 
 
 func state_physics_process(delta):

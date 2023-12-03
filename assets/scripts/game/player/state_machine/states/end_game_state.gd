@@ -8,9 +8,13 @@ func _ready():
 	player = owner
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func state_enter():
+	player.velocity = Vector2.ZERO
+	player.can_move = false
+	player.can_take_items = false
+	player.can_crash = false
+
+
 func state_process(delta):
 	if player == null:
 		return
-
-	pass

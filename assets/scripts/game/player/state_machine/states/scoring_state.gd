@@ -10,6 +10,8 @@ func _ready():
 func state_enter():
 	player.animation.play("happy")
 	player.can_move = false
+	player.can_take_items = false
+	player.can_crash = false
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func state_process(delta):
