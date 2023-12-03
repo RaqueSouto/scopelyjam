@@ -4,6 +4,6 @@
 is_oneshot = true
 min_distance = 1.0
 max_distance = 20.0
-path = "event:/Take_VHS"
+path = "event:/FXs/Take_VHS"
 guid = "{ea63fc33-16b8-4e2d-a95b-b7719fee9750}"
 name = "Take_VHS"

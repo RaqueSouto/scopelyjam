@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://igrrthfcyjvl"]
+[gd_scene load_steps=7 format=3 uid="uid://igrrthfcyjvl"]
 
 [ext_resource type="Script" path="res://assets/scripts/ui/player_selection/player_selection.gd" id="1_g4nc4"]
 [ext_resource type="Script" path="res://assets/scripts/ui/player_selection/character_selection.gd" id="2_7q8pf"]
 [ext_resource type="Texture2D" uid="uid://whmheiqeg4b6" path="res://assets/sprites/background/Scopely_Background.png" id="2_bd6px"]
 [ext_resource type="Theme" uid="uid://b3kf378b70aub" path="res://assets/style/millenial_go.tres" id="2_djyf3"]
 [ext_resource type="PackedScene" uid="uid://ckom1utsggt8k" path="res://assets/scenes/ui/player_selection/character_selector.tscn" id="3_q8gex"]
+
+[sub_resource type="EventAsset" id="EventAsset_cdn5o"]
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Music/Character_selection"
+guid = "{c570944e-2b38-4174-a1d8-a7c5072050b8}"
+name = "Character_selection"
 
 [node name="PlayerSelection" type="Node"]
 script = ExtResource("1_g4nc4")
@@ -77,3 +84,6 @@ pivot_offset = Vector2(0, 100)
 theme = ExtResource("2_djyf3")
 bbcode_enabled = true
 text = "[center]Player 1: Press [img]res://addons/controller_icons/assets/ps5/options_alt.png[/img] / [img]res://addons/controller_icons/assets/xbox360/start_alt.png[/img] to GO![/center]"
+
+[node name="Music" type="StudioEventEmitter2D" parent="."]
+event = SubResource("EventAsset_cdn5o")

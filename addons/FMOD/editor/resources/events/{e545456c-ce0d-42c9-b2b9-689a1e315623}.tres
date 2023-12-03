@@ -4,6 +4,6 @@
 is_oneshot = true
 min_distance = 1.0
 max_distance = 20.0
-path = "event:/Crash"
+path = "event:/FXs/Crash"
 guid = "{e545456c-ce0d-42c9-b2b9-689a1e315623}"
 name = "Crash"

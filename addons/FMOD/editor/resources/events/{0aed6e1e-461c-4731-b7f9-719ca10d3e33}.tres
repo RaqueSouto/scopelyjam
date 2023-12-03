@@ -4,6 +4,6 @@
 is_oneshot = true
 min_distance = 1.0
 max_distance = 20.0
-path = "event:/Start"
+path = "event:/FXs/Start"
 guid = "{0aed6e1e-461c-4731-b7f9-719ca10d3e33}"
 name = "Start"

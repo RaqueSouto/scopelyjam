@@ -9,8 +9,13 @@ var players : PlayersState
 var characters_repo : CharacterRepository
 var pendant_devices : Dictionary
 @onready var start_label = %StartLabel
+@onready var music = $Music
 
 func _ready():
+	ScreenEffects.transition_fade_out_immediately()
+	
+	music.play()
+	
 	players = GameState.players
 	characters_repo = Config.character_repository
 	for device in Input.get_connected_joypads():
@@ -76,8 +81,8 @@ func _check_start():
 	if players.all_players_ready and players.list[0].device_input.is_action_just_pressed("ui_start"):
 		Audio.play_open_match()
 		get_tree().paused = true
+		music.stop()
 		await ScreenEffects.transtion_fade_in()
-		await get_tree().create_timer(5.0).timeout
 		get_tree().change_scene_to_file(GAME_PATH)
 
 

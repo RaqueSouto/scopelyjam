@@ -14,6 +14,7 @@ var players : PlayersState
 @onready var end_game_timer = %EndGameTimer
 @onready var item_spawner = $ItemSpawner
 @onready var score = %Score
+@onready var music = $Music
 
 const END_GAME = "res://assets/scenes/end_game.tscn"
 
@@ -37,11 +38,14 @@ func _ready():
 	end_game_timer.timeout.connect(_on_end_game_timeout)
 	item_spawner.init()
 	
+	music.play()
+	
 	
 func _on_end_game_timeout():
 	get_tree().paused = true
 	check_winners()
 	await game_ui.show_end_game()
+	music.stop()
 	await ScreenEffects.transtion_fade_in()
 	get_tree().change_scene_to_file(END_GAME)
 	

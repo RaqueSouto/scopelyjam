@@ -4,6 +4,6 @@
 is_oneshot = true
 min_distance = 1.0
 max_distance = 20.0
-path = "event:/Choose"
+path = "event:/FXs/Choose"
 guid = "{9a6a719b-abc1-4304-bd03-71e9e87cc583}"
 name = "Choose"
