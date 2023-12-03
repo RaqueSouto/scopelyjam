@@ -23,7 +23,7 @@ y_sort_enabled = true
 position = Vector2(960.5, 541.5)
 scale = Vector2(0.998437, 1.00093)
 
-[node name="CollisionUp" parent="Environment/Level" index="7"]
+[node name="CollisionUp" parent="Environment/Level" index="6"]
 position = Vector2(0, -470)
 
 [node name="LevelBases" type="Sprite2D" parent="Environment"]
