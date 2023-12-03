@@ -148,7 +148,6 @@ func add_score():
 		
 	tail.clear()
 		
-	print("score_items.size() " + str(score_items.size()))
 	if score_items.size() == item_types: 
 		var score_added = score_items.values().min()
 		score += score_added

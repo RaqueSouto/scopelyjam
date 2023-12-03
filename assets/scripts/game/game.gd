@@ -55,5 +55,3 @@ func check_winners():
 			players.score_players[player.score] = Array()
 			
 		players.score_players[player.score].append(player)
-	
-	
