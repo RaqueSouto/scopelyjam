@@ -15,9 +15,11 @@ func _ready():
 	await owner.ready
 	for child in get_children():
 		child.state_machine = self
-		
+
+
+func init():
 	set_state(initial_state)
-	
+
 
 func set_state(state : State):
 	current_state = state
@@ -25,14 +27,20 @@ func set_state(state : State):
 	
 
 func _unhandled_input(event):
+	if current_state == null:
+		return
 	current_state.state_input(event)
 	
 
 func _process(delta):
+	if current_state == null:
+		return
 	current_state.state_process(delta)
 
 
 func _physics_process(delta):
+	if current_state == null:
+		return
 	current_state.state_physics_process(delta)
 
 

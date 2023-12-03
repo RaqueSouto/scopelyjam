@@ -17,19 +17,19 @@ shape = SubResource("RectangleShape2D_tetos")
 
 [node name="BackgroundSprite" type="Sprite2D" parent="."]
 modulate = Color(0.5, 0.5, 0.5, 1)
-texture = ExtResource("1_wn1wo")
-offset = Vector2(0, -114)
-
-[node name="bordersprite" type="Sprite2D" parent="BackgroundSprite"]
-self_modulate = Color(0.5, 0.5, 0.5, 1)
-z_index = 1
-y_sort_enabled = true
 position = Vector2(0, -228)
-texture = ExtResource("2_4vvq5")
+texture = ExtResource("1_wn1wo")
 offset = Vector2(0, 114)
 
+[node name="BorderSprite" type="Sprite2D" parent="BackgroundSprite"]
+self_modulate = Color(0.5, 0.5, 0.5, 1)
+z_index = 1
+position = Vector2(0, 228)
+texture = ExtResource("2_4vvq5")
+offset = Vector2(0, -114)
+
 [node name="PlayerSpawn" type="Marker2D" parent="."]
-position = Vector2(0, -75)
+position = Vector2(0, -120)
 
 [node name="PlayerStart" type="Marker2D" parent="."]
 position = Vector2(150, -228)

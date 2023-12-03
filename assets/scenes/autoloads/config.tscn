@@ -19,6 +19,11 @@ script = ExtResource("2_vvwk1")
 [node name="PlayerConfig" type="Node" parent="MatchConfig"]
 unique_name_in_owner = true
 script = ExtResource("3_6hu3x")
+base_speed = 300
+speed_penalization = 15
+min_speed = 100
+angular_speed_penalization = 15
+angular_min_speed = 90
 
 [node name="CharacterRepository" type="Node" parent="."]
 unique_name_in_owner = true

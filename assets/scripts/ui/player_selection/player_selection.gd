@@ -77,6 +77,7 @@ func _check_start():
 		Audio.play_open_match()
 		get_tree().paused = true
 		await ScreenEffects.transtion_fade_in()
+		await get_tree().create_timer(5.0).timeout
 		get_tree().change_scene_to_file(GAME_PATH)
 
 
