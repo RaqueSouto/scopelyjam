@@ -48,5 +48,12 @@ func _on_end_game_timeout():
 	
 func check_winners():
 	game_ended.emit()
-	pass
+	
+	players.score_players = Dictionary()
+	for player in players.list:
+		if not players.score_players.has(player.score):
+			players.score_players[player.score] = Array()
+			
+		players.score_players[player.score].append(player)
+	
 	

@@ -12,6 +12,7 @@ var color : Color
 
 var input : DeviceInput
 var config : PlayerConfig
+var settings : PlayerSettings
 
 var not_flip := true
 var can_score := false
@@ -31,7 +32,6 @@ var score := 0
 
 @onready var animation := %AnimationPlayer
 
-
 @onready var state_machine = %StateMachine
 @onready var starting_state = %StartingState
 @onready var moving_state = %MovingState
@@ -48,6 +48,7 @@ func _ready():
 func setup(player_settings : PlayerSettings, character_config : CharacterConfig, player_base : PlayerBase, game : Game):
 	input = player_settings.device_input
 	
+	settings = player_settings
 	base = player_base
 	current_speed = config.base_speed
 	current_angular_speed = deg_to_rad(config.base_angular_speed)
@@ -170,4 +171,4 @@ func _process(delta):
 
 
 func _on_game_ended():
-	pass
+	settings.score = score

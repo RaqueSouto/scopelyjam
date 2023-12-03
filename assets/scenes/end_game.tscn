@@ -1,6 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://dk01d60anhl06"]
+[gd_scene load_steps=3 format=3 uid="uid://dk01d60anhl06"]
 
 [ext_resource type="Script" path="res://assets/scripts/ui/end_game.gd" id="1_0ay04"]
+[ext_resource type="Texture2D" uid="uid://whmheiqeg4b6" path="res://assets/sprites/background/Scopely_Background.png" id="2_gpl1g"]
 
 [node name="EndGame" type="Node"]
 script = ExtResource("1_0ay04")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.65098, 0.482353, 0.482353, 1)
+position = Vector2(960, 540)
+texture = ExtResource("2_gpl1g")
+
+[node name="PlayersSlots" type="Node2D" parent="."]
+z_index = 100
+
+[node name="PlayerSlot_0" type="Node2D" parent="PlayersSlots"]
+position = Vector2(449, 827)
+
+[node name="PlayerSlot_1" type="Node2D" parent="PlayersSlots"]
+position = Vector2(1291, 430)
+
+[node name="PlayerSlot_2" type="Node2D" parent="PlayersSlots"]
+position = Vector2(567, 381)
+
+[node name="PlayerSlot_3" type="Node2D" parent="PlayersSlots"]
+position = Vector2(1522, 834)
