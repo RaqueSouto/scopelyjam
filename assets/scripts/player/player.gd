@@ -9,10 +9,17 @@ var angular_speed : float
 var input : DeviceInput
 var config : PlayerConfig
 
+var not_flip := true
 var can_score := false
+var can_move = false:
+	set(value):
+		can_move = value
+		target.modulate = Color.WHITE if can_move else Color(Color.GRAY, 0.5)
 
-@onready var look_at = %LookAt
-@onready var target = %ArrowTarget
+@onready var look_at := %LookAt
+@onready var target := %ArrowTarget
+
+@onready var animation := %AnimationPlayer
 
 @onready var state_machine = %StateMachine
 @onready var starting_state = %StartingState
@@ -21,13 +28,19 @@ var can_score := false
 @onready var scoring_state = %ScoringState
 @onready var end_game_state = %EndGameState
 
+
+func _ready():
+	config = Config.match.player
+	target.modulate = Color(Color.GRAY, 0.5)
+
+
 func setup(player_settings : PlayerSettings, character_config : CharacterConfig, player_base : PlayerBase):
 	input = player_settings.device_input
-	config = Config.match.player
+	
 	base = player_base
 	speed = config.base_speed
 	angular_speed = deg_to_rad(config.base_angular_speed)
-	target.modulate = character_config.color
+	target.self_modulate = character_config.color
 
 	global_position = player_base.player_spawn.global_position
 	global_position.y += spawn_offset
@@ -43,4 +56,21 @@ func enter_house():
 	
 	
 func exit_house():
+	state_machine.change_state(moving_state)
+
+
+func crash(impact_force : Vector2):
+	state_machine.change_state(stunt_state)
+	not_flip = false
+	velocity = impact_force
+	look_at.look_at(global_position + impact_force)
+	lose_half_items()
+	
+	
+func lose_half_items():
+	pass
+
+
+func recover():
+	not_flip = true
 	state_machine.change_state(moving_state)

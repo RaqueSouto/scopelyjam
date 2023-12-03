@@ -5,8 +5,9 @@ var player_bases : Array
 
 var players : PlayersState 
 
-@onready var environment = %Environment
-@onready var level_bases = %LevelBases
+@onready var environment := %Environment
+@onready var level_bases := %LevelBases
+@onready var game_ui := %GameUI
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,5 +19,8 @@ func _ready():
 	for player in players.list:
 		player_bases[player.player_index].setup(environment, player)
 		
+	Audio.play_init_match()
 	await ScreenEffects.transtion_fade_out()
+	await game_ui.play_countdown()
+	
 	get_tree().paused = false

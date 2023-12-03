@@ -2,9 +2,6 @@ class_name StartingState extends State
 
 var player : Player
 
-@onready var look_at := %LookAt
-@onready var target := %Target
-
 var base_start_position : Vector2
 
 # Called when the node enters the scene tree for the first time.
@@ -18,8 +15,11 @@ func setup(in_base_start_position : Vector2):
 
 
 func state_enter():
+	player.animation.play("walk")
+	player.can_move = false
+	
 	var direction = (base_start_position - player.global_position).normalized()
-	look_at.look_at(look_at.global_position + direction)
+	player.look_at.look_at(player.look_at.global_position + direction)
 	player.velocity = direction * player.speed
 
 

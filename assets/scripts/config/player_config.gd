@@ -9,3 +9,8 @@ class_name PlayerConfig extends Node
 @export var base_angular_speed := 360
 @export var angular_speed_penalization := 20
 @export var angular_min_speed := 120
+
+@export_category("Impact")
+@export var impact_force := 500
+@export var impact_deceleration := 6
+@export var stunt_duration := 1

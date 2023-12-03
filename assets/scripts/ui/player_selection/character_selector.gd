@@ -170,6 +170,8 @@ func set_player_as_ready():
 
 func set_as_ready():
 	ready_label.visible = true
+	up_arrow.visible = false
+	down_arrow.visible = false
 
 
 func set_player_as_not_ready():
@@ -180,6 +182,8 @@ func set_player_as_not_ready():
 	
 func set_as_not_ready():
 	ready_label.visible = false
+	up_arrow.visible = true
+	down_arrow.visible = true
 	
 	
 func tween_control(control : Control):

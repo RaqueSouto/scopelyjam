@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://cwk572nh7d3wp"]
+[gd_scene load_steps=20 format=3 uid="uid://cwk572nh7d3wp"]
 
 [ext_resource type="Script" path="res://assets/scripts/player/player.gd" id="1_n8mnh"]
 [ext_resource type="Texture2D" uid="uid://sqdpw4qn1y8m" path="res://assets/sprites/characters/raque.png" id="2_08b8c"]
+[ext_resource type="Script" path="res://assets/scripts/player/player_renderer.gd" id="3_4hq14"]
 [ext_resource type="Texture2D" uid="uid://bf1lata5s2d6d" path="res://assets/sprites/arrow.png" id="3_cfgdn"]
 [ext_resource type="Script" path="res://assets/scripts/player/state_machine/state_machine.gd" id="4_csyv5"]
 [ext_resource type="Script" path="res://assets/scripts/player/state_machine/states/moving_state.gd" id="5_aa3ev"]
@@ -19,7 +20,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Renderer:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -37,7 +38,7 @@ step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Renderer:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -55,7 +56,7 @@ step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Renderer:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -71,7 +72,7 @@ length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Renderer:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -88,7 +89,7 @@ loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Renderer:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -106,7 +107,7 @@ step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Renderer:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -133,12 +134,13 @@ radius = 30.0
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_n8mnh")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Renderer" type="Sprite2D" parent="."]
 z_index = 100
 texture = ExtResource("2_08b8c")
 offset = Vector2(0, -170)
 hframes = 6
 vframes = 5
+script = ExtResource("3_4hq14")
 
 [node name="InteractorArea" type="Area2D" parent="."]
 
@@ -159,9 +161,11 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_cfgdn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_60jqf")
 }
+autoplay = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -30)
@@ -183,6 +187,8 @@ script = ExtResource("5_aa3ev")
 [node name="StuntState" type="Node" parent="StateMachine"]
 unique_name_in_owner = true
 script = ExtResource("7_dd1bj")
+
+[node name="StuntTimer" type="Timer" parent="StateMachine/StuntState"]
 
 [node name="ScoringState" type="Node" parent="StateMachine"]
 unique_name_in_owner = true

@@ -9,7 +9,7 @@ class Events:
 	const PLAYER_READY = "{5cde2717-7391-4901-a100-844208377102}"
 	const PLAYER_NOT_READY = "{9a6a719b-abc1-4304-bd03-71e9e87cc583}"
 	const OPEN_MATCH = "{ea63fc33-16b8-4e2d-a95b-b7719fee9750}"
-	const INIT_MATCH = "{0aed6e1e-461c-4731-b7f9-719ca10d3e33}"
+	const INIT_MATCH = "{0aed6e1e-461c-4731-b7f9-719ca10d3e33}" 
 	const START_MATCH = "{bae01454-5e9b-4952-836c-25401e83789c}"
 
 

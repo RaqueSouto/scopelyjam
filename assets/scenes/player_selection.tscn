@@ -10,11 +10,19 @@ script = ExtResource("1_g4nc4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Background" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.137255, 0.00784314, 0.2, 1)
+
 [node name="TitleLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 20.0
-offset_bottom = 89.0
+offset_top = 60.0
+offset_bottom = 129.0
 grow_horizontal = 2
 theme = ExtResource("2_djyf3")
 text = "SELECT PLAYER"
@@ -59,8 +67,8 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -120.0
-offset_bottom = -30.0
+offset_top = -140.0
+offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(0, 100)

@@ -8,6 +8,11 @@ func _ready():
 	player = owner
 
 
+func state_enter():
+	player.animation.play("walk")
+	player.can_move = true
+	
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func state_process(delta):
 	if player == null:
