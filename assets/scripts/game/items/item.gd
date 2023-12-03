@@ -71,7 +71,7 @@ func impact_and_unfollow():
 	
 	
 func destroy():
-	if item_parent is Item:
+	if item_parent != null and not item_parent.is_queued_for_deletion() and item_parent is Item:
 		item_parent.detach_child()
 	
 	player_owner = null
@@ -108,7 +108,8 @@ func change_owner(new_player_owner : Player, new_item_parent : Node2D):
 		
 	animation.play("walk")
 	
-	if item_parent is Item:
+	
+	if item_parent != null and not item_parent.is_queued_for_deletion() and item_parent is Item:
 		item_parent.detach_child()
 	
 	if player_owner != null:

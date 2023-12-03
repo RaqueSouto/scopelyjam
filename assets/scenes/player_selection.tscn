@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://igrrthfcyjvl"]
+[gd_scene load_steps=6 format=3 uid="uid://igrrthfcyjvl"]
 
 [ext_resource type="Script" path="res://assets/scripts/ui/player_selection/player_selection.gd" id="1_g4nc4"]
 [ext_resource type="Script" path="res://assets/scripts/ui/player_selection/character_selection.gd" id="2_7q8pf"]
+[ext_resource type="Texture2D" uid="uid://whmheiqeg4b6" path="res://assets/sprites/background/Scopely_Background.png" id="2_bd6px"]
 [ext_resource type="Theme" uid="uid://b3kf378b70aub" path="res://assets/style/millenial_go.tres" id="2_djyf3"]
 [ext_resource type="PackedScene" uid="uid://ckom1utsggt8k" path="res://assets/scenes/ui/player_selection/character_selector.tscn" id="3_q8gex"]
 
@@ -11,14 +12,19 @@ script = ExtResource("1_g4nc4")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Background" type="TextureRect" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
+modulate = Color(0.65098, 0.482353, 0.482353, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bd6px")
 
 [node name="TitleLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 60.0
-offset_bottom = 129.0
+offset_top = 100.0
+offset_bottom = 169.0
 grow_horizontal = 2
 theme = ExtResource("2_djyf3")
 text = "SELECT PLAYER"
@@ -63,8 +69,8 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -140.0
-offset_bottom = -50.0
+offset_top = -180.0
+offset_bottom = -90.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(0, 100)
