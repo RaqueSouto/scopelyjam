@@ -28,6 +28,8 @@ func _on_spawn_timer():
 func spawn_random_item():
 	if item_scenes.size() == 0:
 		return
+		
+	randomize()
 	var item_scene = item_scenes.pick_random()
 	var item = item_scene.instantiate()
 	environment.add_child(item)

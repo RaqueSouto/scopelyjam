@@ -92,3 +92,5 @@ libraries = {
 "": SubResource("AnimationLibrary_7vipu")
 }
 autoplay = "idle"
+
+[node name="TakeSfxEmitter" type="StudioEventEmitter2D" parent="."]

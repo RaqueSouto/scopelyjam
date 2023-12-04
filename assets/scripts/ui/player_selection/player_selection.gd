@@ -8,8 +8,8 @@ const GAME_PATH = "res://assets/scenes/game.tscn"
 var players : PlayersState
 var characters_repo : CharacterRepository
 var pendant_devices : Dictionary
+
 @onready var start_label = %StartLabel
-@onready var music = $Music
 @onready var title = $CanvasLayer/Title
 
 var is_title := true
@@ -17,10 +17,11 @@ var is_title := true
 func _ready():
 	ScreenEffects.transition_fade_out_immediately()
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	music.play()
 	
 	players = GameState.players
 	characters_repo = Config.character_repository
+	
+	add_device(-1) # Keyboard / SteamController
 	for device in Input.get_connected_joypads():
 		add_device(device)
 	
@@ -84,7 +85,7 @@ func _check_start():
 	if players.all_players_ready and players.list[0].device_input.is_action_just_pressed("ui_start"):
 		Audio.play_open_match()
 		get_tree().paused = true
-		music.stop()
+		Audio.stop_music()
 		await ScreenEffects.transtion_fade_in()
 		get_tree().change_scene_to_file(GAME_PATH)
 

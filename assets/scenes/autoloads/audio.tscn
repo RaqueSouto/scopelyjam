@@ -1,7 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqhaspu8yk6q5"]
+[gd_scene load_steps=5 format=3 uid="uid://dqhaspu8yk6q5"]
 
 [ext_resource type="Script" path="res://assets/scripts/autoloads/audio.gd" id="1_t2u72"]
+[ext_resource type="EventAsset" uid="uid://rxbu7u1acjrt" path="res://addons/FMOD/editor/resources/events/{c570944e-2b38-4174-a1d8-a7c5072050b8}.tres" id="2_ios8i"]
+[ext_resource type="EventAsset" uid="uid://dj0y8k1odfauw" path="res://addons/FMOD/editor/resources/events/{8b715cf3-6326-45bf-80fe-2ab8a3867646}.tres" id="3_ylmg1"]
+[ext_resource type="EventAsset" uid="uid://b7bflbkh45irx" path="res://addons/FMOD/editor/resources/events/{fddaa165-9c96-44f1-a8c9-3bca0486f6dd}.tres" id="4_01dxu"]
 
 [node name="Audio" type="Node"]
 process_mode = 3
 script = ExtResource("1_t2u72")
+
+[node name="TitleMusicEmitter" type="StudioEventEmitter2D" parent="."]
+event = ExtResource("2_ios8i")
+unique_name_in_owner = true
+
+[node name="GameMusicEmitter" type="StudioEventEmitter2D" parent="."]
+event = ExtResource("3_ylmg1")
+unique_name_in_owner = true
+
+[node name="EndMusicEmitter" type="StudioEventEmitter2D" parent="."]
+event = ExtResource("4_01dxu")
+unique_name_in_owner = true

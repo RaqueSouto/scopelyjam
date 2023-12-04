@@ -1,10 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwyhue54jf35g"]
+[gd_scene load_steps=6 format=3 uid="uid://dwyhue54jf35g"]
 
 [ext_resource type="PackedScene" uid="uid://bctm8qvn3nvsq" path="res://assets/scenes/items/base_item.tscn" id="1_l7ltf"]
+[ext_resource type="Shader" path="res://assets/shaders/outline.gdshader" id="2_0h6xv"]
 [ext_resource type="Texture2D" uid="uid://cr3hdlu32f6nk" path="res://assets/sprites/items/gameboy.png" id="2_02ym8"]
+[ext_resource type="EventAsset" uid="uid://cxbfix0ugpil0" path="res://addons/FMOD/editor/resources/events/{5cde2717-7391-4901-a100-844208377102}.tres" id="4_3cox2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_prtga"]
+resource_local_to_scene = true
+shader = ExtResource("2_0h6xv")
+shader_parameter/rainbow = false
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_scale = 16.0
+shader_parameter/frequency = 0.5
+shader_parameter/light_offset = 0.5
+shader_parameter/alpha = 1.0
 
 [node name="Gameboy" instance=ExtResource("1_l7ltf")]
 type = 2
 
 [node name="Renderer" parent="." index="0"]
+material = SubResource("ShaderMaterial_prtga")
 texture = ExtResource("2_02ym8")
+
+[node name="TakeSfxEmitter" parent="." index="3"]
+event = ExtResource("4_3cox2")

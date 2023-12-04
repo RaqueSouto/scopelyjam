@@ -1,11 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://mr28xjyvbcc"]
+[gd_scene load_steps=6 format=3 uid="uid://mr28xjyvbcc"]
 
 [ext_resource type="PackedScene" uid="uid://bctm8qvn3nvsq" path="res://assets/scenes/items/base_item.tscn" id="1_2yp7f"]
+[ext_resource type="Shader" path="res://assets/shaders/outline.gdshader" id="2_5xj6w"]
 [ext_resource type="Texture2D" uid="uid://c43kb8mfs6oqg" path="res://assets/sprites/items/vhs.png" id="2_v5j51"]
+[ext_resource type="EventAsset" uid="uid://tulyw5pvwk88" path="res://addons/FMOD/editor/resources/events/{ea63fc33-16b8-4e2d-a95b-b7719fee9750}.tres" id="4_dee2w"]
 
-[node name="BaseItem" instance=ExtResource("1_2yp7f")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iqnwe"]
+resource_local_to_scene = true
+shader = ExtResource("2_5xj6w")
+shader_parameter/rainbow = false
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_scale = 16.0
+shader_parameter/frequency = 0.5
+shader_parameter/light_offset = 0.5
+shader_parameter/alpha = 1.0
+
+[node name="VHS" instance=ExtResource("1_2yp7f")]
 type = 4
 
 [node name="Renderer" parent="." index="0"]
+material = SubResource("ShaderMaterial_iqnwe")
 texture = ExtResource("2_v5j51")
 offset = Vector2(0, -60)
+
+[node name="TakeSfxEmitter" parent="." index="3"]
+event = ExtResource("4_dee2w")

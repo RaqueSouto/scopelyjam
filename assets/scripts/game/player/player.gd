@@ -39,6 +39,10 @@ var score := 0
 @onready var scoring_state = %ScoringState
 @onready var end_game_state = %EndGameState
 
+@onready var angry_sfx_emitter = %AngrySfxEmitter
+@onready var crash_sfx_emitter = %CrashSfxEmitter
+@onready var score_sfx_emitter = %ScoreSfxEmitter
+
 
 func _ready():
 	config = Config.match.player
@@ -77,8 +81,10 @@ func exit_house():
 
 
 func crash(impact_force : Vector2):
-	if not can_take_items:
+	if not can_crash:
 		return
+		
+	crash_sfx_emitter.play()
 		
 	state_machine.change_state(stunt_state)
 	not_flip = false
@@ -98,6 +104,7 @@ func lose_half_items():
 	
 	update_speed()
 	
+
 
 func add_items(item : Item):
 	if not can_take_items:
@@ -122,6 +129,7 @@ func add_items(item : Item):
 
 
 func remove_item(item):
+	angry_sfx_emitter.play()
 	tail.erase(item)
 	
 
@@ -153,6 +161,7 @@ func add_score():
 		score += score_added
 	
 		if score > 0:
+			score_sfx_emitter.play()
 			scored.emit(score_added)
 
 	update_speed()

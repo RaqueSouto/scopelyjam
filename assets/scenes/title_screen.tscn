@@ -1,16 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcyxtw2m8lkdf"]
+[gd_scene load_steps=5 format=3 uid="uid://bcyxtw2m8lkdf"]
 
 [ext_resource type="Script" path="res://assets/scenes/ui/title_screen.gd" id="1_frnn8"]
 [ext_resource type="Texture2D" uid="uid://f6h8k351punv" path="res://assets/sprites/ui/Scopely_SplashArt.png" id="2_psv4h"]
 [ext_resource type="Theme" uid="uid://b3kf378b70aub" path="res://assets/style/millenial_go.tres" id="3_7al6c"]
 [ext_resource type="Texture2D" uid="uid://cc628t6g8x1ot" path="res://assets/sprites/ui/Scopely_SplashArt_Title.png" id="4_mkcfi"]
-
-[sub_resource type="EventAsset" id="EventAsset_qcm73"]
-min_distance = 1.0
-max_distance = 20.0
-path = "event:/Music/Character_selection"
-guid = "{c570944e-2b38-4174-a1d8-a7c5072050b8}"
-name = "Character_selection"
 
 [node name="TitleScreen" type="Node"]
 script = ExtResource("1_frnn8")
@@ -47,6 +40,3 @@ text = "[center]Press any key to GO![/center]"
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("4_mkcfi")
-
-[node name="Music" type="StudioEventEmitter2D" parent="CanvasLayer"]
-event = SubResource("EventAsset_qcm73")

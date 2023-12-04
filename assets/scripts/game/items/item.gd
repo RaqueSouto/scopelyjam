@@ -31,6 +31,7 @@ var far_offset_squared : float
 
 @onready var animation = $AnimationPlayer
 @onready var renderer = $Renderer
+@onready var take_sfx_emitter = $TakeSfxEmitter
 
 
 func _ready():
@@ -107,7 +108,7 @@ func change_owner(new_player_owner : Player, new_item_parent : Node2D):
 		return
 		
 	animation.play("walk")
-	
+	take_sfx_emitter.play()
 	
 	if item_parent != null and not item_parent.is_queued_for_deletion() and item_parent is Item:
 		item_parent.detach_child()

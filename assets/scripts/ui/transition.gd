@@ -1,7 +1,7 @@
 class_name Transition extends ColorRect
 
-func _ready():
-	material.set_shader_parameter("screen_size", get_window().size)
+#func _ready():
+#	material.set_shader_parameter("screen_size", get_window().size)
 
 
 func fade_in():

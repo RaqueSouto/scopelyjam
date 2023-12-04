@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvjlpmx5mxmba"]
+[gd_scene load_steps=9 format=3 uid="uid://bvjlpmx5mxmba"]
 
 [ext_resource type="Script" path="res://assets/scripts/game/game.gd" id="1_qm8kl"]
 [ext_resource type="PackedScene" uid="uid://briojhyaesuc0" path="res://assets/scenes/level/level.tscn" id="3_54xch"]
@@ -8,13 +8,6 @@
 [ext_resource type="FontFile" uid="uid://d0wdrl6eo28bi" path="res://assets/fonts/BADABB__.TTF" id="6_11ea6"]
 [ext_resource type="Script" path="res://assets/scripts/ui/game/player_score_ui.gd" id="6_qupih"]
 [ext_resource type="PackedScene" uid="uid://dhrnd83k14vrw" path="res://assets/scenes/level/enviroment/house.tscn" id="7_1kioi"]
-
-[sub_resource type="EventAsset" id="EventAsset_wi4cs"]
-min_distance = 1.0
-max_distance = 20.0
-path = "event:/Music/Game_song"
-guid = "{8b715cf3-6326-45bf-80fe-2ab8a3867646}"
-name = "Game_song"
 
 [node name="Game" type="Node"]
 script = ExtResource("1_qm8kl")
@@ -230,9 +223,5 @@ autostart = true
 
 [node name="EndGameTimer" type="Timer" parent="."]
 unique_name_in_owner = true
-
-[node name="Music" type="StudioEventEmitter2D" parent="."]
-event = SubResource("EventAsset_wi4cs")
-visible = false
 
 [editable path="Environment/Level"]

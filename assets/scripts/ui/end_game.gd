@@ -38,7 +38,7 @@ func _ready():
 			
 		
 	get_tree().paused = false
-	music.play()
+	Audio.play_end_music()
 	await ScreenEffects.transtion_fade_out()
 	await get_tree().create_timer(2).timeout
 	
@@ -50,5 +50,5 @@ func _process(delta):
 	if can_exit and players_state.list[0].device_input.is_action_just_pressed("ui_start"):
 		get_tree().paused = true
 		await ScreenEffects.transtion_fade_in()
-		music.stop()
+		Audio.stop_music()
 		get_tree().change_scene_to_file(TITLE)
