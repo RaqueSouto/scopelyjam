@@ -1,8 +1,11 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b3kf378b70aub"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://b3kf378b70aub"]
+
+[ext_resource type="FontFile" uid="uid://c3vehw0icedpo" path="res://assets/fonts/comic-sans-ms/COMIC.TTF" id="1_pbbvx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3itas"]
 
 [resource]
+default_font = ExtResource("1_pbbvx")
 Label/font_sizes/font_size = 50
 RichTextLabel/font_sizes/normal_font_size = 50
 RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_3itas")

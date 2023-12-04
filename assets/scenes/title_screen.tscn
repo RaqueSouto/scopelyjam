@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcyxtw2m8lkdf"]
+
+[ext_resource type="Script" path="res://assets/scenes/ui/title_screen.gd" id="1_frnn8"]
+[ext_resource type="Texture2D" uid="uid://f6h8k351punv" path="res://assets/sprites/ui/Scopely_SplashArt.png" id="2_psv4h"]
+[ext_resource type="Theme" uid="uid://b3kf378b70aub" path="res://assets/style/millenial_go.tres" id="3_7al6c"]
+[ext_resource type="Texture2D" uid="uid://cc628t6g8x1ot" path="res://assets/sprites/ui/Scopely_SplashArt_Title.png" id="4_mkcfi"]
+
+[sub_resource type="EventAsset" id="EventAsset_qcm73"]
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Music/Character_selection"
+guid = "{c570944e-2b38-4174-a1d8-a7c5072050b8}"
+name = "Character_selection"
+
+[node name="TitleScreen" type="Node"]
+script = ExtResource("1_frnn8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_psv4h")
+
+[node name="StartLabel" type="RichTextLabel" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -120.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(0, 100)
+theme = ExtResource("3_7al6c")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 16
+bbcode_enabled = true
+text = "[center]Press any key to GO![/center]"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_mkcfi")
+
+[node name="Music" type="StudioEventEmitter2D" parent="CanvasLayer"]
+event = SubResource("EventAsset_qcm73")

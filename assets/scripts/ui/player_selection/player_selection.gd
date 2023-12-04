@@ -10,10 +10,13 @@ var characters_repo : CharacterRepository
 var pendant_devices : Dictionary
 @onready var start_label = %StartLabel
 @onready var music = $Music
+@onready var title = $CanvasLayer/Title
+
+var is_title := true
 
 func _ready():
 	ScreenEffects.transition_fade_out_immediately()
-	
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	music.play()
 	
 	players = GameState.players

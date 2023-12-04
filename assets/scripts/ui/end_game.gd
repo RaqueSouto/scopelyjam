@@ -9,8 +9,7 @@ var characters_repo : CharacterRepository
 @onready var back_menu_label = %BackMenuLabel
 @onready var music = $Music
 
-
-const TITLE = "res://assets/scenes/player_selection.tscn"
+const TITLE = "res://assets/scenes/title_screen.tscn"
 
 var can_exit = false
 
