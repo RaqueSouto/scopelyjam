@@ -17,21 +17,20 @@ size = Vector2(1320, 46)
 size = Vector2(1320, 46)
 
 [node name="Level" type="StaticBody2D"]
+y_sort_enabled = true
+position = Vector2(0, 3)
 
 [node name="Background" type="Sprite2D" parent="."]
-y_sort_enabled = true
-position = Vector2(0, -540)
-scale = Vector2(1.00156, 0.999075)
+z_index = -4096
 texture = ExtResource("1_c0sfs")
-offset = Vector2(0, 540)
 
 [node name="GateDown" type="Sprite2D" parent="."]
-y_sort_enabled = true
+position = Vector2(0, -540)
 texture = ExtResource("5_v80hi")
+offset = Vector2(0, 540)
 
 [node name="bench" parent="." instance=ExtResource("1_uqnht")]
 position = Vector2(203, -265)
-scale = Vector2(1.00156, 0.999075)
 
 [node name="Lamppost" parent="." instance=ExtResource("2_3sluq")]
 scale = Vector2(1.00156, 0.999075)

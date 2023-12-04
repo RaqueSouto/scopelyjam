@@ -16,11 +16,20 @@ func setup(in_base_start_position : Vector2):
 
 func state_enter():
 	player.animation.play("walk")
+	player.can_feel = true
 	player.can_move = false
 	player.can_take_items = false
 	player.can_crash = false
 	player.can_score = false
-	
+
+	set_move()
+
+
+func state_process(delta):
+	set_move()
+
+
+func set_move():
 	var direction = (base_start_position - player.global_position).normalized()
 	player.look_at.look_at(player.look_at.global_position + direction)
 	player.velocity = direction * player.current_speed

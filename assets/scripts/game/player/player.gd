@@ -15,11 +15,12 @@ var config : PlayerConfig
 var settings : PlayerSettings
 
 var not_flip := true
+
+var can_feel := false
 var can_score := false
 var can_take_items := false
 var can_crash := false
-var can_move = false:
-	
+var can_move := false:
 	set(value):
 		can_move = value
 		target.modulate = Color.WHITE if can_move else Color(Color.GRAY, 0.5)
@@ -42,7 +43,7 @@ var score := 0
 @onready var angry_sfx_emitter = %AngrySfxEmitter
 @onready var crash_sfx_emitter = %CrashSfxEmitter
 @onready var score_sfx_emitter = %ScoreSfxEmitter
-
+@onready var emotion_timer = $EmotionTimer
 
 func _ready():
 	config = Config.match.player
@@ -129,9 +130,20 @@ func add_items(item : Item):
 
 
 func remove_item(item):
-	angry_sfx_emitter.play()
 	tail.erase(item)
+	if not can_feel:
+		return
+	angry_sfx_emitter.play()
+	play_feeling("angry")
+
 	
+func play_feeling(emotion : String):
+	animation.play(emotion)
+	emotion_timer.start()
+	await emotion_timer.timeout
+	if can_feel:
+		animation.play("walk")
+
 
 func update_speed():
 	current_speed = max(config.min_speed, config.base_speed - config.speed_penalization * tail.size())

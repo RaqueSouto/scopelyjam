@@ -1,0 +1,128 @@
+[gd_scene load_steps=6 format=3 uid="uid://bu66462vl0y7b"]
+
+[ext_resource type="Script" path="res://assets/scripts/ui/game/game_ui.gd" id="1_tflld"]
+[ext_resource type="Theme" uid="uid://b3kf378b70aub" path="res://assets/style/millenial_go.tres" id="2_4gbtp"]
+[ext_resource type="Texture2D" uid="uid://c58s7bqic4l6t" path="res://assets/sprites/ui/Scopely_Interface_Timer.png" id="2_f4cry"]
+[ext_resource type="FontFile" uid="uid://d0wdrl6eo28bi" path="res://assets/fonts/BADABB__.TTF" id="3_shmfh"]
+[ext_resource type="PackedScene" uid="uid://bpxyv38mwjr3m" path="res://assets/scenes/ui/score_panel.tscn" id="5_8viks"]
+
+[node name="GameUI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_tflld")
+
+[node name="EndGamePanel" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -328.0
+offset_right = 328.0
+offset_bottom = 112.0
+grow_horizontal = 2
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(328, 0)
+size_flags_horizontal = 4
+texture = ExtResource("2_f4cry")
+
+[node name="EndGameLabel" type="Label" parent="EndGamePanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_right = 200.0
+offset_bottom = 85.0
+grow_horizontal = 2
+theme = ExtResource("2_4gbtp")
+theme_override_colors/font_color = Color(0.898039, 0.254902, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 12
+theme_override_font_sizes/font_size = 60
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CountdownLabel" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -164.0
+offset_right = 150.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(150, 164)
+size_flags_horizontal = 4
+theme = ExtResource("2_4gbtp")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 30
+theme_override_constants/shadow_outline_size = 40
+theme_override_fonts/font = ExtResource("3_shmfh")
+theme_override_font_sizes/font_size = 240
+text = "3
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScoreLabel_P1" parent="Score" instance=ExtResource("5_8viks")]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 575.0
+offset_right = 158.0
+offset_bottom = 891.0
+flip_h = true
+flip_v = true
+
+[node name="ScoreLabel" parent="Score/ScoreLabel_P1" index="0"]
+offset_top = 0.0
+offset_bottom = -61.0
+
+[node name="ScoreLabel_P2" parent="Score" instance=ExtResource("5_8viks")]
+layout_mode = 0
+offset_left = 1762.0
+offset_top = 190.0
+offset_right = 1914.0
+offset_bottom = 506.0
+
+[node name="ScoreLabel_P3" parent="Score" instance=ExtResource("5_8viks")]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 190.0
+offset_right = 158.0
+offset_bottom = 506.0
+flip_h = true
+
+[node name="ScoreLabel_P4" parent="Score" instance=ExtResource("5_8viks")]
+layout_mode = 0
+offset_left = 1762.0
+offset_top = 575.0
+offset_right = 1914.0
+offset_bottom = 891.0
+flip_v = true
+
+[node name="ScoreLabel" parent="Score/ScoreLabel_P4" index="0"]
+offset_top = 0.0
+offset_bottom = -61.0
+
+[editable path="Score/ScoreLabel_P1"]
+[editable path="Score/ScoreLabel_P4"]

@@ -10,6 +10,7 @@ func _ready():
 
 func state_enter():
 	player.animation.play("walk")
+	player.can_feel = true
 	player.can_move = true
 	player.can_take_items = true
 	player.can_crash = true

@@ -1,16 +1,22 @@
 class_name GameUI extends CanvasLayer
 
+var end_game_timer
+
 @onready var countdown_label = %CountdownLabel
 @onready var end_game_label = %EndGameLabel
-@onready var end_game_timer = %EndGameTimer
 @onready var score = $Score
-
-
 
 func _ready():
 	countdown_label.visible = false
+
 	
+func setup(in_end_game_timer : Timer):
+	end_game_timer = in_end_game_timer
 	set_timer()
+
+
+func get_score_label(player_index : int) -> PlayerScoreUI:
+	return score.get_child(player_index)
 	
 
 func set_timer():

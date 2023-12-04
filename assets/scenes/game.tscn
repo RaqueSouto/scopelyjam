@@ -1,13 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvjlpmx5mxmba"]
+[gd_scene load_steps=7 format=3 uid="uid://bvjlpmx5mxmba"]
 
 [ext_resource type="Script" path="res://assets/scripts/game/game.gd" id="1_qm8kl"]
 [ext_resource type="PackedScene" uid="uid://briojhyaesuc0" path="res://assets/scenes/level/level.tscn" id="3_54xch"]
-[ext_resource type="Script" path="res://assets/scripts/ui/game/game_ui.gd" id="4_dfltd"]
-[ext_resource type="Theme" uid="uid://b3kf378b70aub" path="res://assets/style/millenial_go.tres" id="4_u5p2u"]
+[ext_resource type="PackedScene" uid="uid://bu66462vl0y7b" path="res://assets/scenes/ui/game_ui.tscn" id="4_jirg3"]
 [ext_resource type="Script" path="res://assets/scripts/game/items/item_spawner.gd" id="6_7jwdh"]
-[ext_resource type="FontFile" uid="uid://d0wdrl6eo28bi" path="res://assets/fonts/BADABB__.TTF" id="6_11ea6"]
-[ext_resource type="Script" path="res://assets/scripts/ui/game/player_score_ui.gd" id="6_qupih"]
 [ext_resource type="PackedScene" uid="uid://dhrnd83k14vrw" path="res://assets/scenes/level/enviroment/house.tscn" id="7_1kioi"]
+[ext_resource type="Script" path="res://addons/shaker/shaker.gd" id="9_cf1a7"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_qm8kl")
@@ -18,17 +16,11 @@ y_sort_enabled = true
 
 [node name="Level" parent="Environment" instance=ExtResource("3_54xch")]
 unique_name_in_owner = true
-z_index = -100
-y_sort_enabled = true
-position = Vector2(960.5, 541.5)
 scale = Vector2(0.998437, 1.00093)
-
-[node name="CollisionUp" parent="Environment/Level" index="6"]
-position = Vector2(0, -470)
 
 [node name="LevelBases" type="Sprite2D" parent="Environment"]
 unique_name_in_owner = true
-position = Vector2(960.5, 541.5)
+y_sort_enabled = true
 scale = Vector2(0.998437, 1.00093)
 
 [node name="House1" parent="Environment/LevelBases" instance=ExtResource("7_1kioi")]
@@ -46,182 +38,22 @@ scale = Vector2(1, -1)
 position = Vector2(810, 540)
 scale = Vector2(-1, 1)
 
-[node name="GameUI" type="CanvasLayer" parent="."]
+[node name="GameUI" parent="." instance=ExtResource("4_jirg3")]
 unique_name_in_owner = true
-process_mode = 3
-script = ExtResource("4_dfltd")
-
-[node name="CountdownLabel" type="Label" parent="GameUI"]
-unique_name_in_owner = true
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -164.0
-offset_right = 150.0
-offset_bottom = 164.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(150, 164)
-size_flags_horizontal = 4
-theme = ExtResource("4_u5p2u")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 0
-theme_override_constants/shadow_offset_y = 6
-theme_override_constants/outline_size = 30
-theme_override_constants/shadow_outline_size = 40
-theme_override_fonts/font = ExtResource("6_11ea6")
-theme_override_font_sizes/font_size = 240
-text = "3
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="EndGameLabel" type="Label" parent="GameUI"]
-unique_name_in_owner = true
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -200.0
-offset_right = 200.0
-offset_bottom = 110.0
-grow_horizontal = 2
-theme = ExtResource("4_u5p2u")
-theme_override_colors/font_color = Color(1, 0.258824, 0.662745, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.501961)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/shadow_offset_x = 0
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 6
-theme_override_constants/shadow_outline_size = 10
-theme_override_font_sizes/font_size = 80
-text = "00:00"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Score" type="Control" parent="GameUI"]
-unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ScoreLabel_P1" type="Label" parent="GameUI/Score"]
-visible = false
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -952.0
-offset_top = 692.0
-offset_right = -752.0
-offset_bottom = 857.0
-grow_horizontal = 2
-theme = ExtResource("4_u5p2u")
-theme_override_colors/font_color = Color(1, 0.258824, 0.662745, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.501961)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/shadow_offset_x = 0
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 6
-theme_override_constants/shadow_outline_size = 10
-theme_override_font_sizes/font_size = 120
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("6_qupih")
-
-[node name="ScoreLabel_P2" type="Label" parent="GameUI/Score"]
-visible = false
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 754.0
-offset_top = 224.0
-offset_right = 954.0
-offset_bottom = 389.0
-grow_horizontal = 2
-theme = ExtResource("4_u5p2u")
-theme_override_colors/font_color = Color(1, 0.258824, 0.662745, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.501961)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/shadow_offset_x = 0
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 6
-theme_override_constants/shadow_outline_size = 10
-theme_override_font_sizes/font_size = 120
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("6_qupih")
-
-[node name="ScoreLabel_P3" type="Label" parent="GameUI/Score"]
-visible = false
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -947.0
-offset_top = 224.0
-offset_right = -747.0
-offset_bottom = 389.0
-grow_horizontal = 2
-theme = ExtResource("4_u5p2u")
-theme_override_colors/font_color = Color(1, 0.258824, 0.662745, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.501961)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/shadow_offset_x = 0
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 6
-theme_override_constants/shadow_outline_size = 10
-theme_override_font_sizes/font_size = 120
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("6_qupih")
-
-[node name="ScoreLabel_P4" type="Label" parent="GameUI/Score"]
-visible = false
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 748.0
-offset_top = 690.0
-offset_right = 948.0
-offset_bottom = 855.0
-grow_horizontal = 2
-theme = ExtResource("4_u5p2u")
-theme_override_colors/font_color = Color(1, 0.258824, 0.662745, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.501961)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/shadow_offset_x = 0
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 6
-theme_override_constants/shadow_outline_size = 10
-theme_override_font_sizes/font_size = 120
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("6_qupih")
 
 [node name="ItemSpawner" type="Node2D" parent="."]
-position = Vector2(960, 540)
 script = ExtResource("6_7jwdh")
 item_paths = Array[String](["res://assets/scenes/items/gameboy.tscn", "res://assets/scenes/items/msn.tscn", "res://assets/scenes/items/tamagochi.tscn", "res://assets/scenes/items/vhs.tscn"])
 spawn_offset = Vector2(500, 400)
 
 [node name="SpawnTimer" type="Timer" parent="ItemSpawner"]
-wait_time = 5.0
+wait_time = 3.0
 autostart = true
 
 [node name="EndGameTimer" type="Timer" parent="."]
 unique_name_in_owner = true
 
-[editable path="Environment/Level"]
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target_node")]
+script = ExtResource("9_cf1a7")
+target_node = NodePath(".")
+target_property = &"position"

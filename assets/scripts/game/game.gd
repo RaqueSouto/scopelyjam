@@ -13,7 +13,6 @@ var players : PlayersState
 @onready var game_ui := %GameUI
 @onready var end_game_timer = %EndGameTimer
 @onready var item_spawner = $ItemSpawner
-@onready var score = %Score
 
 const END_GAME = "res://assets/scenes/end_game.tscn"
 
@@ -23,10 +22,11 @@ func _ready():
 	players = GameState.players
 	
 	player_bases = level_bases.get_children()
-	score_labels = score.get_children()
+	
+	game_ui.setup(end_game_timer)
 	
 	for player in players.list:
-		player_bases[player.player_index].setup(environment, player, score_labels[player.player_index], self)
+		player_bases[player.player_index].setup(environment, player, game_ui.get_score_label(player.player_index), self)
 		
 	Audio.play_init_match()
 	await ScreenEffects.transtion_fade_out()

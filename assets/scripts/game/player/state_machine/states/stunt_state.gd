@@ -13,9 +13,11 @@ func _ready():
 
 func state_enter():
 	player.animation.play("stun")
+	player.can_feel = false
 	player.can_move = false
 	player.can_take_items = false
 	player.can_crash = false
+	player.can_score = false
 	
 	stunt_timer.start(player.config.stunt_duration)
 	#TODO: play particles

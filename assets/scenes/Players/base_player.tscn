@@ -149,7 +149,6 @@ scale = Vector2(0.4, 0.4)
 script = ExtResource("1_xw7wa")
 
 [node name="Renderer" type="Sprite2D" parent="."]
-z_index = 100
 material = SubResource("ShaderMaterial_fiy1p")
 texture = ExtResource("2_08b8c")
 offset = Vector2(0, -170)
@@ -181,7 +180,6 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_60jqf")
 }
-autoplay = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -30)
@@ -225,3 +223,7 @@ unique_name_in_owner = true
 [node name="ScoreSfxEmitter" type="StudioEventEmitter2D" parent="."]
 event = ExtResource("15_gh83e")
 unique_name_in_owner = true
+
+[node name="EmotionTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true

@@ -11,11 +11,12 @@ radius = 130.0
 script = ExtResource("1_vb2mn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(11, -92)
+position = Vector2(22, -97)
 shape = SubResource("CircleShape2D_3bbbt")
 
 [node name="BackgroundSprite" type="Sprite2D" parent="."]
 modulate = Color(0.5, 0.5, 0.5, 1)
+z_index = -2048
 position = Vector2(0, -228)
 texture = ExtResource("1_wn1wo")
 offset = Vector2(0, 114)

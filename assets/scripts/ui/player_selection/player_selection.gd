@@ -10,7 +10,6 @@ var characters_repo : CharacterRepository
 var pendant_devices : Dictionary
 
 @onready var start_label = %StartLabel
-@onready var title = $CanvasLayer/Title
 
 var is_title := true
 
