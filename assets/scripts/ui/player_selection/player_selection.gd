@@ -20,6 +20,8 @@ func _ready():
 	players = GameState.players
 	characters_repo = Config.character_repository
 	
+	character_selection.setup(self)
+	
 	add_device(-1) # Keyboard / SteamController
 	for device in Input.get_connected_joypads():
 		add_device(device)
@@ -49,13 +51,23 @@ func add_device(device : int):
 			
 	var device_input = DeviceInput.new(device)
 	pendant_devices[device] = device_input
+	character_selection.update_player_list()
 
 
 func remove_device(device : int):
 	if pendant_devices.has(device):
 		pendant_devices.erase(device)
+		character_selection.update_player_list()
 	else:
 		players.remove_player_by_device(device)
+	
+	
+func disconnect_player(player : PlayerSettings):
+	if pendant_devices.has(player.device):
+		return
+			
+	pendant_devices[player.device] = player.device_input
+	players.remove_player(player.player_index)
 	
 	
 func _process(_delta):

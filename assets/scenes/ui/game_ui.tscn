@@ -85,6 +85,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ScoreLabel_P1" parent="Score" instance=ExtResource("5_8viks")]
+visible = false
 layout_mode = 0
 offset_left = 6.0
 offset_top = 575.0
@@ -98,6 +99,7 @@ offset_top = 0.0
 offset_bottom = -61.0
 
 [node name="ScoreLabel_P2" parent="Score" instance=ExtResource("5_8viks")]
+visible = false
 layout_mode = 0
 offset_left = 1762.0
 offset_top = 190.0
@@ -105,6 +107,7 @@ offset_right = 1914.0
 offset_bottom = 506.0
 
 [node name="ScoreLabel_P3" parent="Score" instance=ExtResource("5_8viks")]
+visible = false
 layout_mode = 0
 offset_left = 6.0
 offset_top = 190.0
@@ -113,6 +116,7 @@ offset_bottom = 506.0
 flip_h = true
 
 [node name="ScoreLabel_P4" parent="Score" instance=ExtResource("5_8viks")]
+visible = false
 layout_mode = 0
 offset_left = 1762.0
 offset_top = 575.0

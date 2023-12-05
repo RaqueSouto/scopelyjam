@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dk01d60anhl06"]
+[gd_scene load_steps=5 format=3 uid="uid://dk01d60anhl06"]
 
 [ext_resource type="Script" path="res://assets/scripts/ui/end_game.gd" id="1_0ay04"]
 [ext_resource type="Texture2D" uid="uid://whmheiqeg4b6" path="res://assets/sprites/background/Scopely_Background.png" id="2_gpl1g"]
 [ext_resource type="Theme" uid="uid://b3kf378b70aub" path="res://assets/style/millenial_go.tres" id="3_ynnp4"]
+[ext_resource type="Script" path="res://assets/scripts/ui/fade_effect.gd" id="4_ru073"]
 
 [node name="EndGame" type="Node"]
 script = ExtResource("1_0ay04")
@@ -41,3 +42,4 @@ pivot_offset = Vector2(0, 100)
 theme = ExtResource("3_ynnp4")
 bbcode_enabled = true
 text = "[center]Player 1: Press [img]res://addons/controller_icons/assets/ps5/options_alt.png[/img] / [img]res://addons/controller_icons/assets/xbox360/start_alt.png[/img] to back menu[/center]"
+script = ExtResource("4_ru073")

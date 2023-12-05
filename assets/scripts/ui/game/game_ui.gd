@@ -6,12 +6,15 @@ var end_game_timer
 @onready var end_game_label = %EndGameLabel
 @onready var score = $Score
 
+var game : Game
+
 func _ready():
 	countdown_label.visible = false
 
 	
-func setup(in_end_game_timer : Timer):
-	end_game_timer = in_end_game_timer
+func setup(in_game : Game):
+	game = in_game
+	end_game_timer = game.end_game_timer
 	set_timer()
 
 
@@ -28,20 +31,30 @@ func play_countdown():
 	
 	set_countdown_number("3")
 	countdown_label.visible = true
+	game.vibrate(0.2, 0, 0.2)
+	game.countdown()
 
 	var tween = create_tween()
 	tween.tween_property(countdown_label, "scale", Vector2.ONE, 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
 	tween.tween_interval(0.5)
 	
 	tween.tween_callback(func(): set_countdown_number("2"))
+	tween.tween_callback(func(): 
+			game.vibrate(0.4, 0.25, 0.2)
+			game.countdown())
 	tween.tween_property(countdown_label, "scale", Vector2.ONE, 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
 	tween.tween_interval(0.5)
 	
 	tween.tween_callback(func(): set_countdown_number("1"))
+	tween.tween_callback(func(): 
+			game.vibrate(0.6, 0.5, 0.2)
+			game.countdown())
 	tween.tween_property(countdown_label, "scale", Vector2.ONE, 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
 	tween.tween_interval(0.5)
 	tween.tween_callback(func(): set_countdown_number("GO!"))
-	tween.tween_callback(Audio.play_start_match)
+	tween.tween_callback(func(): 
+			game.vibrate(1, 1, 0.4)
+			game.go())
 	tween.tween_property(countdown_label, "scale", Vector2.ONE, 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
 	tween.tween_interval(0.5)
 	tween.tween_property(countdown_label, "modulate", Color(Color.WHITE, 0), 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)

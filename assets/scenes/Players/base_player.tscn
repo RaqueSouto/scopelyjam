@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cwk572nh7d3wp"]
+[gd_scene load_steps=30 format=3 uid="uid://cwk572nh7d3wp"]
 
 [ext_resource type="Script" path="res://assets/scripts/game/player/player.gd" id="1_xw7wa"]
 [ext_resource type="Shader" path="res://assets/shaders/outline.gdshader" id="2_3clm5"]
@@ -15,6 +15,7 @@
 [ext_resource type="EventAsset" uid="uid://dnxjh6hc1j6ar" path="res://addons/FMOD/editor/resources/events/{c6c0728c-b150-4e83-8aa6-b7414491544f}.tres" id="13_8ut53"]
 [ext_resource type="EventAsset" uid="uid://c2g6u0cw2gfs1" path="res://addons/FMOD/editor/resources/events/{e545456c-ce0d-42c9-b2b9-689a1e315623}.tres" id="14_hmp2u"]
 [ext_resource type="EventAsset" uid="uid://bbw7t73lqjx2c" path="res://addons/FMOD/editor/resources/events/{a0345161-9fd0-4385-a240-8f79d2b08b15}.tres" id="15_gh83e"]
+[ext_resource type="Texture2D" uid="uid://dpr7qga0il5to" path="res://assets/sprites/effects/star.png" id="16_fash7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fiy1p"]
 shader = ExtResource("2_3clm5")
@@ -144,6 +145,33 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_1irbj"]
 radius = 30.0
 
+[sub_resource type="Curve" id="Curve_sg0kn"]
+_data = [Vector2(0, 0.896708), 0.0, 0.828736, 0, 0, Vector2(1, 0.181044), -2.35686, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_dlven"]
+curve = SubResource("Curve_sg0kn")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7jq7l"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -250, 0)
+emission_shape_scale = Vector3(1.5, 1, 1)
+emission_shape = 1
+emission_sphere_radius = 180.0
+angle_min = -90.0
+angle_max = 90.0
+direction = Vector3(0, -1, 0)
+spread = 20.0
+flatness = 0.2
+initial_velocity_min = 450.0
+initial_velocity_max = 550.0
+angular_velocity_min = -360.0
+angular_velocity_max = 360.0
+gravity = Vector3(0, 800, 0)
+attractor_interaction_enabled = false
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_dlven")
+
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_xw7wa")
@@ -227,3 +255,12 @@ unique_name_in_owner = true
 [node name="EmotionTimer" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
+
+[node name="CrashParticles" type="GPUParticles2D" parent="."]
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_7jq7l")
+texture = ExtResource("16_fash7")
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+randomness = 0.5

@@ -1,9 +1,9 @@
 class_name Item extends Area2D
 
-const speed := 800
+const speed := 300
 const angular_speed := 10
 const follow_offset := 75
-const far_offset := 240
+const far_offset := 200
 const impact_force := 800
 const deceleration := 6
 
@@ -45,6 +45,7 @@ func follow(delta : float):
 	var distance_squared = global_position.distance_squared_to(item_parent.global_position)
 	
 	if distance_squared < follow_offset_squared:
+		current_speed = 0
 		return
 	
 	if distance_squared < far_offset_squared:
@@ -107,24 +108,38 @@ func change_owner(new_player_owner : Player, new_item_parent : Node2D):
 	if player_owner == new_player_owner:
 		return
 		
+	if player_owner != null:
+		player_owner.remove_item(self, item_parent == new_item_parent)
+		
+	player_owner = new_player_owner
+	player_owner.attach_child(self)
+	
+	renderer.material.set("shader_parameter/line_color", player_owner.color)
+		
 	animation.play("walk")
 	take_sfx_emitter.play()
 	
+	if item_parent == new_item_parent:
+		direction = (item_parent.global_position - global_position).normalized()
+		propagate_change_owner(player_owner)
+		return
+		
 	if item_parent != null and not item_parent.is_queued_for_deletion() and item_parent is Item:
 		item_parent.detach_child()
 	
-	if player_owner != null:
-		player_owner.remove_item(self)
-	
 	item_parent = new_item_parent
-	player_owner = new_player_owner
-	renderer.material.set("shader_parameter/line_color", player_owner.color)
 	
 	if item_parent is Item:
 		item_parent.attach_child(self)
 		
 	direction = (item_parent.global_position - global_position).normalized()
+	propagate_change_owner(player_owner)
 
+
+func propagate_change_owner(new_player_owner : Player):
+	if item_child != null:
+		item_child.change_owner(new_player_owner, self)
+		
 
 func attach_child(item : Item):
 	item_child = item

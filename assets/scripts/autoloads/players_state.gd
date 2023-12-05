@@ -37,6 +37,9 @@ func add_player(device : int, device_input : DeviceInput, character_index : int)
 
 func remove_player(player : int):
 	list.remove_at(player)
+	for player_index in list.size():
+		list[player_index].player_index = player_index
+		
 	player_list_changed.emit()
 	_check_players_ready()
 

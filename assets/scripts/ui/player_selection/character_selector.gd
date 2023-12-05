@@ -1,23 +1,23 @@
 class_name CharacterSelector extends Node
 
+const disallowed_color := Color.DIM_GRAY
+
 var character_repo : CharacterRepository
 var players : PlayersState
-
-var index : int
+var character_selection : CharacterSelection
+#var index : int
 var player : PlayerSettings
 var select_cooldown := false
 
 @onready var player_active = $PlayerActive
 @onready var player_inactive = $PlayerInactive
+@onready var device_disconnected = $DeviceDisconnected
 @onready var player_label := %PlayerLabel
 @onready var character_avatar := %CharacterAvatar
 @onready var character_name_label = %CharacterNameLabel
 @onready var character_role_label = %CharacterRoleLabel
 @onready var select_cooldown_timer := %SelectCooldownTimer
 @onready var ready_label = %ReadyLabel
-
-const disallowed_color := Color.DIM_GRAY
-
 
 @onready var up_arrow = %UpArrow
 @onready var down_arrow = %DownArrow
@@ -41,10 +41,15 @@ func _ready():
 	select_cooldown_timer.timeout.connect(_on_select_cooldown_timer_timeout)
 	players.player_ready_changed.connect(_on_player_ready_changed)
 	
-	player_active.visible = false
-	player_inactive.visible = true
-	
 
+func setup(in_character_selection : CharacterSelection):
+	character_selection = in_character_selection
+	
+	device_disconnected.visible = true
+	player_inactive.visible = false
+	player_active.visible = false
+	
+	
 func _on_select_cooldown_timer_timeout():
 	select_cooldown = false
 
@@ -63,6 +68,17 @@ func _check_is_avatar_allowed():
 	ready_allowed = not players.is_character_id_being_used_by_other(player.character_index, player.player_index)
 
 
+func disconnect_device():
+	player = null
+	set_as_disconnected()
+		
+
+func set_as_disconnected():
+	player_active.visible = false
+	player_inactive.visible = false
+	device_disconnected.visible = true
+
+
 func set_player(player_settings : PlayerSettings):
 	player = player_settings
 	player_label.text = player.get_print()
@@ -70,6 +86,7 @@ func set_player(player_settings : PlayerSettings):
 	set_character(character)
 	player_active.visible = true
 	player_inactive.visible = false
+	device_disconnected.visible = false
 	
 	if player.is_ready:
 		set_as_ready()
@@ -93,6 +110,7 @@ func remove_player():
 	player = null
 	player_active.visible = false
 	player_inactive.visible = true
+	device_disconnected.visible = false
 
 
 func _process(_delta):
@@ -122,8 +140,11 @@ func _process(_delta):
 				set_player_as_ready()
 			else:
 				Audio.play_warning()
+				
+		elif player.device_input.is_action_just_pressed("ui_cancel"):
+			disconnect_player()
 		
-	elif player.is_ready and player.device_input.is_action_just_pressed("ui_cancel"):
+	elif player.device_input.is_action_just_pressed("ui_cancel"):
 		set_player_as_not_ready()
 
 func select_previous():
@@ -144,6 +165,10 @@ func select_previous():
 	Audio.play_select_character()
 
 
+func disconnect_player():
+	character_selection.player_selection.disconnect_player(player)
+	
+	
 func select_next():
 	var character_index = character_repo.get_last_character_index()
 	if player.character_index < character_index:
@@ -160,7 +185,6 @@ func select_next():
 	
 	tween_control(down_arrow)
 	Audio.play_select_character()
-
 
 func set_player_as_ready():
 	players.set_player_ready(player.player_index, true)

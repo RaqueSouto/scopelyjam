@@ -28,6 +28,8 @@ var can_move := false:
 var tail : Array[Item]
 var score := 0
 
+var game : Game
+
 @onready var look_at := %LookAt
 @onready var target := %ArrowTarget
 
@@ -44,13 +46,17 @@ var score := 0
 @onready var crash_sfx_emitter = %CrashSfxEmitter
 @onready var score_sfx_emitter = %ScoreSfxEmitter
 @onready var emotion_timer = $EmotionTimer
+@onready var crash_particles = $CrashParticles
+
 
 func _ready():
 	config = Config.match.player
 	target.modulate = Color(Color.GRAY, 0.5)
 
 
-func setup(player_settings : PlayerSettings, character_config : CharacterConfig, player_base : PlayerBase, game : Game):
+func setup(player_settings : PlayerSettings, character_config : CharacterConfig, player_base : PlayerBase, in_game : Game):
+	
+	game = in_game
 	input = player_settings.device_input
 	
 	settings = player_settings
@@ -83,9 +89,14 @@ func exit_house():
 
 func crash(impact_force : Vector2):
 	if not can_crash:
+		velocity = impact_force
+		look_at.look_at(global_position + impact_force)
 		return
 		
 	crash_sfx_emitter.play()
+	game.crash_shaker.start()
+	input.start_vibration(1, 1, 0.6)
+	crash_particles.emitting = true
 		
 	state_machine.change_state(stunt_state)
 	not_flip = false
@@ -114,28 +125,41 @@ func add_items(item : Item):
 	if (item.player_owner == self):
 		return
 		
+	var vibration := 0.2
+	
+	var item_child = item.item_child
+	while (item_child != null):
+		item_child = item_child.item_child
+		vibration += 0.05
+		
 	if tail.size() > 0:
 		item.change_owner(self, tail[tail.size() - 1])
 	else:
 		item.change_owner(self, self)
-		
-	#tail.insert(0, item)
-	tail.append(item)
 	
-	while (item.item_child != null):
-		item = item.item_child
-		item.change_owner(self, tail[tail.size() - 1])
-		
+	
+	vibration = min(vibration, 0.8)
+	input.start_vibration(vibration, vibration, vibration / 2)
+	
 	update_speed()
 
 
-func remove_item(item):
+func attach_child(item : Item):
+	tail.append(item)
+
+
+#func detach_child(item : Item):
+#	tail.erase(item)
+
+
+func remove_item(item : Item, omite_taunt : bool):
 	tail.erase(item)
-	if not can_feel:
+	if omite_taunt or not can_feel:
 		return
 	angry_sfx_emitter.play()
+	game.robbed_shaker.start()
 	play_feeling("angry")
-
+	
 	
 func play_feeling(emotion : String):
 	animation.play(emotion)

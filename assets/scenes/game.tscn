@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvjlpmx5mxmba"]
+[gd_scene load_steps=9 format=3 uid="uid://bvjlpmx5mxmba"]
 
 [ext_resource type="Script" path="res://assets/scripts/game/game.gd" id="1_qm8kl"]
 [ext_resource type="PackedScene" uid="uid://briojhyaesuc0" path="res://assets/scenes/level/level.tscn" id="3_54xch"]
@@ -6,6 +6,14 @@
 [ext_resource type="Script" path="res://assets/scripts/game/items/item_spawner.gd" id="6_7jwdh"]
 [ext_resource type="PackedScene" uid="uid://dhrnd83k14vrw" path="res://assets/scenes/level/enviroment/house.tscn" id="7_1kioi"]
 [ext_resource type="Script" path="res://addons/shaker/shaker.gd" id="9_cf1a7"]
+
+[sub_resource type="Curve" id="Curve_do6o7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_5fqgy"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Game" type="Node"]
 script = ExtResource("1_qm8kl")
@@ -53,7 +61,44 @@ autostart = true
 [node name="EndGameTimer" type="Timer" parent="."]
 unique_name_in_owner = true
 
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target_node")]
+[node name="Camera" type="Camera2D" parent="."]
+ignore_rotation = false
+
+[node name="CrashShaker" type="Node" parent="Camera" node_paths=PackedStringArray("target_node")]
+unique_name_in_owner = true
 script = ExtResource("9_cf1a7")
-target_node = NodePath(".")
-target_property = &"position"
+target_node = NodePath("..")
+target_property = &"offset"
+min_value = -15.0
+max_value = 15.0
+fall_off = SubResource("Curve_do6o7")
+
+[node name="RobbedShaker" type="Node" parent="Camera" node_paths=PackedStringArray("target_node")]
+unique_name_in_owner = true
+script = ExtResource("9_cf1a7")
+target_node = NodePath("..")
+target_property = &"offset"
+min_value = -10.0
+max_value = 10.0
+duration = 0.4
+fall_off = SubResource("Curve_5fqgy")
+
+[node name="CountdownShaker" type="Node" parent="Camera" node_paths=PackedStringArray("target_node")]
+unique_name_in_owner = true
+script = ExtResource("9_cf1a7")
+target_node = NodePath("..")
+target_property = &"offset"
+min_value = -4.0
+max_value = 4.0
+duration = 0.4
+fall_off = SubResource("Curve_5fqgy")
+
+[node name="GoShaker" type="Node" parent="Camera" node_paths=PackedStringArray("target_node")]
+unique_name_in_owner = true
+script = ExtResource("9_cf1a7")
+target_node = NodePath("..")
+target_property = &"offset"
+min_value = -10.0
+max_value = 10.0
+duration = 0.3
+fall_off = SubResource("Curve_5fqgy")
