@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvjlpmx5mxmba"]
+[gd_scene load_steps=10 format=3 uid="uid://bvjlpmx5mxmba"]
 
 [ext_resource type="Script" path="res://assets/scripts/game/game.gd" id="1_qm8kl"]
 [ext_resource type="PackedScene" uid="uid://briojhyaesuc0" path="res://assets/scenes/level/level.tscn" id="3_54xch"]
 [ext_resource type="PackedScene" uid="uid://bu66462vl0y7b" path="res://assets/scenes/ui/game_ui.tscn" id="4_jirg3"]
 [ext_resource type="Script" path="res://assets/scripts/game/items/item_spawner.gd" id="6_7jwdh"]
 [ext_resource type="PackedScene" uid="uid://dhrnd83k14vrw" path="res://assets/scenes/level/enviroment/house.tscn" id="7_1kioi"]
+[ext_resource type="PackedScene" uid="uid://cq3wjvnfo0irq" path="res://assets/scenes/ui/pause.tscn" id="7_n4hss"]
 [ext_resource type="Script" path="res://addons/shaker/shaker.gd" id="9_cf1a7"]
 
 [sub_resource type="Curve" id="Curve_do6o7"]
@@ -102,3 +103,6 @@ min_value = -10.0
 max_value = 10.0
 duration = 0.3
 fall_off = SubResource("Curve_5fqgy")
+
+[node name="Pause" parent="." instance=ExtResource("7_n4hss")]
+unique_name_in_owner = true

@@ -24,5 +24,17 @@ func _ready():
 
 
 func _process(delta):
-	if can_start and Input.is_anything_pressed():
+	if can_start and _check_start():
 		get_tree().change_scene_to_file(PLAYER_SELECTION)
+
+
+func _check_start() -> bool:
+	if MultiplayerInput.is_action_just_pressed(-1, "ui_start"):
+		return true
+		
+	var joypads = Input.get_connected_joypads()
+	for device in joypads:
+		if MultiplayerInput.is_action_just_pressed(device, "ui_start"):
+			return true
+
+	return false

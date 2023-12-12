@@ -101,3 +101,8 @@ func _check_players_ready():
 		players_ready += 1
 		
 	all_players_ready = players_ready >= MIN_PLAYERS
+
+
+func reset_players_state():
+	for player in list:
+		player.is_ready = false

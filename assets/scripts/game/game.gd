@@ -17,6 +17,7 @@ var players : PlayersState
 @onready var robbed_shaker = %RobbedShaker
 @onready var countdown_shaker = %CountdownShaker
 @onready var go_shaker = %GoShaker
+@onready var pause = %Pause
 
 
 
@@ -42,10 +43,12 @@ func _ready():
 	end_game_timer.start(match_config.duration)
 	end_game_timer.timeout.connect(_on_end_game_timeout)
 	item_spawner.init()
+	pause.enabled = true
 	Audio.play_game_music()
 	
 	
 func _on_end_game_timeout():
+	pause.enabled = false
 	get_tree().paused = true
 	check_winners()
 	await game_ui.show_end_game()

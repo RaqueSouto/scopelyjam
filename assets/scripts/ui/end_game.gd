@@ -7,7 +7,6 @@ var characters_repo : CharacterRepository
 
 @onready var background = $Background
 @onready var back_menu_label = %BackMenuLabel
-@onready var music = $Music
 
 const TITLE = "res://assets/scenes/title_screen.tscn"
 
@@ -48,7 +47,11 @@ func _ready():
 
 func _process(delta):
 	if can_exit and players_state.list[0].device_input.is_action_just_pressed("ui_start"):
-		get_tree().paused = true
-		await ScreenEffects.transtion_fade_in()
-		Audio.stop_music()
-		get_tree().change_scene_to_file(TITLE)
+		exit()
+
+
+func exit():
+	can_exit = false
+	await ScreenEffects.transtion_fade_in()
+	Audio.stop_music()
+	get_tree().change_scene_to_file(TITLE)

@@ -1,0 +1,103 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkypu0tai8o34"]
+
+[ext_resource type="Script" path="res://assets/scripts/ui/quit.gd" id="1_574li"]
+[ext_resource type="Theme" uid="uid://b3kf378b70aub" path="res://assets/style/millenial_go.tres" id="2_dx1rw"]
+[ext_resource type="Texture2D" uid="uid://gdcwq4col8im" path="res://assets/sprites/circle.png" id="3_283x3"]
+
+[node name="Quit" type="Node"]
+script = ExtResource("1_574li")
+
+[node name="QuitCanvasLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+layer = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="QuitCanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -620.0
+offset_top = -65.0
+offset_right = -40.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("2_dx1rw")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[right]Hold [img=50]res://addons/controller_icons/assets/xboxone/y.png[/img] / [img=50]res://addons/controller_icons/assets/ps5/triangle.png[/img] to quit[/right]"
+
+[node name="QuitPanel" type="ColorRect" parent="QuitCanvasLayer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.8)
+
+[node name="QuitProgressBar" type="TextureProgressBar" parent="QuitCanvasLayer/QuitPanel"]
+unique_name_in_owner = true
+self_modulate = Color(0.87451, 0.313726, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 200)
+theme = ExtResource("2_dx1rw")
+max_value = 1.0
+step = 0.0
+value = 1.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_progress = ExtResource("3_283x3")
+tint_over = Color(0, 0, 0, 1)
+
+[node name="QuitLabelPanel" type="TextureRect" parent="QuitCanvasLayer/QuitPanel/QuitProgressBar"]
+self_modulate = Color(0.909804, 0.772549, 0.352941, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(150, 150)
+texture = ExtResource("3_283x3")
+expand_mode = 1
+
+[node name="QuitLabel" type="Label" parent="QuitCanvasLayer/QuitPanel/QuitProgressBar/QuitLabelPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.5
+offset_top = -42.5
+offset_right = 85.5
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00392, 1)
+theme = ExtResource("2_dx1rw")
+text = "QUIT"
+
+[node name="QuitTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true

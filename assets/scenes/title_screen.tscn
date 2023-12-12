@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcyxtw2m8lkdf"]
+[gd_scene load_steps=7 format=3 uid="uid://bcyxtw2m8lkdf"]
 
 [ext_resource type="Script" path="res://assets/scenes/ui/title_screen.gd" id="1_frnn8"]
 [ext_resource type="Texture2D" uid="uid://f6h8k351punv" path="res://assets/sprites/ui/Scopely_SplashArt.png" id="2_psv4h"]
 [ext_resource type="Theme" uid="uid://b3kf378b70aub" path="res://assets/style/millenial_go.tres" id="3_7al6c"]
 [ext_resource type="Texture2D" uid="uid://cc628t6g8x1ot" path="res://assets/sprites/ui/Scopely_SplashArt_Title.png" id="4_mkcfi"]
 [ext_resource type="Script" path="res://assets/scripts/ui/fade_effect.gd" id="5_i2d2a"]
+[ext_resource type="PackedScene" uid="uid://dkypu0tai8o34" path="res://assets/scenes/ui/quit.tscn" id="6_wjgni"]
 
 [node name="TitleScreen" type="Node"]
 script = ExtResource("1_frnn8")
@@ -40,5 +41,7 @@ pivot_offset = Vector2(0, 100)
 theme = ExtResource("3_7al6c")
 theme_override_constants/outline_size = 16
 bbcode_enabled = true
-text = "[center]Press any key to GO![/center]"
+text = "[center]Press [img]res://addons/controller_icons/assets/ps5/options_alt.png[/img] / [img]res://addons/controller_icons/assets/xbox360/start_alt.png[/img] to GO![/center]"
 script = ExtResource("5_i2d2a")
+
+[node name="Quit" parent="." instance=ExtResource("6_wjgni")]

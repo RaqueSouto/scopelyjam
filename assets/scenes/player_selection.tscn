@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://igrrthfcyjvl"]
+[gd_scene load_steps=8 format=3 uid="uid://igrrthfcyjvl"]
 
 [ext_resource type="Script" path="res://assets/scripts/ui/player_selection/player_selection.gd" id="1_g4nc4"]
 [ext_resource type="Script" path="res://assets/scripts/ui/player_selection/character_selection.gd" id="2_7q8pf"]
@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://b3kf378b70aub" path="res://assets/style/millenial_go.tres" id="2_djyf3"]
 [ext_resource type="PackedScene" uid="uid://ckom1utsggt8k" path="res://assets/scenes/ui/player_selection/character_selector.tscn" id="3_q8gex"]
 [ext_resource type="Script" path="res://assets/scripts/ui/fade_effect.gd" id="6_jise5"]
+[ext_resource type="PackedScene" uid="uid://dkypu0tai8o34" path="res://assets/scenes/ui/quit.tscn" id="7_8thjx"]
 
 [node name="PlayerSelection" type="Node"]
 script = ExtResource("1_g4nc4")
@@ -79,3 +80,5 @@ theme = ExtResource("2_djyf3")
 bbcode_enabled = true
 text = "[center]Player 1: Press [img]res://addons/controller_icons/assets/ps5/options_alt.png[/img] / [img]res://addons/controller_icons/assets/xbox360/start_alt.png[/img] to GO![/center]"
 script = ExtResource("6_jise5")
+
+[node name="Quit" parent="." instance=ExtResource("7_8thjx")]

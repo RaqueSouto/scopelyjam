@@ -22,13 +22,19 @@ func _ready():
 	
 	character_selection.setup(self)
 	
-	add_device(-1) # Keyboard / SteamController
+	# Keyboard / SteamController
+	if not players.exist_player_device(-1):
+		add_device(-1) 
+	
+	# Console controllers	
 	for device in Input.get_connected_joypads():
-		add_device(device)
+		if not players.exist_player_device(device):
+			add_device(device)
 	
 	Input.joy_connection_changed.connect(_on_joy_connection_changed)
 	players.all_players_ready_changed.connect(_on_all_players_ready_changed)
 	
+	character_selection.update_player_list()
 	start_label.visible = false
 	
 	
@@ -98,6 +104,7 @@ func _check_start():
 		get_tree().paused = true
 		Audio.stop_music()
 		await ScreenEffects.transtion_fade_in()
+		players.reset_players_state()
 		get_tree().change_scene_to_file(GAME_PATH)
 
 

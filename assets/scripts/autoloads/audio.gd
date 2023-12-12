@@ -91,7 +91,7 @@ func play_game_music():
 	
 func play_end_music():
 	end_music_emitter.play()
-	current_music_emitter = game_music_emitter
+	current_music_emitter = end_music_emitter
 
 
 func stop_music():
