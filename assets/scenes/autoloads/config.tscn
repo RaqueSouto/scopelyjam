@@ -16,7 +16,7 @@ script = ExtResource("1_nfl1k")
 [node name="MatchConfig" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_vvwk1")
-duration = 5
+duration = 120
 
 [node name="PlayerConfig" type="Node" parent="MatchConfig"]
 unique_name_in_owner = true
