@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bee0r3t3l6dg3"
-path="res://.godot/imported/button_switch_digital_y.png-64509a56e1f0184c2e5f3abc607c4f21.ctex"
+path="res://.godot/imported/button_switch_digital_y.png-ab491213a51f64dabdbf34ec9990ce78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/Assets/Switch Buttons Package/PNG/Resize/button_switch_digital_y.png"
-dest_files=["res://.godot/imported/button_switch_digital_y.png-64509a56e1f0184c2e5f3abc607c4f21.ctex"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/Assets/Switch Buttons Package/PNG/Resize/button_switch_digital_y.png"
+dest_files=["res://.godot/imported/button_switch_digital_y.png-ab491213a51f64dabdbf34ec9990ce78.ctex"]
 
 [params]
 

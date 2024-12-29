@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbbwekppiqi37"
-path="res://.godot/imported/Button - PS Analogue R Left Right.svg-89f46b428ef5c9a67e8ad13e3db95f68.ctex"
+path="res://.godot/imported/Button - PS Analogue R Left Right.svg-e59e2b926ffe6e8ba488004e1f4fc9ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/Assets/PS4 BUTTONS - Premium Assets/PS4 BUTTONS - Premium Assets/Analogue R Inputs/Button - PS Analogue R Left Right.svg"
-dest_files=["res://.godot/imported/Button - PS Analogue R Left Right.svg-89f46b428ef5c9a67e8ad13e3db95f68.ctex"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/Assets/PS4 BUTTONS - Premium Assets/PS4 BUTTONS - Premium Assets/Analogue R Inputs/Button - PS Analogue R Left Right.svg"
+dest_files=["res://.godot/imported/Button - PS Analogue R Left Right.svg-e59e2b926ffe6e8ba488004e1f4fc9ac.ctex"]
 
 [params]
 

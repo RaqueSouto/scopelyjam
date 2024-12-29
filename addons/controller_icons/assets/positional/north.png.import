@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://78i5io3k54qf"
-path="res://.godot/imported/north.png-8eae94f078419a6dd29488ecb0e91781.ctex"
+path="res://.godot/imported/north.png-71ed694c21bb9768a3eb8449c9e04f23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/positional/north.png"
-dest_files=["res://.godot/imported/north.png-8eae94f078419a6dd29488ecb0e91781.ctex"]
+source_file="res://Addons/controller_icons/assets/positional/north.png"
+dest_files=["res://.godot/imported/north.png-71ed694c21bb9768a3eb8449c9e04f23.ctex"]
 
 [params]
 

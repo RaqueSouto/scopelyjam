@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6b1xw0oivd8a"
-path="res://.godot/imported/zr.png-773c45f72efa58594d2c296f7bcf98ad.ctex"
+path="res://.godot/imported/zr.png-3f102d78dc1d7376d04adb16d9ff4936.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/switch/zr.png"
-dest_files=["res://.godot/imported/zr.png-773c45f72efa58594d2c296f7bcf98ad.ctex"]
+source_file="res://Addons/controller_icons/assets/switch/zr.png"
+dest_files=["res://.godot/imported/zr.png-3f102d78dc1d7376d04adb16d9ff4936.ctex"]
 
 [params]
 

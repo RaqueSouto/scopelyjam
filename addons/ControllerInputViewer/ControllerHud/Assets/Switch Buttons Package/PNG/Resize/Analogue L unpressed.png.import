@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdrey7751qsyh"
-path="res://.godot/imported/Analogue L unpressed.png-283ce6fdf057ace86077fbe05af3ad64.ctex"
+path="res://.godot/imported/Analogue L unpressed.png-eb9d6b4b520c67c71db38329260f91ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/Assets/Switch Buttons Package/PNG/Resize/Analogue L unpressed.png"
-dest_files=["res://.godot/imported/Analogue L unpressed.png-283ce6fdf057ace86077fbe05af3ad64.ctex"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/Assets/Switch Buttons Package/PNG/Resize/Analogue L unpressed.png"
+dest_files=["res://.godot/imported/Analogue L unpressed.png-eb9d6b4b520c67c71db38329260f91ab.ctex"]
 
 [params]
 

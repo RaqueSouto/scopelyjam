@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bck8srkobqvi3"
-path="res://.godot/imported/power.png-0830cc8bf011276d1ca084df938e9bfe.ctex"
+path="res://.godot/imported/power.png-f167de462effc72c9f664ed01aa671ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/steamdeck/power.png"
-dest_files=["res://.godot/imported/power.png-0830cc8bf011276d1ca084df938e9bfe.ctex"]
+source_file="res://Addons/controller_icons/assets/steamdeck/power.png"
+dest_files=["res://.godot/imported/power.png-f167de462effc72c9f664ed01aa671ff.ctex"]
 
 [params]
 

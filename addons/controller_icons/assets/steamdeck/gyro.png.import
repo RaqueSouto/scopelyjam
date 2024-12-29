@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brtnyias3061u"
-path="res://.godot/imported/gyro.png-069596f609be7f7b726934d7d8c01f58.ctex"
+path="res://.godot/imported/gyro.png-c4664a4a76f6128ac600d6b5e7684ddb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/steamdeck/gyro.png"
-dest_files=["res://.godot/imported/gyro.png-069596f609be7f7b726934d7d8c01f58.ctex"]
+source_file="res://Addons/controller_icons/assets/steamdeck/gyro.png"
+dest_files=["res://.godot/imported/gyro.png-c4664a4a76f6128ac600d6b5e7684ddb.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bctm8qvn3nvsq" path="res://assets/scenes/items/base_item.tscn" id="1_8bhg5"]
 [ext_resource type="Texture2D" uid="uid://c7eeqlobl35sm" path="res://assets/sprites/items/tamagochi.png" id="2_5l651"]
 [ext_resource type="Shader" path="res://assets/shaders/outline.gdshader" id="2_p30xn"]
-[ext_resource type="EventAsset" uid="uid://b8v6ag7mpfklw" path="res://addons/FMOD/editor/resources/events/{eae6ec51-3da6-4eb2-ba4d-6248b46dcd27}.tres" id="4_gifvb"]
+[ext_resource type="EventAsset" uid="uid://b8v6ag7mpfklw" path="res://Addons/FMOD/editor/resources/events/{eae6ec51-3da6-4eb2-ba4d-6248b46dcd27}.tres" id="4_gifvb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0bmx2"]
 resource_local_to_scene = true

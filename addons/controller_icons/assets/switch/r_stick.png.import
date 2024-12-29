@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d4kfa5jikbh6e"
-path="res://.godot/imported/r_stick.png-8336fb8720a1ed38bfe5dd6386d21f1b.ctex"
+path="res://.godot/imported/r_stick.png-a2986646ca8c7c0014a9d6b46cbb1a52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/switch/r_stick.png"
-dest_files=["res://.godot/imported/r_stick.png-8336fb8720a1ed38bfe5dd6386d21f1b.ctex"]
+source_file="res://Addons/controller_icons/assets/switch/r_stick.png"
+dest_files=["res://.godot/imported/r_stick.png-a2986646ca8c7c0014a9d6b46cbb1a52.ctex"]
 
 [params]
 

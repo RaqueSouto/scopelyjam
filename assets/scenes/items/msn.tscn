@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bctm8qvn3nvsq" path="res://assets/scenes/items/base_item.tscn" id="1_dgt5d"]
 [ext_resource type="Texture2D" uid="uid://dh053vmebneuv" path="res://assets/sprites/items/msn.png" id="2_n4pbd"]
 [ext_resource type="Shader" path="res://assets/shaders/outline.gdshader" id="2_tv0qw"]
-[ext_resource type="EventAsset" uid="uid://b8c6gd1jvmj5s" path="res://addons/FMOD/editor/resources/events/{19e83a06-b5b1-463a-a2b0-9ac31d360b70}.tres" id="4_0itu2"]
+[ext_resource type="EventAsset" uid="uid://b8c6gd1jvmj5s" path="res://Addons/FMOD/editor/resources/events/{19e83a06-b5b1-463a-a2b0-9ac31d360b70}.tres" id="4_0itu2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i7k8i"]
 resource_local_to_scene = true

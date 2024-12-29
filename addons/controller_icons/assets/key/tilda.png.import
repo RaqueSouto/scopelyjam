@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnvawqvdd4jb4"
-path="res://.godot/imported/tilda.png-54e1d4f4a3a498075fe0e8a403e57cbc.ctex"
+path="res://.godot/imported/tilda.png-fba11712bd38ed56a548f6f2bcf1f1b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/key/tilda.png"
-dest_files=["res://.godot/imported/tilda.png-54e1d4f4a3a498075fe0e8a403e57cbc.ctex"]
+source_file="res://Addons/controller_icons/assets/key/tilda.png"
+dest_files=["res://.godot/imported/tilda.png-fba11712bd38ed56a548f6f2bcf1f1b2.ctex"]
 
 [params]
 

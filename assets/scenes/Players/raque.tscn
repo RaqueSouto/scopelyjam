@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://d3odah3n1a5x5"]
 
-[ext_resource type="PackedScene" uid="uid://cwk572nh7d3wp" path="res://assets/scenes/Players/base_player.tscn" id="1_4hncp"]
+[ext_resource type="PackedScene" uid="uid://cwk572nh7d3wp" path="res://assets/scenes/players/base_player.tscn" id="1_4hncp"]
 
 [node name="Player" instance=ExtResource("1_4hncp")]

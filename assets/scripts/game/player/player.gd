@@ -10,7 +10,7 @@ var current_speed : float
 var current_angular_speed : float
 var color : Color
 
-var input : DeviceInput
+var input
 var config : PlayerConfig
 var settings : PlayerSettings
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chvxml4hh2m6n"
-path="res://.godot/imported/button_xbox_digital_a_7.png-c7a1d6f8e8e38ec9367047159d7a2df2.ctex"
+path="res://.godot/imported/button_xbox_digital_a_7.png-db6326a6bd868bfee7f1e40db0f7a71f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/Assets/XBOX BUTTONS - Premium Assets/XBOX BUTTONS - Premium Assets/Digital Buttons/ABXY/button_xbox_digital_a_7.png"
-dest_files=["res://.godot/imported/button_xbox_digital_a_7.png-c7a1d6f8e8e38ec9367047159d7a2df2.ctex"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/Assets/XBOX BUTTONS - Premium Assets/XBOX BUTTONS - Premium Assets/Digital Buttons/ABXY/button_xbox_digital_a_7.png"
+dest_files=["res://.godot/imported/button_xbox_digital_a_7.png-db6326a6bd868bfee7f1e40db0f7a71f.ctex"]
 
 [params]
 

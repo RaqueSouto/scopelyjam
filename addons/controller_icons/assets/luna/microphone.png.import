@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wwhe5v7m720e"
-path="res://.godot/imported/microphone.png-7c6c78023d41c0eecbcde19029281402.ctex"
+path="res://.godot/imported/microphone.png-5239cb14a017b3fc475384716c9737de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/luna/microphone.png"
-dest_files=["res://.godot/imported/microphone.png-7c6c78023d41c0eecbcde19029281402.ctex"]
+source_file="res://Addons/controller_icons/assets/luna/microphone.png"
+dest_files=["res://.godot/imported/microphone.png-5239cb14a017b3fc475384716c9737de.ctex"]
 
 [params]
 

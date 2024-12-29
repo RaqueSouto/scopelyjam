@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ckjwmngj4kbho"
-path="res://.godot/imported/dpad.png-4637fef7b5db266765dab22db8f811fd.ctex"
+path="res://.godot/imported/dpad.png-2e4379dd7f41cf295163e5772cacd334.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/ps3/dpad.png"
-dest_files=["res://.godot/imported/dpad.png-4637fef7b5db266765dab22db8f811fd.ctex"]
+source_file="res://Addons/controller_icons/assets/ps3/dpad.png"
+dest_files=["res://.godot/imported/dpad.png-2e4379dd7f41cf295163e5772cacd334.ctex"]
 
 [params]
 

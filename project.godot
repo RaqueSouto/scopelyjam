@@ -17,11 +17,11 @@ config/icon="res://assets/sprites/ui/Scopely_Icon.png"
 
 [autoload]
 
-FMODRuntime="*res://addons/FMOD/runtime/fmod_runtime_manager.gd"
+FMODRuntime="*res://Addons/FMOD/runtime/fmod_runtime_manager.gd"
 Config="*res://assets/scenes/autoloads/config.tscn"
 GameState="*res://assets/scenes/autoloads/game_state.tscn"
 Audio="*res://assets/scenes/autoloads/audio.tscn"
-MultiplayerInput="*res://addons/MultiplayerInput/multiplayer_input.gd"
+MultiplayerInput="*res://Addons/MultiplayerInput/multiplayer_input.gd"
 ScreenEffects="*res://assets/scenes/autoloads/screen_effects.tscn"
 
 [display]
@@ -73,8 +73,7 @@ ui_select={
 }
 ui_cancel={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":32,"echo":false,"script":null)
-, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":1,"pressure":0.0,"pressed":true,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 ui_left={

@@ -12,9 +12,9 @@
 [ext_resource type="Script" path="res://assets/scripts/game/player/state_machine/states/stunt_state.gd" id="8_klr8n"]
 [ext_resource type="Script" path="res://assets/scripts/game/player/state_machine/states/scoring_state.gd" id="9_8b70k"]
 [ext_resource type="Script" path="res://assets/scripts/game/player/state_machine/states/end_game_state.gd" id="10_ak4t7"]
-[ext_resource type="EventAsset" uid="uid://dnxjh6hc1j6ar" path="res://addons/FMOD/editor/resources/events/{c6c0728c-b150-4e83-8aa6-b7414491544f}.tres" id="13_8ut53"]
-[ext_resource type="EventAsset" uid="uid://c2g6u0cw2gfs1" path="res://addons/FMOD/editor/resources/events/{e545456c-ce0d-42c9-b2b9-689a1e315623}.tres" id="14_hmp2u"]
-[ext_resource type="EventAsset" uid="uid://bbw7t73lqjx2c" path="res://addons/FMOD/editor/resources/events/{a0345161-9fd0-4385-a240-8f79d2b08b15}.tres" id="15_gh83e"]
+[ext_resource type="EventAsset" uid="uid://dnxjh6hc1j6ar" path="res://Addons/FMOD/editor/resources/events/{c6c0728c-b150-4e83-8aa6-b7414491544f}.tres" id="13_8ut53"]
+[ext_resource type="EventAsset" uid="uid://c2g6u0cw2gfs1" path="res://Addons/FMOD/editor/resources/events/{e545456c-ce0d-42c9-b2b9-689a1e315623}.tres" id="14_hmp2u"]
+[ext_resource type="EventAsset" uid="uid://bbw7t73lqjx2c" path="res://Addons/FMOD/editor/resources/events/{a0345161-9fd0-4385-a240-8f79d2b08b15}.tres" id="15_gh83e"]
 [ext_resource type="Texture2D" uid="uid://dpr7qga0il5to" path="res://assets/sprites/effects/star.png" id="16_fash7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fiy1p"]

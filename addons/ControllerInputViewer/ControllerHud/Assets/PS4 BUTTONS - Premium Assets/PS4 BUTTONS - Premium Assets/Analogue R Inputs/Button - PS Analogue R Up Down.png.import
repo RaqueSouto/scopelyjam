@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqupol4mlilxc"
-path="res://.godot/imported/Button - PS Analogue R Up Down.png-877c24039520e2bf9ead5f091908b51a.ctex"
+path="res://.godot/imported/Button - PS Analogue R Up Down.png-025f5dbb918b5460b950ba971d55f8d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/Assets/PS4 BUTTONS - Premium Assets/PS4 BUTTONS - Premium Assets/Analogue R Inputs/Button - PS Analogue R Up Down.png"
-dest_files=["res://.godot/imported/Button - PS Analogue R Up Down.png-877c24039520e2bf9ead5f091908b51a.ctex"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/Assets/PS4 BUTTONS - Premium Assets/PS4 BUTTONS - Premium Assets/Analogue R Inputs/Button - PS Analogue R Up Down.png"
+dest_files=["res://.godot/imported/Button - PS Analogue R Up Down.png-025f5dbb918b5460b950ba971d55f8d2.ctex"]
 
 [params]
 

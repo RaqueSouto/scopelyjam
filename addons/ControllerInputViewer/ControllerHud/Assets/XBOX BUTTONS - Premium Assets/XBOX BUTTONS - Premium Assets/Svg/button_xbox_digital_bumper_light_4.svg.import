@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c38mf760q2nmg"
-path="res://.godot/imported/button_xbox_digital_bumper_light_4.svg-6f89327cc304209a55a4006e23d5f1ad.ctex"
+path="res://.godot/imported/button_xbox_digital_bumper_light_4.svg-20fbe1899393f7078efd5d298277bcf7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/Assets/XBOX BUTTONS - Premium Assets/XBOX BUTTONS - Premium Assets/Svg/button_xbox_digital_bumper_light_4.svg"
-dest_files=["res://.godot/imported/button_xbox_digital_bumper_light_4.svg-6f89327cc304209a55a4006e23d5f1ad.ctex"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/Assets/XBOX BUTTONS - Premium Assets/XBOX BUTTONS - Premium Assets/Svg/button_xbox_digital_bumper_light_4.svg"
+dest_files=["res://.godot/imported/button_xbox_digital_bumper_light_4.svg-20fbe1899393f7078efd5d298277bcf7.ctex"]
 
 [params]
 

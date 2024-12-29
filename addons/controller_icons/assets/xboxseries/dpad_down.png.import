@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bd2rj8doekapn"
-path="res://.godot/imported/dpad_down.png-73c90acd2c18f3d773119570fce2af56.ctex"
+path="res://.godot/imported/dpad_down.png-3d85747305cbb64a0471d41efb84847e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/xboxseries/dpad_down.png"
-dest_files=["res://.godot/imported/dpad_down.png-73c90acd2c18f3d773119570fce2af56.ctex"]
+source_file="res://Addons/controller_icons/assets/xboxseries/dpad_down.png"
+dest_files=["res://.godot/imported/dpad_down.png-3d85747305cbb64a0471d41efb84847e.ctex"]
 
 [params]
 

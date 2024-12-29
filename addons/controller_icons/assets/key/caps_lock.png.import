@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmu1dyma2ia1w"
-path="res://.godot/imported/caps_lock.png-68be22558ed98886d7f0c42175a4f042.ctex"
+path="res://.godot/imported/caps_lock.png-2aa4f2909b5dc56bbc938afd039d4520.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/key/caps_lock.png"
-dest_files=["res://.godot/imported/caps_lock.png-68be22558ed98886d7f0c42175a4f042.ctex"]
+source_file="res://Addons/controller_icons/assets/key/caps_lock.png"
+dest_files=["res://.godot/imported/caps_lock.png-2aa4f2909b5dc56bbc938afd039d4520.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://n7kjeg5ha3wi"
-path.s3tc="res://.godot/imported/fmod_emitter.png-e0c584c022923e704103a5722938e616.s3tc.ctex"
+path.s3tc="res://.godot/imported/fmod_emitter.png-3318c1d163ef19aa70d0f0e11d8501b9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/FMOD/editor/images/fmod_emitter.png"
-dest_files=["res://.godot/imported/fmod_emitter.png-e0c584c022923e704103a5722938e616.s3tc.ctex"]
+source_file="res://Addons/FMOD/editor/images/fmod_emitter.png"
+dest_files=["res://.godot/imported/fmod_emitter.png-3318c1d163ef19aa70d0f0e11d8501b9.s3tc.ctex"]
 
 [params]
 

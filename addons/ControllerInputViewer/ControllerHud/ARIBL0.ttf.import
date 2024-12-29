@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://d2ptwfexmx5g1"
-path="res://.godot/imported/ARIBL0.ttf-6ca0ced3bd4e69cd89e2625cf77b7c9e.fontdata"
+path="res://.godot/imported/ARIBL0.ttf-a2b1bf683e83bf0c5ae8f92cfe0ec578.fontdata"
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/ARIBL0.ttf"
-dest_files=["res://.godot/imported/ARIBL0.ttf-6ca0ced3bd4e69cd89e2625cf77b7c9e.fontdata"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/ARIBL0.ttf"
+dest_files=["res://.godot/imported/ARIBL0.ttf-a2b1bf683e83bf0c5ae8f92cfe0ec578.fontdata"]
 
 [params]
 

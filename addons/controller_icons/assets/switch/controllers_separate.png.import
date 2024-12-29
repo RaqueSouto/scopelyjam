@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bluvevys04kfi"
-path="res://.godot/imported/controllers_separate.png-1060f3b60202e8596c5e2b6cb4ab7773.ctex"
+path="res://.godot/imported/controllers_separate.png-8bdb8286123ec91db52063e9946b9a0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/switch/controllers_separate.png"
-dest_files=["res://.godot/imported/controllers_separate.png-1060f3b60202e8596c5e2b6cb4ab7773.ctex"]
+source_file="res://Addons/controller_icons/assets/switch/controllers_separate.png"
+dest_files=["res://.godot/imported/controllers_separate.png-8bdb8286123ec91db52063e9946b9a0d.ctex"]
 
 [params]
 

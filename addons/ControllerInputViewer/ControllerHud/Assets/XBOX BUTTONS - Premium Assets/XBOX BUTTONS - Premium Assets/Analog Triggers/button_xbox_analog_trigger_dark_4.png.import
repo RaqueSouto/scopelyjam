@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5bi6mp0qipja"
-path="res://.godot/imported/button_xbox_analog_trigger_dark_4.png-72d6e08152b3988575d99dd403201258.ctex"
+path="res://.godot/imported/button_xbox_analog_trigger_dark_4.png-6180383a0a9fd2e6e74fb7506e99c9ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/Assets/XBOX BUTTONS - Premium Assets/XBOX BUTTONS - Premium Assets/Analog Triggers/button_xbox_analog_trigger_dark_4.png"
-dest_files=["res://.godot/imported/button_xbox_analog_trigger_dark_4.png-72d6e08152b3988575d99dd403201258.ctex"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/Assets/XBOX BUTTONS - Premium Assets/XBOX BUTTONS - Premium Assets/Analog Triggers/button_xbox_analog_trigger_dark_4.png"
+dest_files=["res://.godot/imported/button_xbox_analog_trigger_dark_4.png-6180383a0a9fd2e6e74fb7506e99c9ff.ctex"]
 
 [params]
 

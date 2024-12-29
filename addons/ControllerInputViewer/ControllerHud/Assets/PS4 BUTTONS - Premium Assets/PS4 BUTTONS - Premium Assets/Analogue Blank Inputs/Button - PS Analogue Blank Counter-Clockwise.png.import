@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4peg12v5dhji"
-path="res://.godot/imported/Button - PS Analogue Blank Counter-Clockwise.png-f4b109670fc395b102044cbef41bb1f6.ctex"
+path="res://.godot/imported/Button - PS Analogue Blank Counter-Clockwise.png-77f05883a5c74a3f101ec2a9cde2b67d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/Assets/PS4 BUTTONS - Premium Assets/PS4 BUTTONS - Premium Assets/Analogue Blank Inputs/Button - PS Analogue Blank Counter-Clockwise.png"
-dest_files=["res://.godot/imported/Button - PS Analogue Blank Counter-Clockwise.png-f4b109670fc395b102044cbef41bb1f6.ctex"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/Assets/PS4 BUTTONS - Premium Assets/PS4 BUTTONS - Premium Assets/Analogue Blank Inputs/Button - PS Analogue Blank Counter-Clockwise.png"
+dest_files=["res://.godot/imported/Button - PS Analogue Blank Counter-Clockwise.png-77f05883a5c74a3f101ec2a9cde2b67d.ctex"]
 
 [params]
 

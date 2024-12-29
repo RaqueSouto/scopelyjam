@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://41vus25khrl5"
-path="res://.godot/imported/folder_opened.svg-40fae91eff73ee4d13ff7d45de2bc499.ctex"
+path="res://.godot/imported/folder_opened.svg-7938bf404c571a7ede4c67ac77db6591.ctex"
 metadata={
 "has_editor_variant": true,
 "vram_texture": false
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/FMOD/editor/images/folder_opened.svg"
-dest_files=["res://.godot/imported/folder_opened.svg-40fae91eff73ee4d13ff7d45de2bc499.ctex"]
+source_file="res://Addons/FMOD/editor/images/folder_opened.svg"
+dest_files=["res://.godot/imported/folder_opened.svg-7938bf404c571a7ede4c67ac77db6591.ctex"]
 
 [params]
 

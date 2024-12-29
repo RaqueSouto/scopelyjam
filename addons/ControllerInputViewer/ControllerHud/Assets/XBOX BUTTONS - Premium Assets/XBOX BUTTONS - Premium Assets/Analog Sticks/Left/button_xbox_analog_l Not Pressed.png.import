@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dig7e88wtc2b2"
-path="res://.godot/imported/button_xbox_analog_l Not Pressed.png-51d35ea9739cab42bc40a150178c4f55.ctex"
+path="res://.godot/imported/button_xbox_analog_l Not Pressed.png-822975dc3ad58d3cc8fb07a4d83508ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/Assets/XBOX BUTTONS - Premium Assets/XBOX BUTTONS - Premium Assets/Analog Sticks/Left/button_xbox_analog_l Not Pressed.png"
-dest_files=["res://.godot/imported/button_xbox_analog_l Not Pressed.png-51d35ea9739cab42bc40a150178c4f55.ctex"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/Assets/XBOX BUTTONS - Premium Assets/XBOX BUTTONS - Premium Assets/Analog Sticks/Left/button_xbox_analog_l Not Pressed.png"
+dest_files=["res://.godot/imported/button_xbox_analog_l Not Pressed.png-822975dc3ad58d3cc8fb07a4d83508ff.ctex"]
 
 [params]
 

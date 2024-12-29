@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btc4lralbjr0b"
-path="res://.godot/imported/Button - PS Cross 2.svg-338ad106f469eb8eccaedf5d5a59bf80.ctex"
+path="res://.godot/imported/Button - PS Cross 2.svg-3d2467258ae6aac8cb6d27ac8af22417.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/Assets/PS4 BUTTONS - Premium Assets/PS4 BUTTONS - Premium Assets/Main Buttons/Button - PS Cross 2.svg"
-dest_files=["res://.godot/imported/Button - PS Cross 2.svg-338ad106f469eb8eccaedf5d5a59bf80.ctex"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/Assets/PS4 BUTTONS - Premium Assets/PS4 BUTTONS - Premium Assets/Main Buttons/Button - PS Cross 2.svg"
+dest_files=["res://.godot/imported/Button - PS Cross 2.svg-3d2467258ae6aac8cb6d27ac8af22417.ctex"]
 
 [params]
 

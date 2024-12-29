@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0f1x4lapymuw"
-path="res://.godot/imported/Button - PS Analogue Blank Up Left.png-4ce9c33bf81db0e1b88f106921da467f.ctex"
+path="res://.godot/imported/Button - PS Analogue Blank Up Left.png-de7e6b6f7844b25a097504beca65023e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/Assets/PS4 BUTTONS - Premium Assets/PS4 BUTTONS - Premium Assets/Analogue Blank Inputs/Button - PS Analogue Blank Up Left.png"
-dest_files=["res://.godot/imported/Button - PS Analogue Blank Up Left.png-4ce9c33bf81db0e1b88f106921da467f.ctex"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/Assets/PS4 BUTTONS - Premium Assets/PS4 BUTTONS - Premium Assets/Analogue Blank Inputs/Button - PS Analogue Blank Up Left.png"
+dest_files=["res://.godot/imported/Button - PS Analogue Blank Up Left.png-de7e6b6f7844b25a097504beca65023e.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cq1nvhcewu5nc"
-path="res://.godot/imported/semicolon.png-c1c48dd478b2bf5ae5d9bae57cdf3d69.ctex"
+path="res://.godot/imported/semicolon.png-6f069d7bd42f299e10b83729fa1abcd9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/key/semicolon.png"
-dest_files=["res://.godot/imported/semicolon.png-c1c48dd478b2bf5ae5d9bae57cdf3d69.ctex"]
+source_file="res://Addons/controller_icons/assets/key/semicolon.png"
+dest_files=["res://.godot/imported/semicolon.png-6f069d7bd42f299e10b83729fa1abcd9.ctex"]
 
 [params]
 

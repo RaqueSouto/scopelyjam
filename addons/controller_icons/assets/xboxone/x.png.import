@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cna0glvxuuco"
-path="res://.godot/imported/x.png-3a51ef6e3dd538a024aafb793c6f0ecc.ctex"
+path="res://.godot/imported/x.png-fa0a23c2bf370094b0d55ab8f2e4c00a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/xboxone/x.png"
-dest_files=["res://.godot/imported/x.png-3a51ef6e3dd538a024aafb793c6f0ecc.ctex"]
+source_file="res://Addons/controller_icons/assets/xboxone/x.png"
+dest_files=["res://.godot/imported/x.png-fa0a23c2bf370094b0d55ab8f2e4c00a.ctex"]
 
 [params]
 

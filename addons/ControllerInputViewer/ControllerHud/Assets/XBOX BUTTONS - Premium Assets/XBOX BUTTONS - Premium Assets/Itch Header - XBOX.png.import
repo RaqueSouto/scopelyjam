@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddo7wtax3i8lf"
-path="res://.godot/imported/Itch Header - XBOX.png-e4404d3ef640eeed7bc069860081ae36.ctex"
+path="res://.godot/imported/Itch Header - XBOX.png-a6247fba3249193844f9fbe2983f1241.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/Assets/XBOX BUTTONS - Premium Assets/XBOX BUTTONS - Premium Assets/Itch Header - XBOX.png"
-dest_files=["res://.godot/imported/Itch Header - XBOX.png-e4404d3ef640eeed7bc069860081ae36.ctex"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/Assets/XBOX BUTTONS - Premium Assets/XBOX BUTTONS - Premium Assets/Itch Header - XBOX.png"
+dest_files=["res://.godot/imported/Itch Header - XBOX.png-a6247fba3249193844f9fbe2983f1241.ctex"]
 
 [params]
 

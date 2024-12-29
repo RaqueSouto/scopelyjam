@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ppl4iemmq11p"
-path="res://.godot/imported/Button - PS Touchpad.svg-9027491eaf5c4943b555f684ac7898e7.ctex"
+path="res://.godot/imported/Button - PS Touchpad.svg-540d21fdc04bd02ffd620fae73651a3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/Assets/PS4 BUTTONS - Premium Assets/PS4 BUTTONS - Premium Assets/Other Inputs/Button - PS Touchpad.svg"
-dest_files=["res://.godot/imported/Button - PS Touchpad.svg-9027491eaf5c4943b555f684ac7898e7.ctex"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/Assets/PS4 BUTTONS - Premium Assets/PS4 BUTTONS - Premium Assets/Other Inputs/Button - PS Touchpad.svg"
+dest_files=["res://.godot/imported/Button - PS Touchpad.svg-540d21fdc04bd02ffd620fae73651a3d.ctex"]
 
 [params]
 

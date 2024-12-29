@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0rrslb07wjrf"
-path="res://.godot/imported/diagram_simple.png-28acd78142da16060c36b59ae19d78b7.ctex"
+path="res://.godot/imported/diagram_simple.png-fc28d53a0ea20e3e98f3a87205aa1281.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/luna/diagram_simple.png"
-dest_files=["res://.godot/imported/diagram_simple.png-28acd78142da16060c36b59ae19d78b7.ctex"]
+source_file="res://Addons/controller_icons/assets/luna/diagram_simple.png"
+dest_files=["res://.godot/imported/diagram_simple.png-fc28d53a0ea20e3e98f3a87205aa1281.ctex"]
 
 [params]
 

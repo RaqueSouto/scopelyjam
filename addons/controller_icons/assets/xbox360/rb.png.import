@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cw2jo5xbteqdu"
-path="res://.godot/imported/rb.png-1161a3ee4faa1b6a0f9a32ae97dda6fd.ctex"
+path="res://.godot/imported/rb.png-fefddfb54807e73d0a739a2c91e2a4e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/xbox360/rb.png"
-dest_files=["res://.godot/imported/rb.png-1161a3ee4faa1b6a0f9a32ae97dda6fd.ctex"]
+source_file="res://Addons/controller_icons/assets/xbox360/rb.png"
+dest_files=["res://.godot/imported/rb.png-fefddfb54807e73d0a739a2c91e2a4e9.ctex"]
 
 [params]
 

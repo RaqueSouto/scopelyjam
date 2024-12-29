@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btq0dc1dsk0to"
-path="res://.godot/imported/Button - PS Analogue Blank Clockwise-1.svg-136b4cbb0b27940bb11e7e75980c5a43.ctex"
+path="res://.godot/imported/Button - PS Analogue Blank Clockwise-1.svg-513bbcf7f0741cd1a25068d4aa67c2cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/Assets/PS4 BUTTONS - Premium Assets/PS4 BUTTONS - Premium Assets/Analogue Blank Inputs/Button - PS Analogue Blank Clockwise-1.svg"
-dest_files=["res://.godot/imported/Button - PS Analogue Blank Clockwise-1.svg-136b4cbb0b27940bb11e7e75980c5a43.ctex"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/Assets/PS4 BUTTONS - Premium Assets/PS4 BUTTONS - Premium Assets/Analogue Blank Inputs/Button - PS Analogue Blank Clockwise-1.svg"
+dest_files=["res://.godot/imported/Button - PS Analogue Blank Clockwise-1.svg-513bbcf7f0741cd1a25068d4aa67c2cf.ctex"]
 
 [params]
 

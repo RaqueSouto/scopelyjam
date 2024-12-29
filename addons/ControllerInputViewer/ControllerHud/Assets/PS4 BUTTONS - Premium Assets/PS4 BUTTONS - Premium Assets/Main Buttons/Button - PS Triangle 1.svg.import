@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jxo26aa2px1w"
-path="res://.godot/imported/Button - PS Triangle 1.svg-5a78cf01f2e94eb571321929b6e74521.ctex"
+path="res://.godot/imported/Button - PS Triangle 1.svg-8135b7b653474c4927579f4072a06d0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/Assets/PS4 BUTTONS - Premium Assets/PS4 BUTTONS - Premium Assets/Main Buttons/Button - PS Triangle 1.svg"
-dest_files=["res://.godot/imported/Button - PS Triangle 1.svg-5a78cf01f2e94eb571321929b6e74521.ctex"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/Assets/PS4 BUTTONS - Premium Assets/PS4 BUTTONS - Premium Assets/Main Buttons/Button - PS Triangle 1.svg"
+dest_files=["res://.godot/imported/Button - PS Triangle 1.svg-8135b7b653474c4927579f4072a06d0b.ctex"]
 
 [params]
 

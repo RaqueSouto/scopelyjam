@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bap23yu4qfl3y"
-path="res://.godot/imported/num_lock.png-e2af79f4edd04e9ecf785f370befb814.ctex"
+path="res://.godot/imported/num_lock.png-f9f0d306aae615ded4526ae32b63073e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/key/num_lock.png"
-dest_files=["res://.godot/imported/num_lock.png-e2af79f4edd04e9ecf785f370befb814.ctex"]
+source_file="res://Addons/controller_icons/assets/key/num_lock.png"
+dest_files=["res://.godot/imported/num_lock.png-f9f0d306aae615ded4526ae32b63073e.ctex"]
 
 [params]
 

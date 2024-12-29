@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://biwmgedaxpe5g"
-path="res://.godot/imported/button_xboxone_dpad_light_6.svg-350bd7e4a2d64431401ba1805bb99849.ctex"
+path="res://.godot/imported/button_xboxone_dpad_light_6.svg-1a8fcf63147d71ceefe2d5a5480166f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/Assets/XBOX BUTTONS - Premium Assets/XBOX BUTTONS - Premium Assets/Svg/button_xboxone_dpad_light_6.svg"
-dest_files=["res://.godot/imported/button_xboxone_dpad_light_6.svg-350bd7e4a2d64431401ba1805bb99849.ctex"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/Assets/XBOX BUTTONS - Premium Assets/XBOX BUTTONS - Premium Assets/Svg/button_xboxone_dpad_light_6.svg"
+dest_files=["res://.godot/imported/button_xboxone_dpad_light_6.svg-1a8fcf63147d71ceefe2d5a5480166f5.ctex"]
 
 [params]
 

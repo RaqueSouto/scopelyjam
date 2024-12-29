@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhawl508ukd07"
-path="res://.godot/imported/Itch Media - Xbox 3.png-a4a372ef5a1ffb302255ad36e1c23f58.ctex"
+path="res://.godot/imported/Itch Media - Xbox 3.png-3ce9e35aac830fcec84f67e424445dfa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/Assets/XBOX BUTTONS - Premium Assets/XBOX BUTTONS - Premium Assets/Itch Media - Xbox 3.png"
-dest_files=["res://.godot/imported/Itch Media - Xbox 3.png-a4a372ef5a1ffb302255ad36e1c23f58.ctex"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/Assets/XBOX BUTTONS - Premium Assets/XBOX BUTTONS - Premium Assets/Itch Media - Xbox 3.png"
+dest_files=["res://.godot/imported/Itch Media - Xbox 3.png-3ce9e35aac830fcec84f67e424445dfa.ctex"]
 
 [params]
 

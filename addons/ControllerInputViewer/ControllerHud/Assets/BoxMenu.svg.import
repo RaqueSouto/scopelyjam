@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvx1n86kv4772"
-path="res://.godot/imported/BoxMenu.svg-51c30eb860a5db8b3b280857857a74aa.ctex"
+path="res://.godot/imported/BoxMenu.svg-33b6b10a0603fc7c37de57652c9c6b20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/Assets/BoxMenu.svg"
-dest_files=["res://.godot/imported/BoxMenu.svg-51c30eb860a5db8b3b280857857a74aa.ctex"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/Assets/BoxMenu.svg"
+dest_files=["res://.godot/imported/BoxMenu.svg-33b6b10a0603fc7c37de57652c9c6b20.ctex"]
 
 [params]
 

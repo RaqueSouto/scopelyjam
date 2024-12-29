@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbal33e5rq6o2"
-path="res://.godot/imported/Button - PS Directional Arrows Up 2.svg-918fbb38728e3d58991644cd7dcea2ba.ctex"
+path="res://.godot/imported/Button - PS Directional Arrows Up 2.svg-68a6deb06a1b368ce5ec8869ffdbfd50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/Assets/PS4 BUTTONS - Premium Assets/PS4 BUTTONS - Premium Assets/Directional Arrows/Button - PS Directional Arrows Up 2.svg"
-dest_files=["res://.godot/imported/Button - PS Directional Arrows Up 2.svg-918fbb38728e3d58991644cd7dcea2ba.ctex"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/Assets/PS4 BUTTONS - Premium Assets/PS4 BUTTONS - Premium Assets/Directional Arrows/Button - PS Directional Arrows Up 2.svg"
+dest_files=["res://.godot/imported/Button - PS Directional Arrows Up 2.svg-68a6deb06a1b368ce5ec8869ffdbfd50.ctex"]
 
 [params]
 

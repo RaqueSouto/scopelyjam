@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cq7w3jth676di"
-path="res://.godot/imported/dpad_left.png-6f793e4e26f3c710bdbc49c5329c5eff.ctex"
+path="res://.godot/imported/dpad_left.png-9dc996a4ce3bda799b5f8f698af35b07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/stadia/dpad_left.png"
-dest_files=["res://.godot/imported/dpad_left.png-6f793e4e26f3c710bdbc49c5329c5eff.ctex"]
+source_file="res://Addons/controller_icons/assets/stadia/dpad_left.png"
+dest_files=["res://.godot/imported/dpad_left.png-9dc996a4ce3bda799b5f8f698af35b07.ctex"]
 
 [params]
 

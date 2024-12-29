@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://byqc7vuhgliui"
-path="res://.godot/imported/l2.png-49cf84f948da7cf4a5ca5167681ae3d5.ctex"
+path="res://.godot/imported/l2.png-c59f9ef441a1d50a899902741f5b56d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/ps3/l2.png"
-dest_files=["res://.godot/imported/l2.png-49cf84f948da7cf4a5ca5167681ae3d5.ctex"]
+source_file="res://Addons/controller_icons/assets/ps3/l2.png"
+dest_files=["res://.godot/imported/l2.png-c59f9ef441a1d50a899902741f5b56d2.ctex"]
 
 [params]
 

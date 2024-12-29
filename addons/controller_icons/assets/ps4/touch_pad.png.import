@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bk8ykwla3kyee"
-path="res://.godot/imported/touch_pad.png-7bbb4179df1c702619f3e56dc6165c73.ctex"
+path="res://.godot/imported/touch_pad.png-7c9a397b7ef40d80e1cf86eaaa8b4c8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/ps4/touch_pad.png"
-dest_files=["res://.godot/imported/touch_pad.png-7bbb4179df1c702619f3e56dc6165c73.ctex"]
+source_file="res://Addons/controller_icons/assets/ps4/touch_pad.png"
+dest_files=["res://.godot/imported/touch_pad.png-7c9a397b7ef40d80e1cf86eaaa8b4c8c.ctex"]
 
 [params]
 

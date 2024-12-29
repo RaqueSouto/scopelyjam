@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hsm81sodtdrk"
-path="res://.godot/imported/button_xboxone_analog_l_direction_10.svg-21fc60961c9c0b730de8fa1c217b4971.ctex"
+path="res://.godot/imported/button_xboxone_analog_l_direction_10.svg-95724e7be8860d361e7918de051e0fba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/Assets/XBOX BUTTONS - Premium Assets/XBOX BUTTONS - Premium Assets/Svg/button_xboxone_analog_l_direction_10.svg"
-dest_files=["res://.godot/imported/button_xboxone_analog_l_direction_10.svg-21fc60961c9c0b730de8fa1c217b4971.ctex"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/Assets/XBOX BUTTONS - Premium Assets/XBOX BUTTONS - Premium Assets/Svg/button_xboxone_analog_l_direction_10.svg"
+dest_files=["res://.godot/imported/button_xboxone_analog_l_direction_10.svg-95724e7be8860d361e7918de051e0fba.ctex"]
 
 [params]
 

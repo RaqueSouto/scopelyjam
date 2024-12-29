@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bp58drjdgvxsi"
-path="res://.godot/imported/enter_alt.png-15ea435f9aa8699e8752649d5707d3f9.ctex"
+path="res://.godot/imported/enter_alt.png-b0efc6f9f26bf17c21976c79824c97b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/key/enter_alt.png"
-dest_files=["res://.godot/imported/enter_alt.png-15ea435f9aa8699e8752649d5707d3f9.ctex"]
+source_file="res://Addons/controller_icons/assets/key/enter_alt.png"
+dest_files=["res://.godot/imported/enter_alt.png-b0efc6f9f26bf17c21976c79824c97b4.ctex"]
 
 [params]
 

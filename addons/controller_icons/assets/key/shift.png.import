@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvan6ddb77ca3"
-path="res://.godot/imported/shift.png-a03a9bd92c17d4fc5b370f1755f396ce.ctex"
+path="res://.godot/imported/shift.png-6ec70bf2c6deda778ad6db4832067de3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/key/shift.png"
-dest_files=["res://.godot/imported/shift.png-a03a9bd92c17d4fc5b370f1755f396ce.ctex"]
+source_file="res://Addons/controller_icons/assets/key/shift.png"
+dest_files=["res://.godot/imported/shift.png-6ec70bf2c6deda778ad6db4832067de3.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ba04a0ql4pg6s"
-path="res://.godot/imported/r_stick_click.png-65cb2bed7b9da43cbe790342cd7869f7.ctex"
+path="res://.godot/imported/r_stick_click.png-e5795575fce6083fda55369d8d7c537d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/steamdeck/r_stick_click.png"
-dest_files=["res://.godot/imported/r_stick_click.png-65cb2bed7b9da43cbe790342cd7869f7.ctex"]
+source_file="res://Addons/controller_icons/assets/steamdeck/r_stick_click.png"
+dest_files=["res://.godot/imported/r_stick_click.png-e5795575fce6083fda55369d8d7c537d.ctex"]
 
 [params]
 

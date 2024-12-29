@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhc7resdjhky"
-path="res://.godot/imported/D-PadUp.png-5dc179b48d64bd11bb6cbca9ef2fec50.ctex"
+path="res://.godot/imported/D-PadUp.png-8d3b7170f2fa4fa738c6e87f0d48c109.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/Assets/XBOX BUTTONS - Premium Assets/XBOX BUTTONS - Premium Assets/D-Pad/D-Pad Interface/D-PadUp.png"
-dest_files=["res://.godot/imported/D-PadUp.png-5dc179b48d64bd11bb6cbca9ef2fec50.ctex"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/Assets/XBOX BUTTONS - Premium Assets/XBOX BUTTONS - Premium Assets/D-Pad/D-Pad Interface/D-PadUp.png"
+dest_files=["res://.godot/imported/D-PadUp.png-8d3b7170f2fa4fa738c6e87f0d48c109.ctex"]
 
 [params]
 

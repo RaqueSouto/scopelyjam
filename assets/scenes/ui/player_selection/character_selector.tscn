@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://b3kf378b70aub" path="res://assets/style/millenial_go.tres" id="3_m8nbh"]
 [ext_resource type="Shader" path="res://assets/shaders/outline.gdshader" id="3_trqaf"]
 [ext_resource type="Texture2D" uid="uid://bf1lata5s2d6d" path="res://assets/sprites/arrow.png" id="3_yisvs"]
-[ext_resource type="Texture2D" uid="uid://b5j0idk4yjkkj" path="res://addons/controller_icons/assets/disconnected.png" id="5_2k886"]
+[ext_resource type="Texture2D" uid="uid://b5j0idk4yjkkj" path="res://Addons/controller_icons/assets/disconnected.png" id="5_2k886"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5luo2"]
 shader = ExtResource("3_trqaf")

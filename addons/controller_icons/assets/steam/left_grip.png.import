@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctjkl1pjr5p4r"
-path="res://.godot/imported/left_grip.png-7632e6b4dc516d33c14edaaca9a800f6.ctex"
+path="res://.godot/imported/left_grip.png-e74b244226af536f772f0b7bc004abfe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/steam/left_grip.png"
-dest_files=["res://.godot/imported/left_grip.png-7632e6b4dc516d33c14edaaca9a800f6.ctex"]
+source_file="res://Addons/controller_icons/assets/steam/left_grip.png"
+dest_files=["res://.godot/imported/left_grip.png-e74b244226af536f772f0b7bc004abfe.ctex"]
 
 [params]
 

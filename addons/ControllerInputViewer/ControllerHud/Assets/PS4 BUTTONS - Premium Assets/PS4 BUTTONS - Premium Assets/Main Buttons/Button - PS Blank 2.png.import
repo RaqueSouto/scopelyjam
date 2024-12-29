@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0j0ok3uy0u1g"
-path="res://.godot/imported/Button - PS Blank 2.png-ca3efb7b4f70b1e2f1a5256a85faa8ca.ctex"
+path="res://.godot/imported/Button - PS Blank 2.png-1108be43c739dbc5250181f90a4352c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ControllerInputViewer/ControllerHud/Assets/PS4 BUTTONS - Premium Assets/PS4 BUTTONS - Premium Assets/Main Buttons/Button - PS Blank 2.png"
-dest_files=["res://.godot/imported/Button - PS Blank 2.png-ca3efb7b4f70b1e2f1a5256a85faa8ca.ctex"]
+source_file="res://Addons/ControllerInputViewer/ControllerHud/Assets/PS4 BUTTONS - Premium Assets/PS4 BUTTONS - Premium Assets/Main Buttons/Button - PS Blank 2.png"
+dest_files=["res://.godot/imported/Button - PS Blank 2.png-1108be43c739dbc5250181f90a4352c9.ctex"]
 
 [params]
 

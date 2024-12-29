@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhq248yp0aa52"
-path="res://.godot/imported/left_track.png-a3f6b83f0eb656760c4e50b38378b0d2.ctex"
+path="res://.godot/imported/left_track.png-fe73093e65c72c2b4a6658fd9de20f0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/controller_icons/assets/steamdeck/left_track.png"
-dest_files=["res://.godot/imported/left_track.png-a3f6b83f0eb656760c4e50b38378b0d2.ctex"]
+source_file="res://Addons/controller_icons/assets/steamdeck/left_track.png"
+dest_files=["res://.godot/imported/left_track.png-fe73093e65c72c2b4a6658fd9de20f0b.ctex"]
 
 [params]
 
